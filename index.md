@@ -16,9 +16,9 @@ Originally, this mod was supposed to be a direct replica of the original Super M
 
 ## Tutorials
 
-There is currently nothing over here as these are still in the works. I'm hoping to transfer my knowledge in video game modification and programming in general here over the next few months.  
-  
-  
-  
-  
-Thank you to everyone who has supported me over the years and continue to support!  
+There is currently nothing over here as these are still in the works. I'm hoping to transfer my knowledge in video game modification and programming in general here over the next few months.
+
+
+
+
+Thank you to everyone who has supported me over the years and continue to support!
