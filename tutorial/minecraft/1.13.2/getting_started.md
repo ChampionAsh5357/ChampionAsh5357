@@ -46,11 +46,11 @@ After you have set up the workspace, there are some additional features that mig
 
 The default setting in Eclipse is to list all the packages by their full name such as "net.minecraft.init.Blocks" and "net.minecraft.init.Items" instead of using a subdirectory system like: net->minecraft->init->{Blocks, Items}. To be able to set it up in this way, go to the left side of the screen where you will find the Project Explorer. To the right of the tab is a drop down arrow. Go to Package Presentation and switch it from Flat to Hierarchial and it will be much easier to find whatever you are looking for.
 
-## Run Favorites
+### Run Favorites
 
 Since the new system in 1.13.2 does not run the Eclipse setup through the mdk, it might be a bit more difficult to select the runClient and runServer application used to test your mod in game. To set these as your favorites to easily find them, go to the Green Play button underneath the toolbar and click the drop down arrow to the right. Click Organize Run Favorites->Add...->Select All->Ok->Ok to set the applications as your favorites for easy access.
 
-## Removing TODO Auto Generated Messages
+### Removing TODO Auto Generated Messages
 
 Sometimes when auto-completing a method, the TODO message auto generates within as a comment. To disable this, go to Window->Preferences->Java->Code Style->Code Templates and Edit the Method body, Constructor body, and Catch block body to remove all instances of this message. Then click Apply and Close and you should no longer have any auto generated messages appearing when auto-completing.
 
