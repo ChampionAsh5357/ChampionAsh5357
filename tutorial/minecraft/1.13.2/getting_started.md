@@ -54,4 +54,4 @@ Since the new system in 1.13.2 does not run the Eclipse setup through the mdk, i
 
 Sometimes when auto-completing a method, the TODO message auto generates within as a comment. To disable this, go to Window->Preferences->Java->Code Style->Code Templates and Edit the Method body, Constructor body, and Catch block body to remove all instances of this message. Then click Apply and Close and you should no longer have any auto generated messages appearing when auto-completing.
 
-Now that you have setup the workspace, it is now time to begin the Main Mod File (WIP).
+Now that you have setup the workspace, it is now time to begin the [Main Mod File](https://championash5357.github.io/ChampionAsh5357/tutorial/minecraft/1.13.2/main_file).
