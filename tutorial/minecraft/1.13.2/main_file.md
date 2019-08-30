@@ -14,3 +14,20 @@ public class Tutorial {
     
 }
 ```
+
+This is the default generated class for Eclipse. To be able to turn this into the mod, we need to add an `@Mod` annotation to the top of the class. This mod has a required parameter of the id. So, you would need to put in paraentheses the string id (e.g. `@Mod("tutorial")`). However, for consistent use over and over, it is recommend you create a public static final initializer for the id:
+```java
+@Mod(Tutorial.ID)
+public static class Tutorial {
+    public static final String ID = "tutorial";
+}
+```
+
+At the current moment, that's all you need for the class; however, we will be adding in four events that will most likely be used in advanced modifications. To add events to our mod bus for execution, we need to call `@Mod#EventBusSubscriber`. This takes two parameters, the id of our mod (modid) and the bus it is sending the event to (bus). The Bus enum only contains `Bus#FORGE` and `Bus#MOD`. Whenever registries are used, the mod bus will be called. However, in the case of standard events the forge bus will be called by default instead. So, this would be appeneded once again above the class:
+```java
+@Mod(Tutorial.ID)
+@Mod.EventBusSubscriber(modid = Tutorial.ID, bus = Bus.MOD)
+public class Tutorial {...}
+```
+
+Next, we will need to create a static method with an `@SubscribeEvent` annotation to allow the event to be registered by forge. The parameters will be four final event classes: FMLCommonSetupEvent, FMLClientSetupEvent, InterModEnqueueEvent, and InterModProcessEvent.
