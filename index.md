@@ -16,9 +16,9 @@ Originally, this mod was supposed to be a direct replica of the original Super M
 
 ## Tutorials
 
-There is currently nothing over here as these are still in the works. I'm hoping to transfer my knowledge in video game modification and programming in general here over the next few months.
+### [Minecraft Modifications](https://championash5357.github.io/ChampionAsh5357/tutorial/minecraft)
 
-
+This is a list of tutorials I do for Minecraft modding. The current version being worked on is 1.13.2 and is still in early development in text form. I suggest watching the videos if you would like to catch up to the current work being done.
 
 
 Thank you to everyone who has supported me over the years and continue to support!
