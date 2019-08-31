@@ -106,3 +106,13 @@ These were both taken directly from the default toml file. Obviously, 'tutorial'
 
 ## MCMeta File
 
+This MCMeta file is basically the configuration file for the assets used in your mod. It allows the game to know that your mod has assets to attach to it. Although it has a different file extension, it is written in the JSON format. All you need to do is create an object `pack` with a `description` and a `pack_format` of 4:
+```json
+{
+    "pack": {
+        "description": "Tutorial Resources",
+        "pack_format": 4
+    }
+}
+```
+This is to be saved as **pack.mcmeta** in src/main/resources. If you again deleted this file originally, follow the process for create an Untitled Text File in the TOML section.
