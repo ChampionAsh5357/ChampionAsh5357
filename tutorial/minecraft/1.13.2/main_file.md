@@ -30,4 +30,30 @@ At the current moment, that's all you need for the class; however, we will be ad
 public class Tutorial {...}
 ```
 
-Next, we will need to create a static method with an `@SubscribeEvent` annotation to allow the event to be registered by forge. The parameters will be four final event classes: FMLCommonSetupEvent, FMLClientSetupEvent, InterModEnqueueEvent, and InterModProcessEvent.
+Next, we will need to create a static method with an `@SubscribeEvent` annotation to allow the event to be registered by forge. The parameters will be four final event classes: `FMLCommonSetupEvent`, `FMLClientSetupEvent`, `InterModEnqueueEvent`, and `InterModProcessEvent`. Both `FMLCommonSetupEvent` and `FMLClientSetupEvent` are part of the `ModLifecycleEvent` where the mod is initialized. `FMLCommonSetupEvent` is the basic initialization on both the client and server side. `FMLClientSetupEvent`, on the other hand, is the initialization on the client side. There is a `FMLDedicatedServerSetupEvent` specifically for the server side; however, it is rarely used. Then there is the `InterModEnqueueEvent` and `InterModProcessEvent` which is used to send and recieve messages between mods respectively. These are the four most common events used hence why we usually include them in the main mod file:
+```java
+...
+@SubscribeEvent
+public static void setup(final FMLCommonSetupEvent event) {
+
+}
+
+@SubscribeEvent
+public static void clientSetup(final FMLClientSetupEvent event) {
+
+}
+
+@SubscribeEvent
+public static void enqueueIMC(final InterModEnqueueEvent event) {
+
+}
+
+@SubscribeEvent
+public static void processIMC(final InterModProcessEvent event) {
+
+}
+...
+```
+After doing this, your main mod file should be complete.
+
+## TOML File
