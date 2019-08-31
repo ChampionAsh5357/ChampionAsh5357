@@ -115,4 +115,4 @@ This MCMeta file is basically the configuration file for the assets used in your
     }
 }
 ```
-This is to be saved as **pack.mcmeta** in src/main/resources. If you again deleted this file originally, follow the process for create an Untitled Text File in the TOML section.
+This is to be saved as **pack.mcmeta** in src/main/resources. If you again deleted this file originally, follow the process for create an Untitled Text File in the [TOML](https://championash5357.github.io/ChampionAsh5357/tutorial/minecraft/1.13.2/main_file#toml-file) section.
