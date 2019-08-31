@@ -116,3 +116,75 @@ This MCMeta file is basically the configuration file for the assets used in your
 }
 ```
 This is to be saved as **pack.mcmeta** in src/main/resources. If you again deleted this file originally, follow the process for create an Untitled Text File in the [TOML](https://championash5357.github.io/ChampionAsh5357/tutorial/minecraft/1.13.2/main_file#toml-file) section.
+
+## Final Code
+
+Congrats on completing the introduction! Here is all the basic code we created in this tutorial (you still need to import the classes).  
+Main Class (Tutorial.java):
+```java
+@Mod(Tutorial.ID)
+@Mod.EventBusSubscriber(modid = Tutorial.ID, bus = Bus.MOD)
+public class Tutorial {
+    
+    public static final String ID = "tutorial";
+    
+    @SubscribeEvent
+    public static void setup(final FMLCommonSetupEvent event) {
+        
+    }
+
+    @SubscribeEvent
+    public static void clientSetup(final FMLClientSetupEvent event) {
+        
+    }
+    
+    @SubscribeEvent
+    public static void enqueueIMC(final InterModEnqueueEvent event) {
+        
+    }
+    
+    @SubscribeEvent
+    public static void processIMC(final InterModProcessEvent event) {
+        
+    }
+}
+```
+TOML File (mods.toml):
+```toml
+modLoader="javafml"
+loaderVersion="[25,)"
+modId="tutorial"
+version="1.0.0.0"
+displayName="Tutorial Mod"
+description='''This is our tutorial for programming Minecraft!'''
+
+issueTrackerURL="https://github.com/ChampionAsh5357/1.13.2-Minecraft-Tutorial/issues"
+updateJSONURL="https://github.com/ChampionAsh5357/1.13.2-Minecraft-Tutorial/update_checker"
+displayURL="https://github.com/ChampionAsh5357/1.13.2-Minecraft-Tutorial"
+logoFile="logo.png"
+credits="Everyone who has supported me over the years!"
+authors="ChampionAsh5357"
+
+[[dependencies.tutorial]]
+    modId="forge"
+    mandatory=true
+    versionRange="[25,)"
+    ordering="NONE"
+    side="BOTH"
+    
+[[dependencies.tutorial]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.13.2]"
+    ordering="NONE"
+    side="BOTH"
+```
+MCMeta File (pack.mcmeta):
+```json
+{
+    "pack": {
+        "description": "Tutorial Resources",
+        "pack_format": 4
+    }
+}
+```
