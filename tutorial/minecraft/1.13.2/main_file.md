@@ -81,3 +81,28 @@ Now let's move on to the optional variables:
 
 It is recommended you have all the variables in the file with the unused ones being commented out just for future purpose.
 
+The final part is the dependencies which are formatted like so:
+```toml
+[[dependencies.tutorial]]
+    # the modid of the dependency
+    modId="forge" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=true #mandatory
+    # The version range of the dependency
+    versionRange="[25,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="BOTH"
+    
+[[dependencies.tutorial]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.13.2]"
+    ordering="NONE"
+    side="BOTH"
+```
+These were both taken directly from the default toml file. Obviously, 'tutorial' is replaced by your own mod id when you set the dependencies.
+
+## MCMeta File
+
