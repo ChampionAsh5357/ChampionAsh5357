@@ -63,5 +63,21 @@ Tom's Obvious, Minimal Language or TOML is a file format for easy reading and wr
 If you also deleted everything in src/main/resources, right click that folder, go to New->Other...->General->Untitled Text File->Finish. Type something in the file and save it to version->src->main->resources->META-INF and call it **mods.toml**.
 
 There are currently 13 variables and two dependencies that are written in default toml file of which nine are required. Let's start with the required variables:
-**modLoader** - the name of the mod loader to use, should remain default for regular mods ("javafml" by default)
-**loaderVersion** - the version range of the mod loader to use, also known as the forge version ("[25,)" by default)
+**modLoader** - the name of the mod loader to use, should remain default for regular mods (`"javafml"` by default)
+**loaderVersion** - the version range of the mod loader to use, also known as the forge version (`"[25,)"` by default)
+**modId** - the modid for the mod (e.g. `"tutorial"`)
+**version** - the version of the mod (e.g. `"1.0.0.0"`, usually in [semantic](https://mcforge.readthedocs.io/en/1.13.x/conventions/versioning/) form)
+**displayName** - display name for the mod (e.g. `"Tutorial Mod"`)
+**description** - description text for the mod written in multi line format ?(e.g. `'''This is our tutorial for programming Minecraft!'''`)
+There is one more variable simply listed as `[[mods]]` that just stores a list of mods and isn't set to anything by default to allow all mods.
+
+Now let's move on to the optional variables:
+**issueTrackerURL** - a URL to the issue tracker of this mod (e.g. `"https://github.com/ChampionAsh5357/1.13.2-Minecraft-Tutorial/issues"`)
+**updateJSONURL** - a URL to query for updates to this mod (e.g. `"https://github.com/ChampionAsh5357/1.13.2-Minecraft-Tutorial/update_checker"`)
+**displayURL** - a URL for the mod's homepage (e.g. `"https://github.com/ChampionAsh5357/1.13.2-Minecraft-Tutorial"`)
+**logoFile** - file name of the logo picture in src/main/resources (e.g. `"logo.png"`)
+**credits** - text field for giving credit (e.g. `"Everyone who has supported me over the years!"`)
+**authors** - text field for the author(s) of the mod (e.g. `"ChampionAsh5357"`)
+
+It is recommended you have all the variables in the file with the unused ones being commented out just for future purpose.
+
