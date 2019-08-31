@@ -57,3 +57,8 @@ public static void processIMC(final InterModProcessEvent event) {
 After doing this, your main mod file should be complete.
 
 ## TOML File
+
+Tom's Obvious, Minimal Language or TOML is a file format for easy reading and writing. In modding, it is our mod loading data that is handled by the game. There are mandatory and optional variables that can be set depending on the preferences of your mod. If you haven't deleted the file there by default, then anything you don't want to use can be commented out using a pound or hashtag (e.g. `# var = value`).
+
+If you also deleted everything in src/main/resources, right click that folder, go to New->Other...->General->Untitled Text File->Finish. Type something in the file and save it to MOD_FOLDER->src->main->resources->META-INF and call it **mods.toml**.
+
