@@ -34,7 +34,7 @@ Now that you have downloaded a JDK 8+, Eclipse, and Forge 32.x.x, we can get sta
 
 ### File Setup
 
-First, you will need to extract the Forge mdk to a folder. Preferably you should have a default folder with the name of the mod with a subfolder inside of it which contains the extracted Forge mdk. So if you have a mod folder named `forgemod`, you should extract the mdk to `forgemod/version` where version is the 1.16.1-32.x.x for the current release of forge:
+First, you will need to extract the Forge mdk to a folder. Preferably you should have a default folder with the name of the mod with a subfolder inside of it which contains the extracted Forge mdk. So if you have a mod folder named `forgemod`, you should extract the mdk to `forgemod/version` where version is the `1.16.1-32.x.x` for the current release of forge:
 
 ```
 forgemod
@@ -281,10 +281,10 @@ archivesBaseName = 'modid'
 ...
 ```
 
-These three variables are the most common ones within `build.gradle` to edit:
-**version** - The version of the mod you are on. For this, you might want to follow the [Forge standard](https://mcforge.readthedocs.io/en/latest/conventions/versioning/) provided on their docs.`
-**group** - The starting file directory of your mod. Usually this is done by taking the domain of a website you own, reversing it, and appending the mod id. In my case, the domain I use now is `championash5357.github.io` which would translate to `io.github.championash5357.tutorial` where `tutorial` is my current mod id.
-**archivesBaseName** - The mod id of the project.
+These three variables are the most common ones within `build.gradle` to edit:  
+**version** - The version of the mod you are on. For this, you might want to follow the [Forge standard](https://mcforge.readthedocs.io/en/latest/conventions/versioning/) provided on their docs.  
+**group** - The starting file directory of your mod. Usually this is done by taking the domain of a website you own, reversing it, and appending the mod id. In my case, the domain I use now is `championash5357.github.io` which would translate to `io.github.championash5357.tutorial` where `tutorial` is my current mod id.  
+**archivesBaseName** - The mod id of the project.  
 
 You should also replace every instance of `examplemod` within the file with your mod id as well.
 
@@ -360,10 +360,10 @@ minecraft {
 ...
 ```
 
-Here we are going to look at three things:
-**mappings channel** - Holds the current instance of the mappings to use to debobfuscate the Minecraft source code. You can change the `version` value formatted by `YYYYMMDD-MCVERSION` to the current date or any mapping provided by [MCPBot](http://export.mcpbot.bspk.rs/). As of July 4th, 2020, Forge has been using a custom mapping system for 1.16, so you shouldn't change this variable.
-**accessTransformer** - Allows you to set specific fields in the Minecraft source to different levels of access (e.g. public or protected). It provides a link to where the file is located within your current project. Uncomment this line if you would like to use access transformers within your project. I will be using reflection unless absolutely necessary, so I will leave this line commented.
-**data** - This section holds how the `runData` gradle task will execute. Append to the end of the `args` method `, '--existing', file('src/main/resources/')`. This will be useful later on when we start to go over [Data Generators](#).
+Here we are going to look at three things:  
+**mappings channel** - Holds the current instance of the mappings to use to debobfuscate the Minecraft source code. You can change the `version` value formatted by `YYYYMMDD-MCVERSION` to the current date or any mapping provided by [MCPBot](http://export.mcpbot.bspk.rs/). As of July 4th, 2020, Forge has been using a custom mapping system for 1.16, so you shouldn't change this variable.  
+**accessTransformer** - Allows you to set specific fields in the Minecraft source to different levels of access (e.g. public or protected). It provides a link to where the file is located within your current project. Uncomment this line if you would like to use access transformers within your project. I will be using reflection unless absolutely necessary, so I will leave this line commented.  
+**data** - This section holds how the `runData` gradle task will execute. Append to the end of the `args` method `, '--existing', file('src/main/resources/')`. This will be useful later on when we start to go over [Data Generators](#).  
 
 The final part of the file we will talk about briefly is the `dependencies` section. If you want to create mods that contain a dependency, you would use this section to compile and import them into your project. We will talk about this at a later time as well.
 
@@ -371,16 +371,16 @@ The final part of the file we will talk about briefly is the `dependencies` sect
 
 To be able to generate the run configurations used by your mod, you will need to open up a command line to where your `forgemod/version` folder is. This can be obtained by either shift + right clicking in the folder and opening the command line or using `cd` to navigate there depending on your operating system.
 
-Depending on what command line you use (CMD, PowerShell, Terminal), you will need a different variation of the command:
-**Windows Command Prompt** - `gradlew genEclipseRuns`
-**Windows PowerShell** - `./gradlew genEclipseRuns`
-**Mac Terminal** - `bash gradlew genEclipseRuns`
+Depending on what command line you use (CMD, PowerShell, Terminal), you will need a different variation of the command:  
+**Windows Command Prompt** - `gradlew genEclipseRuns`  
+**Windows PowerShell** - `./gradlew genEclipseRuns`  
+**Mac Terminal** - `bash gradlew genEclipseRuns`  
 If you are using IntelliJ instead, `genEclipseRuns` would be replaced with "`genIntellijRuns`.
 
 ### Within the IDE
 
-After executing the above commands, you will need to browse to your `forgemod/workspace` directory and launch it within your IDE. Depending on your IDE, you will need to do different steps to open your project workspace.
-**Eclipse** - Go to File->Import...->Existing Gradle Project and click next. You will see a box that says `Project root directory` to which you will browse to your `forgemod/version` and then click Finish.
+After executing the above commands, you will need to browse to your `forgemod/workspace` directory and launch it within your IDE. Depending on your IDE, you will need to do different steps to open your project workspace:  
+**Eclipse** - Go to File->Import...->Existing Gradle Project and click next. You will see a box that says `Project root directory` to which you will browse to your `forgemod/version` and then click Finish.  
 **IntelliJ** - Go to File->Open and navigate to your `forgemod/version` and click OK.
 From there, wait for gradle to finish importing your project and viola, the workspace is setup!
 
