@@ -380,8 +380,8 @@ If you are using IntelliJ instead, `genEclipseRuns` would be replaced with "`gen
 ### Within the IDE
 
 After executing the above commands, you will need to browse to your `forgemod/workspace` directory and launch it within your IDE. Depending on your IDE, you will need to do different steps to open your project workspace:  
-**Eclipse** - Go to File->Import...->Existing Gradle Project and click next. You will see a box that says `Project root directory` to which you will browse to your `forgemod/version` and then click Finish.  
-**IntelliJ** - Go to File->Open and navigate to your `forgemod/version` and click OK.
+**Eclipse** - Go to `File`->`Import...`->`Existing Gradle Project` and click next. You will see a box that says `Project root directory` to which you will browse to your `forgemod/version` and then click `Finish`.  
+**IntelliJ** - Go to `File`->`Open` and navigate to your `forgemod/version` and click `OK`.
 From there, wait for gradle to finish importing your project and viola, the workspace is setup!
 
 ## Additional Setup
@@ -390,14 +390,22 @@ After you have set up the workspace, there are some additional features that mig
 
 ### Hierarchial Presentation
 
-The default setting in Eclipse is to list all the packages by their full name such as "net.minecraft.init.Blocks" and "net.minecraft.init.Items" instead of using a subdirectory system like: net->minecraft->init->{Blocks, Items}. To be able to set it up in this way, go to the left side of the screen where you will find the Project Explorer. To the right of the tab is a drop down arrow. Go to Package Presentation and switch it from Flat to Hierarchial and it will be much easier to find whatever you are looking for.
+The default setting in Eclipse is to list all the packages by their full name such as `net.minecraft.inventory.CraftingInventory` and `net.minecraft.inventory.DoubleSidedInventory` instead of using a subdirectory system like: 
+```
+net
+└── minecraft
+	└── inventory
+		├── CraftingInventory
+		└── DoubleSidedInventory
+```
+To be able to set it up in this way, go to the left side of the screen where you will find the `Project Explorer`. To the right of the tab is a drop down arrow. Go to `Package Presentation` and switch it from `Flat` to `Hierarchial` and it will be much easier to find whatever you are looking for.
 
 ### Run Favorites
 
-Since the system in 1.16.1 does not run the Eclipse setup through the mdk, it might be a bit more difficult to select the runClient and runServer application used to test your mod in game. To set these as your favorites to easily find them, go to the Green Play button underneath the toolbar and click the drop down arrow to the right. Click Organize Run Favorites->Add...->Select All->Ok->Ok to set the applications as your favorites for easy access.
+Since the system in 1.16.1 does not run the Eclipse setup through the mdk, it might be a bit more difficult to select the `runClient`, `runData`, and `runServer` application used to test your mod in game. To set these as your favorites to easily find them, go to the Green Play button underneath the toolbar and click the drop down arrow to the right. Click `Organize Favorites`->`Add...`->`Select All`->`Ok`->`Ok` to set the applications as your favorites for easy access.
 
 ### Removing TODO Auto Generated Messages
 
-Sometimes when auto-completing a method, the TODO message auto generates within as a comment. To disable this, go to Window->Preferences->Java->Code Style->Code Templates and Edit the Method body, Constructor body, and Catch block body to remove all instances of this message. Then click Apply and Close and you should no longer have any auto generated messages appearing when auto-completing.
+Sometimes when auto-completing a method, the TODO message auto generates within as a comment. To disable this, go to `Window`->`Preferences`->`Java`->`Code Style`->`Code Templates` and edit the `Method body`, `Constructor body`, and `Catch block body` to remove all instances of this message. Then click `Apply and Close` and you should no longer have any auto generated messages appearing when auto-completing.
 
 Now that you have setup the workspace, it is now time to begin the [Main Mod File](https://championash5357.github.io/ChampionAsh5357/tutorial/minecraft/1.16.1/main_file).
