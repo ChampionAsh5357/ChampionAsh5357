@@ -55,7 +55,7 @@ forgemod
 	│		│			└── examplemod
 	│		│				└── ExampleMod.java
 	│		│
-	│		└───resources
+	│		└── resources
 	│			├── pack.mcmeta
 	│			└── META-INF
 	│				└── mods.toml
@@ -88,7 +88,7 @@ forgemod
 │	│		│			└── examplemod
 │	│		│				└── ExampleMod.java
 │	│		│
-│	│		└───resources
+│	│		└── resources
 │	│			├── pack.mcmeta
 │	│			└── META-INF
 │	│				└── mods.toml
