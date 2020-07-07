@@ -133,7 +133,7 @@ public class CommonEvents {
 
 We will be using the first method throughout the tutorial, but feel free to use the second if you are more comfortable with it.
 
-If you want a more detailed explanation, you can check out the [forge documentation](https://mcforge.readthedocs.io/en/latest/events/intro/) once again.
+If you want a more detailed explanation, you can check out the [forge documentation](https://mcforge.readthedocs.io/en/latest/events/intro/).
 
 ### Proxies
 
@@ -142,7 +142,7 @@ One of the most important things about Minecraft is the fact that there are two 
 **Physical Server** - This refers to accessing the `Minecraft Server` file whenever you are setting up a server. Everything that runs on this server is specific to the server.  
 **Logical Server** - This refers to how game logic is handled on the `Server Thread`. This can run on both the `Physical Client (IntegratedServer)` and `Physical Server (DedicatedServer)`.  
 **Logical Client** - This refers to how the game renders on a screen and accepts user input to relay to the `Logical Server` from the `Client Thread`. This can only exist on the `Physical Client`.
-If you would like more information, check out the [forge documentation](https://mcforge.readthedocs.io/en/latest/concepts/sides/) on it.
+If you would like more information, check out the [forge documentation](https://mcforge.readthedocs.io/en/latest/concepts/sides/) on it once again.
 
 So, if you haven't already guessed, we can't really get information on the logical client from the logical server or vice versa without the use of packets. If we did, our mod could never execute on a physical server and would cause a whole number of other issues within the code. So, we need to separate our code such that logical client information is never called on the physical server.
 
@@ -266,5 +266,5 @@ All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x
 
 Before we get started with programming something into the game, let's talk about [registries](#).
 
-Back to [Getting Started](./getting_started)
-Back to [Minecraft Tutorials](../)
+Back to [Getting Started](./getting_started)  
+Back to [Minecraft Tutorials](../)  

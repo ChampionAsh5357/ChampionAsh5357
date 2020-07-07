@@ -10,7 +10,7 @@ To get started, first you are going to need to download the following items:
 
 Minecraft was originally developed in a language called Java developed by the Oracle Corporation. Currently, the latest commercial release is for Java 8 while the latest development release is for Java 14. When deciding on a JDK version, I recommend using the latest commercial relase since its most likely the one everyone has on their computer. Either way, you need at least Java 8 in some capacity to be able to run the Forge development environment on your computer.
 
-### Java Integrated Development Environment ([Eclipse](https://www.eclipse.org/downloads/packages/release/2019-03/r/eclipse-ide-enterprise-java-developers) or [IntelliJ IDEA](https://www.jetbrains.com/idea/download/))
+### Java Integrated Development Environment ([Eclipse](https://www.eclipse.org/downloads/packages/release/2020-06/r/eclipse-ide-enterprise-java-developers) or [IntelliJ IDEA](https://www.jetbrains.com/idea/download/))
 
 Minecraft Forge is currently supported by gradle importation within either Eclipse or IntelliJ. For the purpose of these tutorials, I will be using Eclipse, however, either environment works for the situation.
 
@@ -361,7 +361,7 @@ minecraft {
 ```
 
 Here we are going to look at three things:  
-**mappings channel** - Holds the current instance of the mappings to use to debobfuscate the Minecraft source code. You can change the `version` value formatted by `YYYYMMDD-MCVERSION` to the current date or any mapping provided by [MCPBot](http://export.mcpbot.bspk.rs/). As of July 4th, 2020, Forge has been using a custom mapping system for 1.16, so you shouldn't change this variable.  
+**mappings channel** - Holds the current instance of the mappings to use to debobfuscate the Minecraft source code. You can change the `version` value formatted by `YYYYMMDD-MCVERSION` to the current date or any mapping provided by [MCPBot](http://export.mcpbot.bspk.rs/). As of July 4th, 2020, Forge has been using a custom mapping system for 1.16 as they finish their new mapping system, so you shouldn't change this variable.  
 **accessTransformer** - Allows you to set specific fields in the Minecraft source to different levels of access (e.g. public or protected). It provides a link to where the file is located within your current project. Uncomment this line if you would like to use access transformers within your project. I will be using reflection unless absolutely necessary, so I will leave this line commented.  
 **data** - This section holds how the `runData` gradle task will execute. Append to the end of the `args` method `, '--existing', file('src/main/resources/')`. This will be useful later on when we start to go over [Data Generators](#).  
 
