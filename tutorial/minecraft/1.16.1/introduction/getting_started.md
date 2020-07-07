@@ -412,4 +412,4 @@ All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x
 
 Now that you have setup the workspace, it is now time to begin the [Main Mod File](./main_file).
 
-Back to [Minecraft Tutorials](../)
+Back to [Minecraft Tutorials](../../)

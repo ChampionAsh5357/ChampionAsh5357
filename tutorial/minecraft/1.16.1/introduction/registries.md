@@ -1,6 +1,6 @@
 # Registries
 
-Before we get into the meat of programming a mod for Minecraft, we are going to talk about registries. For anyone new to Minecraft, all objects (e.g. Blocks, Items, Sounds, Biomes, etc.) must first be registered to be recognized and loaded into the game. A list of all currently supported registries can be located in `ForgeRegistries`.
+Before we get into the meat of programming a mod for Minecraft, we are going to talk about registries. For anyone new to Minecraft, all objects (e.g. `Blocks`, `Items`, `Sounds`, `Biomes`, etc.) must first be registered to be recognized and loaded into the game. A list of all currently supported registries can be located in `ForgeRegistries`.
 
 ## Registering Things
 
@@ -151,4 +151,4 @@ All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x
 Now let's get into programming our first [item](#).
 
 Back to [Main Mod File](./main_file)  
-Back to [Minecraft Tutorials](../)  
+Back to [Minecraft Tutorials](../../)  

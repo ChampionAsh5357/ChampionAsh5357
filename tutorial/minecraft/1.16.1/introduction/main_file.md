@@ -267,4 +267,4 @@ All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x
 Before we get started with programming something into the game, let's talk about [registries](./registries).
 
 Back to [Getting Started](./getting_started)  
-Back to [Minecraft Tutorials](../)  
+Back to [Minecraft Tutorials](../../)  
