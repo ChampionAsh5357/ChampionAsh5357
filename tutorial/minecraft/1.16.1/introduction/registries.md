@@ -103,6 +103,7 @@ public class TutorialItems {
 
 To replace the `@ObjectHolder` system, we create a `RegistryObject` using `DeferredRegister::register` since this returns a `RegistryObject`. This method takes two parameters: a `String` holding the registry name (no need for the mod id as it is added via the `DeferredRegister`) and a `Supplier` containing the object instance.  
 > Note that `RegistryObject`s can still return null like their counterpart until the object has been initialized.  
+
 A basic implementation would look like this:
 
 ```java
