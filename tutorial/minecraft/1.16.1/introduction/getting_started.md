@@ -286,9 +286,12 @@ archivesBaseName = 'modid'
 ```
 
 These three variables are the most common ones within `build.gradle` to edit:  
-**version** - The version of the mod you are on. For this, you might want to follow the [Forge standard](https://mcforge.readthedocs.io/en/latest/conventions/versioning/) provided on their docs.  
-**group** - The starting file directory of your mod. Usually this is done by taking the domain of a website you own, reversing it, and appending the mod id. In my case, the domain I use now is `championash5357.github.io` which would translate to `io.github.championash5357.tutorial` where `tutorial` is my current mod id.  
-**archivesBaseName** - The mod id of the project.  
+
+Variables | Description
+--- | ---
+**version** | The version of the mod you are on. For this, you might want to follow the [Forge standard](https://mcforge.readthedocs.io/en/latest/conventions/versioning/) provided on their docs.  
+**group** | The starting file directory of your mod. Usually this is done by taking the domain of a website you own, reversing it, and appending the mod id. In my case, the domain I use now is `championash5357.github.io` which would translate to `io.github.championash5357.tutorial` where `tutorial` is my current mod id.  
+**archivesBaseName** | The mod id of the project.  
 
 You should also replace every instance of `examplemod` within the file with your mod id as well.
 
