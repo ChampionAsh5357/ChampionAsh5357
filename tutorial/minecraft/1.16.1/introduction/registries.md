@@ -49,7 +49,7 @@ public class TutorialItems {
 }
 ```
 
-Note that we have to specify the bus to our mod's event bus since it defaults to Forge's instead.
+> Note: We have to specify the bus to our mod's event bus since it defaults to Forge's instead.
 
 Next we have to create a public static final method with our `RegistryEvent$Register` and add a `@SubscribeEvent` annotation to it:
 
@@ -101,7 +101,9 @@ public class TutorialItems {
 }
 ```
 
-To replace the `@ObjectHolder` system, we create a `RegistryObject` using `DeferredRegister::register` since this returns a `RegistryObject`. This method takes two parameters: a `String` holding the registry name (no need for the mod id as it is added via the `DeferredRegister`) and a `Supplier` containing the object instance. Note that `RegistryObject`s can still return null like their counterpart until the object has been initialized. A basic implementation would look like this:
+To replace the `@ObjectHolder` system, we create a `RegistryObject` using `DeferredRegister::register` since this returns a `RegistryObject`. This method takes two parameters: a `String` holding the registry name (no need for the mod id as it is added via the `DeferredRegister`) and a `Supplier` containing the object instance.  
+> Note that `RegistryObject`s can still return null like their counterpart until the object has been initialized.  
+A basic implementation would look like this:
 
 ```java
 public class TutorialItems {
@@ -123,7 +125,9 @@ public class Tutorial {
 }
 ```
 
-From that, we have registered our `Item` within the game! Note, if you want to get your item from the `RegistryObject`, you will need to call `RegistryObject::get` as it is a `Supplier`. We will be using this method to register our objects within the game itself.
+> Note: If you want to get your item from the `RegistryObject`, you will need to call `RegistryObject::get` as it is a `Supplier`. 
+
+From that, we have registered our `Item` within the game! We will be using this method to register our objects within the game itself.
 
 ## Additional Setup
 ---
