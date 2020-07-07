@@ -178,8 +178,8 @@ public interface IProxy {
 These two parameters refer to our mod's event bus and Forge's event bus. We take in two parameters as we will have these variables already initialized in our main mod class to save a bit of resources from calling the method redundantly.
 
 Once we have done that, we are going to create two new classes:  
-`ClientProxy` - This will be stored within the package `.client.proxy`  
-`ServerProxy` - This will be stored within the package `.server.proxy`  
+**ClientProxy** - This will be stored within the package `.client.proxy`  
+**ServerProxy** - This will be stored within the package `.server.proxy`  
 We want to keep logical client specific and logical server specific code separate from the common code. So, subclassing them in packages is the easiest way to keep track of them.
 
 If you want to add your interface via the creation menu, click `Add...` and type in `IProxy`. Double-click the entry, click `Ok`, make sure `Inherited abstract methods` is selected, and then click `Finish`.
@@ -238,11 +238,14 @@ public class Tutorial {
 As metioned previously in [IEventBus](#ieventbus), the lifecycle events are what is used to initialize information specific to the mod. This is run parallelly so that multiple mods can be loaded at once.
 
 Let's quickly go over the five main events:  
-**FMLCommonSetupEvent** - Basic initialization of methods on both the physical client and physical server.  
-**FMLClientSetupEvent** - Basic initialization of methods on both the physical client.  
-**FMLDedicatedServerSetupEvent** - Basic initialization of methods on both the physical server.  
-**InterModEnqueueEvent** - Send messages to other mods loaded.   
-**InterModProcessEvent** - Receives messages from other mods loaded.  
+
+Lifecycle Events | Description
+--- | ---
+**FMLCommonSetupEvent** | Basic initialization of methods on both the physical client and physical server.  
+**FMLClientSetupEvent** | Basic initialization of methods on both the physical client.  
+**FMLDedicatedServerSetupEvent** | Basic initialization of methods on both the physical server.  
+**InterModEnqueueEvent** | Send messages to other mods loaded.   
+**InterModProcessEvent** | Receives messages from other mods loaded.  
 
 In our case, we will only be setting up two since the rest are irrelevant at the current moment: `FMLCommonSetupEvent` and `FMLClientSetupEvent`. We will setup the methods as mentioned above in our main mod file for the common event and our `ClientProxy` for the client event:
 

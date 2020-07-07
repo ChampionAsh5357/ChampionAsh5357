@@ -365,9 +365,12 @@ minecraft {
 ```
 
 Here we are going to look at three things:  
-**mappings channel** - Holds the current instance of the mappings to use to debobfuscate the Minecraft source code. You can change the `version` value formatted by `YYYYMMDD-MCVERSION` to the current date or any mapping provided by [MCPBot](http://export.mcpbot.bspk.rs/). As of July 4th, 2020, Forge has been using a custom mapping system for 1.16 as they finish their new mapping system, so you shouldn't change this variable.  
-**accessTransformer** - Allows you to set specific fields in the Minecraft source to different levels of access (e.g. public or protected). It provides a link to where the file is located within your current project. Uncomment this line if you would like to use access transformers within your project. I will be using reflection unless absolutely necessary, so I will leave this line commented.  
-**data** - This section holds how the `runData` gradle task will execute. Append to the end of the `args` method `, '--existing', file('src/main/resources/')`. This will be useful later on when we start to go over [Data Generators](#).  
+
+Variables | Description
+--- | ---
+**mappings channel** | Holds the current instance of the mappings to use to debobfuscate the Minecraft source code. You can change the `version` value formatted by `YYYYMMDD-MCVERSION` to the current date or any mapping provided by the now deprecated [MCPBot](http://export.mcpbot.bspk.rs/). As of July 4th, 2020, Forge has been using a custom mapping system for 1.16 as they finish their new mapping system, so you shouldn't change this variable.  
+**accessTransformer** | Allows you to set specific fields in the Minecraft source to different levels of access (e.g. public or protected). It provides a link to where the file is located within your current project. Uncomment this line if you would like to use access transformers within your project. I will be using reflection unless absolutely necessary, so I will leave this line commented.  
+**data** | This section holds how the `runData` gradle task will execute. Append to the end of the `args` method `, '--existing', file('src/main/resources/')`. This will be useful later on when we start to go over [Data Generators](#).  
 
 The final part of the file we will talk about briefly is the `dependencies` section. If you want to create mods that contain a dependency, you would use this section to compile and import them into your project. We will talk about this at a later time as well.
 
