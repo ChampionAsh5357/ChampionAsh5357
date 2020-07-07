@@ -6,6 +6,7 @@ Hello Minecraft programmers! Welcome to modification making for 1.16.1.
 To get started, first you are going to need to download the following items:
 
 ## Required
+---
 
 ### [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/javase-downloads.html)
 
@@ -20,6 +21,7 @@ Minecraft Forge is currently supported by gradle importation within either Eclip
 When deciding which version of Forge to use, I prefer going with the recommended version. However, if there is no recommended version suggest, the latest version should do just fine. Make sure to download the mdk onto your computer.
 
 ## Optional
+---
 
 ### File Extractor
 
@@ -30,6 +32,7 @@ It is good to have a file extractor for .zip files to be able to extract the mdk
 When creating assets, it is a good idea to use a photo editing software of some sort to make textures easier to create and edit.
 
 ## Starting Off
+---
 
 Now that you have downloaded a JDK 8+, Eclipse, and Forge 32.x.x, we can get started creating the workspace. Open the JDK .jar file and download the required contents. There is no need to move the default install location or change any of the download parameters.
 
@@ -386,6 +389,7 @@ After executing the above commands, you will need to browse to your `forgemod/wo
 From there, wait for gradle to finish importing your project and viola, the workspace is setup!
 
 ## Additional Setup
+---
 
 After you have set up the workspace, there are some additional features that might make programming in Eclipse a tiny bit easier for you.
 
@@ -409,6 +413,7 @@ Since the system in 1.16.1 does not run the Eclipse setup through the mdk, it mi
 
 Sometimes when auto-completing a method, the TODO message auto generates within as a comment. To disable this, go to `Window`->`Preferences`->`Java`->`Code Style`->`Code Templates` and edit the `Method body`, `Constructor body`, and `Catch block body` to remove all instances of this message. Then click `Apply and Close` and you should no longer have any auto generated messages appearing when auto-completing.
 
+---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.47-web) under **Getting Started**.
 
 Now that you have setup the workspace, it is now time to begin the [Main Mod File](./main_file).

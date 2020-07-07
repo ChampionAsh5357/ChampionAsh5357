@@ -1,8 +1,10 @@
 # Main Mod File
+---
 
 Congrats on setting up your workspace! Welcome to part 2 of the introduction where we set up the basic mod file and folders for assets and data. You can delete any packages within `src/main/java` via the Project Explorer as we will be writing the code from scratch.
 
 ## Java Class
+---
 
 Let's start with the java class. Head over to the package explorer located by default on the left side of the screen. Right click `src/main/java` and go to `New`->`Class`. You should now see a screen where you can name the class and set the package. Usually, the package refers to the developer's website in reverse with an appended mod id, the same as we did for the `group` tag in [`build.gradle`](./getting_started#build.gradle). We will use `tutorial` as the mod id and the package as `io.github.championash5357.tutorial` in this example. As for the class name, you can use the name of the mod id (e.g. `Tutorial`). I will also check the box labeled `Constructors from superclass` as we will be using the constructor in our class. After setting these parameters, click `Finish` to create the class.
 
@@ -30,6 +32,7 @@ public static class Tutorial {
 ```
 
 ## Resources
+---
 
 This is the barebones minimum needed to run a mod. To be able to set up the information, we will need to do a few more things.
 
@@ -101,6 +104,7 @@ This is to be saved as **pack.mcmeta** in `src/main/resources`. If you again del
 After doing this, your main mod file should be complete.
 
 ## Additional Setup
+---
 
 To prepare for the next tutorials, we're going to do some pre-setup of the main mod file.
 
@@ -262,6 +266,7 @@ public class ClientProxy implements IProxy {
 }
 ```
 
+---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.47-web) under **Main Mod File**.
 
 Before we get started with programming something into the game, let's talk about [registries](./registries).

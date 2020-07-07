@@ -1,8 +1,10 @@
 # Registries
+---
 
 Before we get into the meat of programming a mod for Minecraft, we are going to talk about registries. For anyone new to Minecraft, all objects (e.g. `Blocks`, `Items`, `Sounds`, `Biomes`, etc.) must first be registered to be recognized and loaded into the game. A list of all currently supported registries can be located in `ForgeRegistries`.
 
 ## Registering Things
+---
 
 In this tutorial, we will be going over the two different methods of registering an object and some additional setup to prepare ourselves for creating a mod. If you would like some more information on either of these two topics, check out the [Forge documentation](https://mcforge.readthedocs.io/en/latest/concepts/registries/) on it.
 
@@ -124,6 +126,7 @@ public class Tutorial {
 From that, we have registered our `Item` within the game! Note, if you want to get your item from the `RegistryObject`, you will need to call `RegistryObject::get` as it is a `Supplier`. We will be using this method to register our objects within the game itself.
 
 ## Additional Setup
+---
 
 To be able to register our `DeferredRegister`s all in one place, we will need to add a few lines of code to our current project.
 
@@ -146,6 +149,7 @@ public class Tutorial {
 }
 ```
 
+---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.57-web) under **Registries**.
 
 Now let's get into programming our first [item](../basic/items).
