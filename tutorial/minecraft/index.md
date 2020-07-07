@@ -12,7 +12,7 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 
 ### Modding 101
 
-[Items](#) - Create your first ever object within Minecraft: the Item!  
+[Items](./1.16.1/basic/items) - Create your first ever object within Minecraft: the Item!  
 [Blocks](#) - Create your first Block (and Item too)!
 
 Back to [Home Page](../../)

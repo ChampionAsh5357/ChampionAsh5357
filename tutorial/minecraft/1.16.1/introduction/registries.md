@@ -148,7 +148,7 @@ public class Tutorial {
 
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.57-web) under **Registries**.
 
-Now let's get into programming our first [item](#).
+Now let's get into programming our first [item](../basic/items).
 
 Back to [Main Mod File](./main_file)  
 Back to [Minecraft Tutorials](../../)  
