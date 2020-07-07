@@ -375,7 +375,7 @@ Depending on what command line you use (CMD, PowerShell, Terminal), you will nee
 **Windows Command Prompt** - `gradlew genEclipseRuns`  
 **Windows PowerShell** - `./gradlew genEclipseRuns`  
 **Mac Terminal** - `bash gradlew genEclipseRuns`  
-If you are using IntelliJ instead, `genEclipseRuns` would be replaced with "`genIntellijRuns`.
+If you are using IntelliJ instead, `genEclipseRuns` would be replaced with `genIntellijRuns`.
 
 ### Within the IDE
 
@@ -408,4 +408,8 @@ Since the system in 1.16.1 does not run the Eclipse setup through the mdk, it mi
 
 Sometimes when auto-completing a method, the TODO message auto generates within as a comment. To disable this, go to `Window`->`Preferences`->`Java`->`Code Style`->`Code Templates` and edit the `Method body`, `Constructor body`, and `Catch block body` to remove all instances of this message. Then click `Apply and Close` and you should no longer have any auto generated messages appearing when auto-completing.
 
-Now that you have setup the workspace, it is now time to begin the [Main Mod File](https://championash5357.github.io/ChampionAsh5357/tutorial/minecraft/1.16.1/main_file).
+All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial) under **Getting Started**.
+
+Now that you have setup the workspace, it is now time to begin the [Main Mod File](./main_file).
+
+Back to [Minecraft Tutorials](../)
