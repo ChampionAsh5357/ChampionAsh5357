@@ -43,6 +43,7 @@ Tom's Obvious, Minimal Language (or `TOML` for short) is a file format for easy 
 If you also deleted everything in `src/main/resources`, right click that folder, go to `New`->`Other...`->`General`->`Untitled Text File`->`Finish`. Type something in the file and save it to `src/main/resources/META-INF` and call it **mods.toml**.
 
 There are currently 13 variables and two dependencies that are written in default toml file of which nine are required. Let's start with the required variables:  
+
 | Required Variables | Description |
 | --- | --- |
 | **modLoader** | The name of the mod loader to use, should remain default for regular mods (`javafml` by default). |
@@ -54,6 +55,7 @@ There are currently 13 variables and two dependencies that are written in defaul
 | **[[mods]]** | Stores a list of mods to be loaded. |
 
 Now let's move on to the optional variables:  
+
 | Optional Variables | Description |
 | --- | --- |
 | **issueTrackerURL** | A URL to the issue tracker of this mod (e.g. `https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/issues`). |
