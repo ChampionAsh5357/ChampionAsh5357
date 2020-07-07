@@ -43,25 +43,25 @@ Tom's Obvious, Minimal Language (or `TOML` for short) is a file format for easy 
 If you also deleted everything in `src/main/resources`, right click that folder, go to `New`->`Other...`->`General`->`Untitled Text File`->`Finish`. Type something in the file and save it to `src/main/resources/META-INF` and call it **mods.toml**.
 
 There are currently 13 variables and two dependencies that are written in default toml file of which nine are required. Let's start with the required variables:  
-Required Variables | Description  
---- | ---  
-**modLoader** | The name of the mod loader to use, should remain default for regular mods (`javafml` by default).  
-**loaderVersion** | The version range of the mod loader to use, also known as the Forge version (`[32,)` by default).  
-**modId** | The modid for the mod (e.g. `examplemod` or `tutorial` in our case).  
-**version** | The version of the mod (e.g. `${file.jarVersion}` by default). If you want to use the data stored in [build.gradle](./getting_started#build.gradle), keep it default. This will only work once the mod is built into its jar form.  
-**displayName** | Display name for the mod (e.g. `Example Mod` or `Tutorial`in our case).  
-**description** | Description text for the mod written in multi-line format (e.g. `This is our tutorial for programming Minecraft!`). Multi-line format is specified by three apostrophes (`'''`) at the start and end of the text. This can still be replaced with the standard quotation marks for single line format.  
-**[[mods]]** | Stores a list of mods to be loaded.  
+| Required Variables | Description |
+| --- | --- |
+| **modLoader** | The name of the mod loader to use, should remain default for regular mods (`javafml` by default). |
+| **loaderVersion** | The version range of the mod loader to use, also known as the Forge version (`[32,)` by default). |
+| **modId** | The modid for the mod (e.g. `examplemod` or `tutorial` in our case).  | 
+| **version** | The version of the mod (e.g. `${file.jarVersion}` by default). If you want to use the data stored in [build.gradle](./getting_started#build.gradle), keep it default. This will only work once the mod is built into its jar form. |
+| **displayName** | Display name for the mod (e.g. `Example Mod` or `Tutorial`in our case). |
+| **description** | Description text for the mod written in multi-line format (e.g. `This is our tutorial for programming Minecraft!`). Multi-line format is specified by three apostrophes (`'''`) at the start and end of the text. This can still be replaced with the standard quotation marks for single line format. |
+| **[[mods]]** | Stores a list of mods to be loaded. |
 
 Now let's move on to the optional variables:  
-Optional Variables | Description  
---- | ---  
-**issueTrackerURL** | A URL to the issue tracker of this mod (e.g. `https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/issues`).  
-**updateJSONURL** | A URL to query for updates to this mod (e.g. `https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/update_checker`).  
-**displayURL** | A URL for the mod's homepage (e.g. `https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial`).  
-**logoFile** | File name of the logo picture in src/main/resources (e.g. `logo.png`).  
-**credits** | Text field for giving credit (e.g. `Everyone who has supported me over the years!`).  
-**authors** | Text field for the author(s) of the mod (e.g. `ChampionAsh5357`).  
+| Optional Variables | Description |
+| --- | --- |
+| **issueTrackerURL** | A URL to the issue tracker of this mod (e.g. `https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/issues`). |
+| **updateJSONURL** | A URL to query for updates to this mod (e.g. `https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/update_checker`). |
+| **displayURL** | A URL for the mod's homepage (e.g. `https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial`). |
+| **logoFile** | File name of the logo picture in src/main/resources (e.g. `logo.png`). |
+| **credits** | Text field for giving credit (e.g. `Everyone who has supported me over the years!`). |
+| **authors** | Text field for the author(s) of the mod (e.g. `ChampionAsh5357`). |
 
 It is recommended you have all the variables in the file with the unused ones being commented out just for future purpose.
 
