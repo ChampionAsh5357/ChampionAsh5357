@@ -235,17 +235,17 @@ All `Item`s are initialized with a new instance of an `Item$Properties` object. 
 
 Method | Parameter(s) | Default | Description
 --- | :---: | :---: | ---
-`food` | ##TODO | ##TODO | ##TODO
-`maxStackSize` | ##TODO | ##TODO | ##TODO
-`defaultMaxDamage` | ##TODO | ##TODO | ##TODO
-`maxDamage` | ##TODO | ##TODO | ##TODO
-`containerItem` | ##TODO | ##TODO | ##TODO
-`group` | ##TODO | ##TODO | ##TODO
-`rarity` | ##TODO | ##TODO | ##TODO
-`func_234689_a_` | ##TODO | ##TODO | ##TODO
-`setNoRepair` | ##TODO | ##TODO | ##TODO
-`addToolType` | ##TODO | ##TODO | ##TODO
-`setISTER` | ##TODO | ##TODO | ##TODO
+`food` | `Food` | `null` | ##TODO
+`maxStackSize` | `int` | ##TODO | ##TODO
+`defaultMaxDamage` | `int` | ##TODO | ##TODO
+`maxDamage` | `int` | ##TODO | ##TODO
+`containerItem` | `Item` | ##TODO | ##TODO
+`group` | `ItemGroup` | ##TODO | ##TODO
+`rarity` | `Rarity` | ##TODO | ##TODO
+`func_234689_a_` | **NONE** | ##TODO | ##TODO
+`setNoRepair` | **NONE** | ##TODO | ##TODO
+`addToolType` | `ToolType`<br>`int` | ##TODO | ##TODO
+`setISTER` | `Supplier<Callable<ItemStackTileEntityRenderer>>` | ##TODO | ##TODO
 
 Since a standard gem is set within `ItemGroup::MATERIALS`, I will be chaining my property instance to include the `group` method to set this value.
 
