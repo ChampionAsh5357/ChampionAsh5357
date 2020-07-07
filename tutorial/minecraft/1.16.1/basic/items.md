@@ -117,7 +117,7 @@ PNG files have different bit-depths corresponding to how the image will be read.
 For our case, I edited the emerald within Minecraft to make it look like a ruby for our example:
 
 <div style="text-align:center">
-![Ruby Texture](./images/ruby.png = 256x256)
+<img src="./images/ruby.png" alt="Ruby Texture" width="256" height="256">
 </div>
 
 From here, I will save it as a PNG-32 file within our `textures/item` folder resulting in our file tree now looking like this:
