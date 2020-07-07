@@ -41,7 +41,7 @@ If you also deleted everything in `src/main/resources`, right click that folder,
 
 There are currently 13 variables and two dependencies that are written in default toml file of which nine are required. Let's start with the required variables:  
 **modLoader** - The name of the mod loader to use, should remain default for regular mods (`javafml` by default).  
-**loaderVersion** - The version range of the mod loader to use, also known as the forge version (`[32,)` by default).  
+**loaderVersion** - The version range of the mod loader to use, also known as the Forge version (`[32,)` by default).  
 **modId** - The modid for the mod (e.g. `examplemod` or `tutorial` in our case).  
 **version** - The version of the mod (e.g. `${file.jarVersion}` by default). If you want to use the data stored in [build.gradle](./getting_started#build.gradle), keep it default. Note, this will only work once the mod is built into its jar form.  
 **displayName** - Display name for the mod (e.g. `Example Mod` or `Tutorial`in our case).  
@@ -106,9 +106,9 @@ To prepare for the next tutorials, we're going to do some pre-setup of the main 
 
 ### IEventBus
 
-`IEventBus` is an interface where we register specific events handled by forge to. There are two main event buses in the game: our mod's event bus and forge's event bus. The mod event bus is used for listening to lifecycle events (where mods initialize). The forge event bus handles all the intercepts of vanilla code within the game. 
+`IEventBus` is an interface where we register specific events handled by Forge to. There are two main event buses in the game: our mod's event bus and Forge's event bus. The mod event bus is used for listening to lifecycle events (where mods initialize). The Forge event bus handles all the intercepts of vanilla code within the game. 
 
-There are two ways to subscribe a method to an event bus. The first is to go into a constructor (most likely on your main mod class) and call `IEventBus#addListener` which should take in a method that has a single parameter of an object extending `Event`. It would look something like this:
+There are two ways to subscribe a method to an event bus. The first is to go into a constructor (most likely on your main mod class) and call `IEventBus::addListener` which should take in a method that has a single parameter of an object extending `Event`. It would look something like this:
 
 ```java
 ...
@@ -118,7 +118,7 @@ modEventBus.addListener(this::method);
 
 These methods should be private, non-static, and return nothing since they are specific to the class accessed.
 
-The second method is to annotate the top of a class with `@Mod#EventBusSubscriber`. You will need to pass in your mod id as well as the event bus you are currently working on. From there, you would annotate a public static method (one again having a single parameter extending `Event`) with `@SubscribeEvent`. This would look something like:
+The second method is to annotate the top of a class with `@Mod$EventBusSubscriber`. You will need to pass in your mod id as well as the event bus you are currently working on. From there, you would annotate a public static method (one again having a single parameter extending `Event`) with `@SubscribeEvent`. This would look something like:
 
 ```java
 @Mod.EventBusSubscriber(modid = Tutorial.ID, bus = Bus.MOD)
@@ -133,7 +133,7 @@ public class CommonEvents {
 
 We will be using the first method throughout the tutorial, but feel free to use the second if you are more comfortable with it.
 
-If you want a more detailed explanation, you can check out the [forge documentation](https://mcforge.readthedocs.io/en/latest/events/intro/).
+If you want a more detailed explanation, you can check out the [Forge documentation](https://mcforge.readthedocs.io/en/latest/events/intro/).
 
 ### Proxies
 
@@ -142,7 +142,7 @@ One of the most important things about Minecraft is the fact that there are two 
 **Physical Server** - This refers to accessing the `Minecraft Server` file whenever you are setting up a server. Everything that runs on this server is specific to the server.  
 **Logical Server** - This refers to how game logic is handled on the `Server Thread`. This can run on both the `Physical Client (IntegratedServer)` and `Physical Server (DedicatedServer)`.  
 **Logical Client** - This refers to how the game renders on a screen and accepts user input to relay to the `Logical Server` from the `Client Thread`. This can only exist on the `Physical Client`.
-If you would like more information, check out the [forge documentation](https://mcforge.readthedocs.io/en/latest/concepts/sides/) on it once again.
+If you would like more information, check out the [Forge documentation](https://mcforge.readthedocs.io/en/latest/concepts/sides/) on it once again.
 
 So, if you haven't already guessed, we can't really get information on the logical client from the logical server or vice versa without the use of packets. If we did, our mod could never execute on a physical server and would cause a whole number of other issues within the code. So, we need to separate our code such that logical client information is never called on the physical server.
 
@@ -165,7 +165,7 @@ public interface IProxy {
 }
 ```
 
-These two parameters refer to our mod's event bus and forge's event bus. We take in two parameters as we will have these variables already initialized in our main mod class to save a bit of resources from calling the method redundantly.
+These two parameters refer to our mod's event bus and Forge's event bus. We take in two parameters as we will have these variables already initialized in our main mod class to save a bit of resources from calling the method redundantly.
 
 Once we have done that, we are going to create two new classes:  
 `ClientProxy` - This will be stored within the package `.client.proxy`  
@@ -194,7 +194,7 @@ public class ServerProxy implements IProxy {
 
 From here, we have to be able to call `setup` for our proxies. But how do we necessarily call each method so that they only exist on a specific physical side? Enter `DistExecutor`. This allows us to create a variable that is set to one class if it is the physical client and the other class if it is the physical server.
 
-Once again, go into your main mod file and create a public static final variable with an `IProxy` type. We use `IProxy` instead of the specific class name because we want to be able to access either class from this specific variable. We will set this equal to `DistExecutor#safeRunForDist` which takes in a [supplier](https://www.geeksforgeeks.org/supplier-interface-in-java-with-examples/) holding a new `IProxy` instance:
+Once again, go into your main mod file and create a public static final variable with an `IProxy` type. We use `IProxy` instead of the specific class name because we want to be able to access either class from this specific variable. We will set this equal to `DistExecutor::safeRunForDist` which takes in a [supplier](https://www.geeksforgeeks.org/supplier-interface-in-java-with-examples/) holding a new `IProxy` instance:
 
 ```java
 ...
@@ -206,7 +206,7 @@ public class Tutorial {
 }
 ```
 
-From here we can create two variables within our constructor that hold `FMLJavaModLoadingContext#getModEventBus` for our mod's event bus and `MinecraftForge#EVENT_BUS` for forge's event bus and pass them into our proxy variable:
+From here we can create two variables within our constructor that hold `FMLJavaModLoadingContext::getModEventBus` for our mod's event bus and `MinecraftForge::EVENT_BUS` for Forge's event bus and pass them into our proxy variable:
 
 ```java
 ...
@@ -262,9 +262,9 @@ public class ClientProxy implements IProxy {
 }
 ```
 
-All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial) under **Main Mod File**.
+All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.47-web) under **Main Mod File**.
 
-Before we get started with programming something into the game, let's talk about [registries](#).
+Before we get started with programming something into the game, let's talk about [registries](./registries).
 
 Back to [Getting Started](./getting_started)  
 Back to [Minecraft Tutorials](../)  

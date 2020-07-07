@@ -16,7 +16,7 @@ Minecraft Forge is currently supported by gradle importation within either Eclip
 
 ### [Minecraft Forge](https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.16.1.html)
 
-When deciding which version of forge to use, I prefer going with the recommended version. However, if there is no recommended version suggest, the latest version should do just fine. Make sure to download the mdk onto your computer.
+When deciding which version of Forge to use, I prefer going with the recommended version. However, if there is no recommended version suggest, the latest version should do just fine. Make sure to download the mdk onto your computer.
 
 ## Optional
 
@@ -34,7 +34,7 @@ Now that you have downloaded a JDK 8+, Eclipse, and Forge 32.x.x, we can get sta
 
 ### File Setup
 
-First, you will need to extract the Forge mdk to a folder. Preferably you should have a default folder with the name of the mod with a subfolder inside of it which contains the extracted Forge mdk. So if you have a mod folder named `forgemod`, you should extract the mdk to `forgemod/version` where version is the `1.16.1-32.x.x` for the current release of forge:
+First, you will need to extract the Forge mdk to a folder. Preferably you should have a default folder with the name of the mod with a subfolder inside of it which contains the extracted Forge mdk. So if you have a mod folder named `forgemod`, you should extract the mdk to `forgemod/version` where version is the `1.16.1-32.x.x` for the current release of Forge:
 
 ```
 forgemod
@@ -67,7 +67,7 @@ forgemod
 	└── README.txt
 ```
 
-Also within that `forgemod` folder, you should create another subfolder titled workspace (e.g. `forgemod/workspace`). This will be where you will set up the environment workspace for all versions of forge you decide to create this `forgemod` for:
+Also within that `forgemod` folder, you should create another subfolder titled workspace (e.g. `forgemod/workspace`). This will be where you will set up the environment workspace for all versions of Forge you decide to create this `forgemod` for:
 
 ```
 forgemod
@@ -269,7 +269,7 @@ publishing {
 }
 ```
 
-As a quick note, we won't be covering all the information provided by gradle files or that forge has added. For that information you can either check out the [ForgeGradle Cookbook](https://forgegradle.readthedocs.io/en/latest/cookbook/) and the [Gradle Documentation](https://docs.gradle.org/current/userguide/userguide.html).
+As a quick note, we won't be covering all the information provided by gradle files or that Forge has added. For that information you can either check out the [ForgeGradle Cookbook](https://forgegradle.readthedocs.io/en/latest/cookbook/) and the [Gradle Documentation](https://docs.gradle.org/current/userguide/userguide.html).
 
 To start, let's go over the major customizations that should be included in your project:
 
@@ -408,7 +408,7 @@ Since the system in 1.16.1 does not run the Eclipse setup through the mdk, it mi
 
 Sometimes when auto-completing a method, the TODO message auto generates within as a comment. To disable this, go to `Window`->`Preferences`->`Java`->`Code Style`->`Code Templates` and edit the `Method body`, `Constructor body`, and `Catch block body` to remove all instances of this message. Then click `Apply and Close` and you should no longer have any auto generated messages appearing when auto-completing.
 
-All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial) under **Getting Started**.
+All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.47-web) under **Getting Started**.
 
 Now that you have setup the workspace, it is now time to begin the [Main Mod File](./main_file).
 
