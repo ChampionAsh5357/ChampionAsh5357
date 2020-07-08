@@ -9,10 +9,10 @@ Hello warriors of the west! Welcome to your introduction to creating custom armo
 Let's first go over how we are going to create our custom armor. Since our example `Item` was ruby, we will use for this example **ruby armor**.
 
 <div style="text-align:center">
-<img src="./images/ruby_helmet.png" alt="Ruby Helmet Texture" width="64" height="64" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
-<img src="./images/ruby_chestplate.png" alt="Ruby Chestplate Texture" width="64" height="64" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
-<img src="./images/ruby_leggings.png" alt="Ruby Leggings Texture" width="64" height="64" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
-<img src="./images/ruby_boots.png" alt="Ruby Boots Texture" width="64" height="64" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+<img src="./images/ruby_helmet.png" alt="Ruby Helmet Texture" width="128" height="128" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+<img src="./images/ruby_chestplate.png" alt="Ruby Chestplate Texture" width="128" height="128" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+<img src="./images/ruby_leggings.png" alt="Ruby Leggings Texture" width="128" height="128" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+<img src="./images/ruby_boots.png" alt="Ruby Boots Texture" width="128" height="128" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
 </div>
 
 ### <a name="iarmormaterial"></a>IArmorMaterial
@@ -187,6 +187,8 @@ public enum TutorialArmorMaterial implements IArmorMaterial {
 }
 ```
 
+### <a name="item-registry"></a>Item Registry
+
 From here, we are now able to register our item once again using our [DeferredRegister](../basic/items#registry-setup). We will create an item for each `EquipmentSlotType` (`HEAD`, `CHEST`, `LEGS`, `FEET`) and group them within `ItemGroup::COMBAT`.
 
 ```java
@@ -201,7 +203,72 @@ public class TutorialItems {
 
 From there all we need to is setup our [resources](../basic/items#resource-setup) and viola our armor should be in the game, right?
 
+![Basic Armor Missing Model Textures](./images/armor_basic_before.png)
 
+Well everything seems to be rendering...except for, you know, the armor model. This is because armor models aren't handled by a simple texture, but are rather a layer applied via a `BipedArmorLayer` and texture using an `BipedModel` format.
+
+## <a name="extra-resouces"></a>Extra Resources
+--
+
+So, now we neeed to create the `BipedModel` textures for our `ArmorItem`.
+
+### <a name="armor-layer-1-and-2"></a>Armor Layer 1 and 2
+
+All armor model textures has four layers: `armor_layer_1`, `armor_layer_2`, `armor_layer_1_overlay`, and `armor_layer_2_overlay`. Layer 1 is scaled normally and usually holds the head, chest, and feet textures. Layer 2 is scaled to half size and usually holds the legs texture. Layer 1 and Layer 2 are always rendered with the default `BipedModel`. Layer 1 Overlay and Layer 2 Overlay are only rendered if the `ArmorItem` used is implemented with `IDyeableArmorItem`. These two are usually used for rendering dynamic color on the armor model.
+
+To be able to create our armor textures, we are going to need to edit a `BipedModel`texture. Now you can use any texture editor you want. However, for a better visualization, I will be using [Blockbench](https://blockbench.net/) to show off these textures on a model.
+
+Currently, I am going to edit the skin of a zombie. A zombie uses the standard `BipedModel` allowing us to do a direct trace of the entity to an armor model. Opening up the program and doing the configurations (opening the `Skin` tab, setting the model to `Zombie` at `16x`, adjusting the model to correctly represent the `BipedModel` class) gives me this:
+
+![Blockbench Armor Default](./images/blockbench_armor_default.png)
+
+From here I can paint my textures directly into the program and see the result. Since I want to keep the continuity of Minecraft's armor setup, I will just use the default Layer 1 and Layer 2 setup and adjust accordingly. Using this, I can create my armor textures:
+
+<div style="text-align:center">
+<img src="./images/ruby_layer_1.png" alt="Ruby Layer 1 Texture" width="128" height="64" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+<img src="./images/ruby_layer_2.png" alt="Ruby Layer 1 Texture" width="128" height="64" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+</div>
+<div style="text-align:center">
+<img src="./images/ruby_layer_1_mapped.png" alt="Ruby Layer 1 Texture Mapped" width="450" height="800" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+<img src="./images/ruby_layer_2_mapped.png" alt="Ruby Layer 1 Texture Mapped" width="450" height="800" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+</div>
+
+To get these textures to render on the model, I need to save them as `material_layer_1.png` and `material_layer_2.png` where material is our `IArmorMaterial` name (e.g. `ruby`). Since they are not technically items nor entities, they have their own special location to be saved. So let's once again open up our file tree all the way down to `assets/tutorial/textures`:
+
+```
+assets/tutorial/textures
+└── item
+```
+
+We need to add a new subdirectory `models/armor` and save our two textures in there.
+
+```
+assets/tutorial/textures
+├── item
+└── models
+	└── armor
+		├── ruby_layer_1.png
+		└── ruby_layer_2.png
+```
+
+Now if we go back into the game, we should see our model fully loaded on our player.
+
+![Basic Armor with Textures](./images/armor_basic_after.png)
+
+And now we have our armor within the game!
+
+## <a name="custom-armor-model"></a>Custom Armor Model
+---
+
+Custom Armor Models are one of the more difficult things to implement due to a lack of understanding and consistency between programmers. Today, I will attempt my best explanation of how to correctly implement and create a custom armor model for your player.
+
+There will be two methods explaining how to do this. The first method assumes you will be using some semblance of the original Minecraft armor model. The second method will be if you decided to scrap how Minecraft renders its armor altogether and make your own from scratch.
+
+### Method 1: Child Models
+
+##TODO
+
+### Method 2: Global `ModelRenderer`s
 
 ##TODO
 
