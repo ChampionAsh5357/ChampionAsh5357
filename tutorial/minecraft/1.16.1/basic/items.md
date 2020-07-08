@@ -235,17 +235,21 @@ All `Item`s are initialized with a new instance of an `Item$Properties` object. 
 
 Method | Parameter(s) | Default | Description
 --- | :---: | :---: | ---
-`food` | `Food` | `null` | ##TODO
-`maxStackSize` | `int` | ##TODO | ##TODO
-`defaultMaxDamage` | `int` | ##TODO | ##TODO
-`maxDamage` | `int` | ##TODO | ##TODO
-`containerItem` | `Item` | ##TODO | ##TODO
-`group` | `ItemGroup` | ##TODO | ##TODO
-`rarity` | `Rarity` | ##TODO | ##TODO
-`func_234689_a_` | **NONE** | ##TODO | ##TODO
-`setNoRepair` | **NONE** | ##TODO | ##TODO
-`addToolType` | `ToolType`<br>`int` | ##TODO | ##TODO
-`setISTER` | `Supplier<Callable<ItemStackTileEntityRenderer>>` | ##TODO | ##TODO
+`food` | `Food` | `null` | Makes an item edible and apply the stats of the `Food` passed in.
+`maxStackSize` | `int` | 64 | Sets the maximum amount of `Item`s this can stack to.
+`defaultMaxDamage` | `int` | 0 | Sets the maximum amount of damage the `Item` can have along with the maximum stack size to 1 assuming the value wasn't set already.
+`maxDamage` | `int` | 0 | Sets the maximum amount of damage the `Item` can have along with the maximum stack size to 1.
+`containerItem` | `Item` | `null` | Set a container item. The container item will remain after this `Item` is crafted in recipes.
+`group` | `ItemGroup` | `null` | Sets the creative tab the `Item` will appear in.
+`rarity` | `Rarity` | `COMMON` | Sets the "rarity" of the `Item`. This is only used to change the color of text the `Item` is displayed with.
+`setImmuneToFire (func_234689_a_)` | **NONE** | false | Sets the `Item` to be immune to fire damage.
+`setNoRepair` | **NONE** | true | Sets the `Item` to be unrepairable in a grindstone or repair recipes. This is only possible if the `Item` has damage associated with it.
+`addToolType` | `ToolType`<br>`int` | `new HashMap<>` | Gives the `Item` an ability to harvest as a specific tool at a specific level. Can be chained to have the properties of multiple tools (e.g. `addToolType(PICKAXE, 2).addToolType(AXE, 1)` gives the `Item` the efficiency of an iron pickaxe and a stone axe).
+`setISTER` | `Supplier<Callable<ItemStackTileEntityRenderer>>` | `ItemStackTileEntityRenderer::instance` | Sets a custom `ItemStackTileEntityRenderer` to be used to render an item from a `TileEntityRenderer` or defined `Model`. `Model` refers to the class used to create `Entity` models usually.
+
+> Note: The maximum stack size and maximum damage cannot coexist on a single item. An item can either have a stack size greater than 1 with no damage or a stack size of 1 with damage.
+
+> Note: `setNoRepair` is bugged in the latest release of Forge so that it always returns false.
 
 Since a standard gem is set within `ItemGroup::MATERIALS`, I will be chaining my property instance to include the `group` method to set this value.
 
@@ -255,6 +259,10 @@ public class TutorialItems {
 	public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
 }
 ```
+
+### Extending an Item
+
+
 
 ---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.57-web) under **Items**.
