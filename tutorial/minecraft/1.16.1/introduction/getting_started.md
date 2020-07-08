@@ -119,7 +119,7 @@ forgemod
 └── workspace
 ```
 
-### <a name="build.gradle"></a>build.gradle
+### <a name="build-gradle"></a>build.gradle
 
 When setting up your project for the first time, you might want to  customize your mod information on build. For that, we have the `build.gradle` file:
 

@@ -6,7 +6,7 @@ Congrats on setting up your workspace! Welcome to part 2 of the introduction whe
 ## <a name="java-class"></a>Java Class
 ---
 
-Let's start with the java class. Head over to the package explorer located by default on the left side of the screen. Right click `src/main/java` and go to `New`->`Class`. You should now see a screen where you can name the class and set the package. Usually, the package refers to the developer's website in reverse with an appended mod id, the same as we did for the `group` tag in [`build.gradle`](./getting_started#build.gradle). We will use `tutorial` as the mod id and the package as `io.github.championash5357.tutorial` in this example. As for the class name, you can use the name of the mod id (e.g. `Tutorial`). I will also check the box labeled `Constructors from superclass` as we will be using the constructor in our class. After setting these parameters, click `Finish` to create the class.
+Let's start with the java class. Head over to the package explorer located by default on the left side of the screen. Right click `src/main/java` and go to `New`->`Class`. You should now see a screen where you can name the class and set the package. Usually, the package refers to the developer's website in reverse with an appended mod id, the same as we did for the `group` tag in [`build.gradle`](./getting_started#build-gradle). We will use `tutorial` as the mod id and the package as `io.github.championash5357.tutorial` in this example. As for the class name, you can use the name of the mod id (e.g. `Tutorial`). I will also check the box labeled `Constructors from superclass` as we will be using the constructor in our class. After setting these parameters, click `Finish` to create the class.
 
 You should now see something that looks like:
 
@@ -36,7 +36,7 @@ public static class Tutorial {
 
 This is the barebones minimum needed to run a mod. To be able to set up the information, we will need to do a few more things.
 
-### <a name="mods.toml"></a>mods.toml
+### <a name="mods-toml"></a>mods.toml
 
 Tom's Obvious, Minimal Language (or `TOML` for short) is a file format for easy reading and writing. In modding, it is our mod loading data that is handled by the game. There are mandatory and optional variables that can be set depending on the preferences of your mod. If you haven't deleted the file there by default, then anything you don't want to use can be commented out using a pound or hashtag (e.g. `var = value # This is commented out`).
 
@@ -49,7 +49,7 @@ There are currently 13 variables and two dependencies that are written in defaul
 | **modLoader** | The name of the mod loader to use, should remain default for regular mods (`javafml` by default). |
 | **loaderVersion** | The version range of the mod loader to use, also known as the Forge version (`[32,)` by default). |
 | **modId** | The modid for the mod (e.g. `examplemod` or `tutorial` in our case).  | 
-| **version** | The version of the mod (e.g. `${file.jarVersion}` by default). If you want to use the data stored in [build.gradle](./getting_started#build.gradle), keep it default. This will only work once the mod is built into its jar form. |
+| **version** | The version of the mod (e.g. `${file.jarVersion}` by default). If you want to use the data stored in [build.gradle](./getting_started#build-gradle), keep it default. This will only work once the mod is built into its jar form. |
 | **displayName** | Display name for the mod (e.g. `Example Mod` or `Tutorial`in our case). |
 | **description** | Description text for the mod written in multi-line format (e.g. `This is our tutorial for programming Minecraft!`). Multi-line format is specified by three apostrophes (`'''`) at the start and end of the text. This can still be replaced with the standard quotation marks for single line format. |
 | **[[mods]]** | Stores a list of mods to be loaded. |
@@ -92,7 +92,7 @@ The final part is the dependencies which are formatted like so:
 
 These were both taken directly from the default toml file. Obviously, `examplemod` is replaced by your own mod id when you set the dependencies (in our case `tutorial`).
 
-### <a name="pack.mcmeta"></a>pack.mceta
+### <a name="pack-mcmeta"></a>pack.mceta
 
 This MCMeta file is basically the configuration file for the assets used in your mod. It allows the game to know that your mod has assets to attach to it. Although it has a different file extension, it is written in the `JSON` format. All you need to do is create an object `pack` with a `description` and a `pack_format` of 5:
 
@@ -105,7 +105,7 @@ This MCMeta file is basically the configuration file for the assets used in your
 }
 ```
 
-This is to be saved as **pack.mcmeta** in `src/main/resources`. If you again deleted this file originally, follow the process for create an `Untitled Text File` in the [toml](./main_file#toml-file) section.
+This is to be saved as **pack.mcmeta** in `src/main/resources`. If you again deleted this file originally, follow the process for create an `Untitled Text File` in the [toml](./main_file#mods-toml) section.
 
 After doing this, your main mod file should be complete.
 
