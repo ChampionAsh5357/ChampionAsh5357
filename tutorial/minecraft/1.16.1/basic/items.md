@@ -235,17 +235,17 @@ All `Item`s are initialized with a new instance of an `Item$Properties` object. 
 
 Method | Parameter(s) | Default | Use
 --- | :---: | :---: | ---
-`food` | `Food` | `null` | Makes an item edible. Applies the stats of the `Food` passed in.
-`maxStackSize` | `int` | 64 | Sets the maximum amount of `Item`s this can stack.
-`defaultMaxDamage` | `int` | 0 | Sets the maximum amount of damage the `Item` can have along with the maximum stack size to 1 assuming the value wasn't set already.
-`maxDamage` | `int` | 0 | Sets the maximum amount of damage the `Item` can have along with the maximum stack size to 1.
-`containerItem` | `Item` | `null` | Set a container item. The container item will remain after this `Item` is crafted in recipes.
-`group` | `ItemGroup` | `null` | Sets the creative tab the `Item` will appear in.
-`rarity` | `Rarity` | `COMMON` | Sets the "rarity" of the `Item`. This is only used to change the color of text the `Item` is displayed with.
+`food` | `Food` foodIn | `null` | Makes an item edible. Applies the stats of the `Food` passed in.
+`maxStackSize` | `int` maxStackSizeIn | 64 | Sets the maximum amount of `Item`s this can stack.
+`defaultMaxDamage` | `int` maxDamageIn | 0 | Sets the maximum amount of damage the `Item` can have along with the maximum stack size to 1 assuming the value wasn't set already.
+`maxDamage` | `int` maxDamageIn | 0 | Sets the maximum amount of damage the `Item` can have along with the maximum stack size to 1.
+`containerItem` | `Item` containerItemIn | `null` | Set a container item. The container item will remain after this `Item` is crafted in recipes.
+`group` | `ItemGroup` groupIn | `null` | Sets the creative tab the `Item` will appear in.
+`rarity` | `Rarity` rarityIn | `COMMON` | Sets the "rarity" of the `Item`. This is only used to change the color of text the `Item` is displayed with.
 `setImmuneToFire (func_234689_a_)` | **NONE** | false | Sets the `Item` to be immune to fire damage.
 `setNoRepair` | **NONE** | true | Sets the `Item` to be unrepairable in a grindstone or repair recipes. This is only possible if the `Item` has damage associated with it.
-`addToolType` | `ToolType`<br>`int` | `new HashMap<>` | Gives the `Item` an ability to harvest blocks as a specific tool at a specific level. Can be chained to have the properties of multiple tools (e.g. `addToolType(PICKAXE, 2).addToolType(AXE, 1)` gives the `Item` the efficiency of an iron pickaxe and a stone axe).
-`setISTER` | `Supplier<Callable<ItemStackTileEntityRenderer>>` | `ItemStackTileEntityRenderer::instance` | Sets a custom `ItemStackTileEntityRenderer` to render an item from a `TileEntityRenderer` or defined `Model` in most cases. `Model` refers to the class used to create `Entity` models usually.
+`addToolType` | `ToolType` type<br>`int` level | `new HashMap<>` | Gives the `Item` an ability to harvest blocks as a specific tool at a specific level. Can be chained to have the properties of multiple tools (e.g. `addToolType(PICKAXE, 2).addToolType(AXE, 1)` gives the `Item` the efficiency of an iron pickaxe and a stone axe).
+`setISTER` | `Supplier<Callable<ItemStackTileEntityRenderer>>` ister | `ItemStackTileEntityRenderer::instance` | Sets a custom `ItemStackTileEntityRenderer` to render an item from a `TileEntityRenderer` or defined `Model` in most cases. `Model` refers to the class used to create `Entity` models usually.
 
 > Note: The maximum stack size and maximum damage cannot coexist on a single item. An item can either have a stack size greater than 1 with no damage or a stack size of 1 with damage.
 
@@ -279,7 +279,7 @@ If you wanted to do something when an item was right-clicked, for example, you w
 
 Implementation | Method | Parameter(s) | Return Type | Use
 --- | :---: | :---: | :---: | ---
-`Item` | `onUse` | ##TODO | ##TODO | ##TODO |
+`Item` | `onUse` | `World` worldIn<br>`LivingEntity` livingEntityIn<br>`ItemStack` stack<br>`int` count | ##TODO | ##TODO |
 `Item` | `updateItemStackNBT` | ##TODO | ##TODO | ##TODO |
 `Item` | `canPlayerBreakBlockWhileHolding` | ##TODO | ##TODO | ##TODO |
 `Item` | `onItemUse` | ##TODO | ##TODO | ##TODO |
