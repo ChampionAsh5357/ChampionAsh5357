@@ -228,9 +228,10 @@ From here I can paint my textures directly into the program and see the result. 
 <img src="./images/ruby_layer_1.png" alt="Ruby Layer 1 Texture" width="128" height="64" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
 <img src="./images/ruby_layer_2.png" alt="Ruby Layer 1 Texture" width="128" height="64" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
 </div>
+
 <div style="text-align:center">
-<img src="./images/ruby_layer_1_mapped.png" alt="Ruby Layer 1 Texture Mapped" width="450" height="800" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
-<img src="./images/ruby_layer_2_mapped.png" alt="Ruby Layer 1 Texture Mapped" width="450" height="800" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+<img src="./images/ruby_layer_1_mapped.png" alt="Ruby Layer 1 Texture Mapped" width="225" height="400" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+<img src="./images/ruby_layer_2_mapped.png" alt="Ruby Layer 1 Texture Mapped" width="225" height="400" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
 </div>
 
 To get these textures to render on the model, I need to save them as `material_layer_1.png` and `material_layer_2.png` where material is our `IArmorMaterial` name (e.g. `ruby`). Since they are not technically items nor entities, they have their own special location to be saved. So let's once again open up our file tree all the way down to `assets/tutorial/textures`:
