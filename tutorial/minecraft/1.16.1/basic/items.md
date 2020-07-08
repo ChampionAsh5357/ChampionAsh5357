@@ -279,15 +279,15 @@ If you wanted to do something when an item was right-clicked, for example, you w
 
 Implementation | Method | Parameter(s) | Return Type | Use
 --- | :---: | :---: | :---: | ---
-`Item` | `~~onUse~~` | ##TODO | ##TODO | ##TODO |
-`Item` | ~~`updateItemStackNBT`~~ | ##TODO | ##TODO | ##TODO |
+`Item` | `onUse` | ##TODO | ##TODO | ##TODO |
+`Item` | `updateItemStackNBT` | ##TODO | ##TODO | ##TODO |
 `Item` | `canPlayerBreakBlockWhileHolding` | ##TODO | ##TODO | ##TODO |
 `Item` | `onItemUse` | ##TODO | ##TODO | ##TODO |
 `Item` | `getDestroySpeed` | ##TODO | ##TODO | ##TODO |
 `Item` | `onItemRightClick` | ##TODO | ##TODO | ##TODO |
 `Item` | `onItemUseFinish` | ##TODO | ##TODO | ##TODO |
-`Item` | `getMaxStackSize` | ##TODO | ##TODO | ##TODO |
-`Item` | `getMaxDamage` | ##TODO | ##TODO | ##TODO |
+`Item` | ~~`getMaxStackSize`~~ | ##TODO | ##TODO | ##TODO |
+`Item` | ~~`getMaxDamage`~~ | ##TODO | ##TODO | ##TODO |
 `Item` | `isDamageable` | ##TODO | ##TODO | ##TODO |
 `Item` | `hitEntity` | ##TODO | ##TODO | ##TODO |
 `Item` | `onBlockDestroyed` | ##TODO | ##TODO | ##TODO |
@@ -298,8 +298,8 @@ Implementation | Method | Parameter(s) | Return Type | Use
 `Item` | `getTranslationKey` | ##TODO | ##TODO | ##TODO |
 `Item` | `getTranslationKey` | ##TODO | ##TODO | ##TODO |
 `Item` | `shouldSyncTag` | ##TODO | ##TODO | ##TODO |
-`Item` | `getContainerItem` | ##TODO | ##TODO | ##TODO |
-`Item` | `hasContainerItem` | ##TODO | ##TODO | ##TODO |
+`Item` | ~~`getContainerItem`~~ | ##TODO | ##TODO | ##TODO |
+`Item` | ~~`hasContainerItem`~~ | ##TODO | ##TODO | ##TODO |
 `Item` | `inventoryTick` | ##TODO | ##TODO | ##TODO |
 `Item` | `onCreated` | ##TODO | ##TODO | ##TODO |
 `Item` | `isComplex` | ##TODO | ##TODO | ##TODO |
@@ -317,7 +317,7 @@ Implementation | Method | Parameter(s) | Return Type | Use
 `Item` | `isInGroup` | ##TODO | ##TODO | ##TODO |
 `Item` | `getGroup` | ##TODO | ##TODO | ##TODO |
 `Item` | `getIsRepairable` | ##TODO | ##TODO | ##TODO |
-`Item` | `getAttributeModifiers` | ##TODO | ##TODO | ##TODO |
+`Item` | ~~`getAttributeModifiers`~~ | ##TODO | ##TODO | ##TODO |
 `Item` | `isCrossbow` | ##TODO | ##TODO | ##TODO |
 `Item` | `getDefaultInstance` | ##TODO | ##TODO | ##TODO |
 `Item` | `isIn` | ##TODO | ##TODO | ##TODO |
@@ -378,7 +378,7 @@ Implementation | Method | Parameter(s) | Return Type | Use
 `IForgeItem` | `canContinueUsing` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `getCreatorModId` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `initCapabilities` | ##TODO | ##TODO | ##TODO |
-`IForgeItem` | `getAnimationParameters` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | ~~`getAnimationParameters`~~ | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `canDisableShield` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `isShield` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `getBurnTime` | ##TODO | ##TODO | ##TODO |
