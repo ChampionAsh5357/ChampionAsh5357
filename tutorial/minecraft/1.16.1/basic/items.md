@@ -233,7 +233,7 @@ Now that we have completed the main portion of our tutorial, it's now time to ta
 
 All `Item`s are initialized with a new instance of an `Item$Properties` object. This class determines the various properties of our `Item`. Each method can be [chained](https://www.geeksforgeeks.org/method-chaining-in-java-with-examples/) together allowing us to instantiate our object once without multiple calls (e.g. `new Item.Properties().method1(value1).method2(value2)`). I will be adding one of these properties to our ruby to make it possible to find in the creative menu.
 
-Method | Parameter(s) | Default | Description
+Method | Parameter(s) | Default | Use
 --- | :---: | :---: | ---
 `food` | `Food` | `null` | Makes an item edible and apply the stats of the `Food` passed in.
 `maxStackSize` | `int` | 64 | Sets the maximum amount of `Item`s this can stack to.
@@ -249,7 +249,7 @@ Method | Parameter(s) | Default | Description
 
 > Note: The maximum stack size and maximum damage cannot coexist on a single item. An item can either have a stack size greater than 1 with no damage or a stack size of 1 with damage.
 
-> Note: `setNoRepair` is bugged in the latest release of Forge so that it always returns false.
+> Note: `setNoRepair` is bugged in the latest release of Forge so that it always returns false. This list is only accurate as of **v32.0.57**.
 
 Since a standard gem is set within `ItemGroup::MATERIALS`, I will be chaining my property instance to include the `group` method to set this value.
 
@@ -262,7 +262,133 @@ public class TutorialItems {
 
 ### Extending an Item
 
+If you want to add more complex behavior to your item, you would most likely extend the class and store it within the `item` package:
 
+```
+src/main/java/io/github/championash5357/tutorial
+├── client
+├── init
+├── item
+│	└── ExtendedItem.java
+├── proxy
+├── server
+└── Tutorial.java
+```
+
+If you wanted to do something when an item was right-clicked, for example, you would `@Override` a specific method and return your code associated with it. Here are all the method provided by the `Item` class that you might override or use.
+
+Implementation | Method | Parameter(s) | Return Type | Use
+--- | :---: | :---: | :---: | ---
+`Item` | `~~onUse~~` | ##TODO | ##TODO | ##TODO |
+`Item` | ~~`updateItemStackNBT`~~ | ##TODO | ##TODO | ##TODO |
+`Item` | `canPlayerBreakBlockWhileHolding` | ##TODO | ##TODO | ##TODO |
+`Item` | `onItemUse` | ##TODO | ##TODO | ##TODO |
+`Item` | `getDestroySpeed` | ##TODO | ##TODO | ##TODO |
+`Item` | `onItemRightClick` | ##TODO | ##TODO | ##TODO |
+`Item` | `onItemUseFinish` | ##TODO | ##TODO | ##TODO |
+`Item` | `getMaxStackSize` | ##TODO | ##TODO | ##TODO |
+`Item` | `getMaxDamage` | ##TODO | ##TODO | ##TODO |
+`Item` | `isDamageable` | ##TODO | ##TODO | ##TODO |
+`Item` | `hitEntity` | ##TODO | ##TODO | ##TODO |
+`Item` | `onBlockDestroyed` | ##TODO | ##TODO | ##TODO |
+`Item` | `canHarvestBlock` | ##TODO | ##TODO | ##TODO |
+`Item` | `itemInteractionForEntity` | ##TODO | ##TODO | ##TODO |
+`Item` | `getName` | ##TODO | ##TODO | ##TODO |
+`Item` | `getDefaultTranslationKey` | ##TODO | ##TODO | ##TODO |
+`Item` | `getTranslationKey` | ##TODO | ##TODO | ##TODO |
+`Item` | `getTranslationKey` | ##TODO | ##TODO | ##TODO |
+`Item` | `shouldSyncTag` | ##TODO | ##TODO | ##TODO |
+`Item` | `getContainerItem` | ##TODO | ##TODO | ##TODO |
+`Item` | `hasContainerItem` | ##TODO | ##TODO | ##TODO |
+`Item` | `inventoryTick` | ##TODO | ##TODO | ##TODO |
+`Item` | `onCreated` | ##TODO | ##TODO | ##TODO |
+`Item` | `isComplex` | ##TODO | ##TODO | ##TODO |
+`Item` | `getUseAction` | ##TODO | ##TODO | ##TODO |
+`Item` | `getUseDuration` | ##TODO | ##TODO | ##TODO |
+`Item` | `onPlayerStoppedUsing` | ##TODO | ##TODO | ##TODO |
+`Item` | `addInformation` | ##TODO | ##TODO | ##TODO |
+`Item` | `getDisplayName` | ##TODO | ##TODO | ##TODO |
+`Item` | `hasEffect` | ##TODO | ##TODO | ##TODO |
+`Item` | `getRarity` | ##TODO | ##TODO | ##TODO |
+`Item` | `isEnchantable` | ##TODO | ##TODO | ##TODO |
+`Item` | `rayTrace` | ##TODO | ##TODO | ##TODO |
+`Item` | `getItemEnchantability` | ##TODO | ##TODO | ##TODO |
+`Item` | `fillItemGroup` | ##TODO | ##TODO | ##TODO |
+`Item` | `isInGroup` | ##TODO | ##TODO | ##TODO |
+`Item` | `getGroup` | ##TODO | ##TODO | ##TODO |
+`Item` | `getIsRepairable` | ##TODO | ##TODO | ##TODO |
+`Item` | `getAttributeModifiers` | ##TODO | ##TODO | ##TODO |
+`Item` | `isCrossbow` | ##TODO | ##TODO | ##TODO |
+`Item` | `getDefaultInstance` | ##TODO | ##TODO | ##TODO |
+`Item` | `isIn` | ##TODO | ##TODO | ##TODO |
+`Item` | `isFood` | ##TODO | ##TODO | ##TODO |
+`Item` | `getFood` | ##TODO | ##TODO | ##TODO |
+`Item` | `getDrinkSound` | ##TODO | ##TODO | ##TODO |
+`Item` | `getEatSound` | ##TODO | ##TODO | ##TODO |
+`Item` | `isImmuneToFire (func_234687_u_)` | ##TODO | ##TODO | ##TODO |
+`Item` | `isImmuneToFire (func_234685_a_)` | ##TODO | ##TODO | ##TODO |
+`IItemProvider` | `asItem` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getAttributeModifiers` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `onDroppedByPlayer` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getHighlightTip` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `onItemUseFirst` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `isPiglinCurrency` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `makesPiglinsNeutral` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `isRepairable` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getXpRepairRatio` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getShareTag` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `readShareTag` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `onBlockStartBreak` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `onUsingTick` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `onLeftClickEntity` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getContainerItem` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `hasContainerItem` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getEntityLifespan` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `hasCustomEntity` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `createEntity` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `onEntityItemUpdate` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getCreativeTabs` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getSmeltingExperience` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `doesSneakBypassUse` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `onArmorTick` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `canEquip` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getEquipmentSlot` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `isBookEnchantable` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getArmorTexture` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getFontRenderer` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getArmorModel` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `onEntitySwing` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `renderHelmetOverlay` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getDamage` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `showDurabilityBar` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getDurabilityForDisplay` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getRGBDurabilityForDisplay` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getMaxDamage` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `isDamaged` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `setDamage` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `canHarvestBlock` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getItemStackLimit` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getToolTypes` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getHarvestLevel` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getItemEnchantability` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `canApplyAtEnchantingTable` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `isBeaconPayment` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `shouldCauseReequipAnimation` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `shouldCauseBlockBreakReset` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `canContinueUsing` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getCreatorModId` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `initCapabilities` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getAnimationParameters` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `canDisableShield` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `isShield` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getBurnTime` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `onHorseArmorTick` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getItemStackTileEntityRenderer` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `getTags` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `damageItem` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | `isEnderMask` | ##TODO | ##TODO | ##TODO |
+
+> Note: Forge is reviewing most of the methods within IForgeItem and update them accordingly. This list is only accurate as of **v32.0.57**.
 
 ---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.57-web) under **Items**.
