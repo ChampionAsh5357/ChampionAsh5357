@@ -282,7 +282,7 @@ Implementation | Method | Parameter(s) | Return Type | Use
 `Object` | `toString` | NONE | `String` | Returns the registry path of the `Item`. |
 `Item` | `getIdFromItem` | `Item` itemIn | `int` | Returns the id of an `Item`. This is a **static** method that should not be used. |
 `Item` | `getItemById` | `int` id | `Item` | Returns the `Item` of the current id. This is a **static** method that should not be used. |
-`Item` | `getItemFromBlock` | `Block` blockIn | `Item` | Returns the `Item` corresponding to the `Block` registered. This is a **static** method. **Deprecated**Should use `IItemProvider::asItem`. |
+`Item` | `getItemFromBlock` | `Block` blockIn | `Item` | Returns the `Item` corresponding to the `Block` registered. This is a **static** method. **Deprecated** Should use `IItemProvider::asItem`. |
 `Item` | `onUse` | `World` worldIn<br>`LivingEntity` livingEntityIn<br>`ItemStack` stack<br>`int` count | `void` | Called as the item is being used by an entity. Examples include a crossbow to determine what sounds should be played when loading. |
 `Item` | `updateItemStackNBT` | `CompoundNBT` nbt | `boolean` | Called when an ItemStack with NBT data is read to potentially that ItemStack's NBT data. Examples include writing the owner of a player head for a skull. |
 `Item` | `canPlayerBreakBlockWhileHolding` | `BlockState` state<br>`World` worldIn<br>`BlockPos` pos<br>`PlayerEntity` player | `boolean` | Returns whether the player can break a `Block` while holding this `Item`. Examples include swords and tridents to prevent a player from breaking the block while in creative. The debug stick uses it to cycle block states in creative and test destroy animations in survival. |
@@ -330,7 +330,7 @@ Implementation | Method | Parameter(s) | Return Type | Use
 `Item` | `getDrinkSound` | NONE | `SoundEvent` | Returns the drink sound played from an `Item` with `UseAction::DRINK`. |
 `Item` | `getEatSound` | NONE | `SoundEvent` | Returns the eat sound played from an `Item` with `UseAction::EAT`. |
 `Item` | `isImmuneToFire (func_234687_u_)` | NONE | `boolean` | Returns whether the `Item` is immune to fire damage. |
-`Item` | `isImmune (func_234685_a_)` | `DamageSource` source (p_234685_1_) | `boolean` | Returns whether the `Item` is immune to the specific damage source. By default, this acts like `Item::isImmuneToFire (func_234687_u_)`. |
+`Item` | `isImmune (func_234685_a_)` | `DamageSource` source (p\_234685\_1\_) | `boolean` | Returns whether the `Item` is immune to the specific damage source. By default, acts like `Item::isImmuneToFire (func_234687_u_)`. |
 `IItemProvider` | `asItem` | NONE | `Item` | Returns the `Item` associated with the provider. Examples include getting the `Item` instance of a `Block`. |
 `IForgeItem` | `getAttributeModifiers` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `onDroppedByPlayer` | ##TODO | ##TODO | ##TODO |
