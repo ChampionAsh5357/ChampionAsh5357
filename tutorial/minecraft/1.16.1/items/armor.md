@@ -208,7 +208,7 @@ From there all we need to is setup our [resources](../basic/items#resource-setup
 Well everything seems to be rendering...except for, you know, the armor model. This is because armor models aren't handled by a simple texture, but are rather a layer applied via a `BipedArmorLayer` and texture using an `BipedModel` format.
 
 ## <a name="extra-resouces"></a>Extra Resources
---
+---
 
 So, now we neeed to create the `BipedModel` textures for our `ArmorItem`.
 
