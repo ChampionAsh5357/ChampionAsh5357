@@ -1,14 +1,14 @@
-# Registries
+# <a name="registries"></a>Registries
 ---
 
 Before we get into the meat of programming a mod for Minecraft, we are going to talk about registries. For anyone new to Minecraft, all objects (e.g. `Blocks`, `Items`, `Sounds`, `Biomes`, etc.) must first be registered to be recognized and loaded into the game. A list of all currently supported registries can be located in `ForgeRegistries`.
 
-## Registering Things
+## <a name="registering-things"></a>Registering Things
 ---
 
 In this tutorial, we will be going over the two different methods of registering an object and some additional setup to prepare ourselves for creating a mod. If you would like some more information on either of these two topics, check out the [Forge documentation](https://mcforge.readthedocs.io/en/latest/concepts/registries/) on it.
 
-### RegistryEvent
+### <a name="registryevent"></a>RegistryEvent
 
 The original way to register objects within the game was done through a `RegistryEvent`. These events would be called on the mod's event bus and register the object. You could then access the object from a public static final variable through injection via an `@ObjectHolder`. If that was a bit too condensed of an explanation, don't worry. Let's break it down.
 
@@ -89,7 +89,7 @@ public class TutorialItems {
 
 Not the prettiest line of code, but it gets the job done quite well and efficiently.
 
-### DeferredRegister
+### <a name="deferredregister"></a>DeferredRegister
 
 Due to the amount of people who tried to skip all of the above work and statically initialize their objects the same way Minecraft does, Forge decided to implement a new way of registering objects to avoid these issues. It became a new, safer wrapper around the existing registry events adding another layer of abstraction that provides convenience and safety. This became known as `DeferredRegister`.
 
@@ -130,12 +130,12 @@ public class Tutorial {
 
 From that, we have registered our `Item` within the game! We will be using this method to register our objects within the game itself.
 
-## Additional Setup
+## <a name="additional-setup"></a>Additional Setup
 ---
 
 To be able to register our `DeferredRegister`s all in one place, we will need to add a few lines of code to our current project.
 
-### Main Mod File
+### <a name="main-mod-file"></a>Main Mod File
 
 Let's create a private method that returns nothing called `addRegistries` that takes in our mod's event bus. From there, we just need to call it within our constructor and viola, we're done!
 

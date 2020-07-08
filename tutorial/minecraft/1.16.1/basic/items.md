@@ -1,9 +1,9 @@
-# Items
+# <a name="items"></a>Items
 ---
 
 Welcome you novice modders! Congrats on completing the Introduction into Minecraft programming with Forge. In this tutorial, we will take a deep dive into creating items. Specifically, we will be creating a basic item along with a breakdown of everything within the class itself.
 
-## Registry Setup
+## <a name="registry-setup"></a>Registry Setup
 ---
 
 First let's setup a `DeferredRegister` and add it to our event bus via `Tutorial::addRegistries` where `Tutorial` is our main mod file. This should be done similarly to how we did it within the [`DeferredRegister`](../introduction/registries#deferredregister) section of the registries overview;
@@ -42,7 +42,7 @@ Now if you load up the game, you can use the `give` command (like so `/give @p t
 
 What's going on? Our `Item` is in the game, but it's missing a lot of things. As you can see, if we never give our `Item` a texture or a model, it will appear as the default missing texture model in-game. If we also don't add a localization string for our language, it will also appear as its default translation key (e.g. `item.tutorial.ruby`).
 
-## Resource Setup
+## <a name="resource-setup"></a>Resource Setup
 ---
 
 To do this, we're gonna need to update the file tree a bit. Currently we have the following file tree from our `src` folder:
@@ -106,7 +106,7 @@ assets/tutorial
 
 When we create anything that has to do with items from now on, I will be referring to these specific folders. 
 
-### Texture File
+### <a name="texture-file"></a>Texture File
 
 Texture files are stored within `textures/item` as a **Portable Network Graphics (PNG)** file. Textures are traditionally 16 by 16 pixels, however they can be expanded to any size. You can also have a [animated texture](https://minecraft.gamepedia.com/Resource_Pack#Textures) by making the height increase by a multiple of the sides (e.g. 16 x 32 would have two 16 x 16 images to cycle through). To specify a animated texture, add another file on top of the image file that appends `.mcmeta` to the end (e.g. `test.png` would have another file called `test.png.mcmeta`). Take a look at the above link if you would like to learn more.
 
@@ -132,7 +132,7 @@ assets/tutorial
 		└── ruby.png
 ```
 
-### Item Model
+### <a name="item-model"></a>Item Model
 
 Block and item models within Minecraft use exactly the same **JavaScript Object Notation (JSON)** format excluding their locations. If you want a more in-depth explanation of item models, check out the breakdown over at [Minecraft Wiki](https://minecraft.gamepedia.com/Model#Item_models). If you want to create your own, there are many different [modeling softwares](https://blockbench.net/) out there that will help you with that. I will not be going over either of these in-depth, just a basic implementation to get our item rendered in the game.
 
@@ -178,7 +178,7 @@ assets/tutorial
 		└── ruby.png
 ```
 
-### Language Localization
+### <a name="language-localization"></a>Language Localization
 
 All language localization is handled once again via **JSON** files using what is known as translation keys. A translation key is usually broken down into three parts: the specific object type, the mod id, and then the registry name each separated by a '.'. For almost every object initialized, there will be an associated translated key in this format `object_type.modid.registry_name`. To be able to give our items a name, we need to create a new JSON file once again.
 
@@ -218,18 +218,18 @@ assets/tutorial
 
 As you can see, we now have our item fully added into the game!
 
-## Common Issues
+## <a name="common-issues"></a>Common Issues
 ---
 
 If you correctly added your models and textures and still don't see them in the game, refresh your IDE's file tree by clicking on `src/main/resources` and pressing `F5`. Files added outside the editor do not refresh the file tree. 
 Reload your game to test if your resources were added once again.
 
-## Items In-Depth
+## <a name="items-in-depth"></a>Items In-Depth
 ---
 
 Now that we have completed the main portion of our tutorial, it's now time to take a more in-depth perspective in regards to the `Item` class and the `Item$Properties` it provides.
 
-### Item$Properties`
+### <a name="item$properties"></a>Item$Properties`
 
 All `Item`s are initialized with a new instance of an `Item$Properties` object. This class determines the various properties of our `Item`. Each method can be [chained](https://www.geeksforgeeks.org/method-chaining-in-java-with-examples/) together allowing us to instantiate our object once without multiple calls (e.g. `new Item.Properties().method1(value1).method2(value2)`). I will be adding one of these properties to our ruby to make it possible to find in the creative menu.
 
@@ -260,7 +260,7 @@ public class TutorialItems {
 }
 ```
 
-### Extending an Item
+### <a name="extending-an-item"></a>Extending an Item
 
 If you want to add more complex behavior to your item, you would most likely extend the class and store it within the `item` package:
 

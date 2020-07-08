@@ -1,42 +1,42 @@
-# Getting Started
+# <a name="getting-started"></a>Getting Started
 ---
 
 Hello Minecraft programmers! Welcome to modification making for 1.16.1.
 
 To get started, first you are going to need to download the following items:
 
-## Required
+## <a name="required"></a>Required
 ---
 
-### [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/javase-downloads.html)
+### <a name="jdk"></a>[Java Development Kit (JDK)](https://www.oracle.com/java/technologies/javase-downloads.html)
 
 Minecraft was originally developed in a language called Java developed by the Oracle Corporation. Currently, the latest commercial release is for Java 8 while the latest development release is for Java 14. When deciding on a JDK version, I recommend using the latest commercial relase since its most likely the one everyone has on their computer. Either way, you need at least Java 8 in some capacity to be able to run the Forge development environment on your computer.
 
-### Java Integrated Development Environment ([Eclipse](https://www.eclipse.org/downloads/packages/release/2020-06/r/eclipse-ide-enterprise-java-developers) or [IntelliJ IDEA](https://www.jetbrains.com/idea/download/))
+### <a name="ide"></a>Java Integrated Development Environment ([Eclipse](https://www.eclipse.org/downloads/packages/release/2020-06/r/eclipse-ide-enterprise-java-developers) or [IntelliJ IDEA](https://www.jetbrains.com/idea/download/))
 
 Minecraft Forge is currently supported by gradle importation within either Eclipse or IntelliJ. For the purpose of these tutorials, I will be using Eclipse, however, either environment works for the situation.
 
-### [Minecraft Forge](https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.16.1.html)
+### <a name="forge"></a>[Minecraft Forge](https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.16.1.html)
 
 When deciding which version of Forge to use, I prefer going with the recommended version. However, if there is no recommended version suggest, the latest version should do just fine. Make sure to download the mdk onto your computer.
 
-## Optional
+## <a name="optional"></a>Optional
 ---
 
-### File Extractor
+### <a name="file-extractor"></a>File Extractor
 
 It is good to have a file extractor for .zip files to be able to extract the mdk onto your computer.
 
-### Photo Editing Software
+### <a name="photo-editing-software"></a>Photo Editing Software
 
 When creating assets, it is a good idea to use a photo editing software of some sort to make textures easier to create and edit.
 
-## Starting Off
+## <a name="starting-off"></a>Starting Off
 ---
 
 Now that you have downloaded a JDK 8+, Eclipse, and Forge 32.x.x, we can get started creating the workspace. Open the JDK .jar file and download the required contents. There is no need to move the default install location or change any of the download parameters.
 
-### File Setup
+### <a name="file-setup"></a>File Setup
 
 First, you will need to extract the Forge mdk to a folder. Preferably you should have a default folder with the name of the mod with a subfolder inside of it which contains the extracted Forge mdk. So if you have a mod folder named `forgemod`, you should extract the mdk to `forgemod/version` where version is the `1.16.1-32.x.x` for the current release of Forge:
 
@@ -119,7 +119,7 @@ forgemod
 └── workspace
 ```
 
-### build.gradle
+### <a name="build.gradle"></a>build.gradle
 
 When setting up your project for the first time, you might want to  customize your mod information on build. For that, we have the `build.gradle` file:
 
@@ -377,7 +377,7 @@ Variables | Description
 
 The final part of the file we will talk about briefly is the `dependencies` section. If you want to create mods that contain a dependency, you would use this section to compile and import them into your project. We will talk about this at a later time as well.
 
-### The Terminal Line
+### <a name="the-terminal-line"></a>The Terminal Line
 
 To be able to generate the run configurations used by your mod, you will need to open up a command line to where your `forgemod/version` folder is. This can be obtained by either shift + right clicking in the folder and opening the command line or using `cd` to navigate there depending on your operating system.
 
@@ -387,19 +387,19 @@ Depending on what command line you use (CMD, PowerShell, Terminal), you will nee
 **Mac Terminal** - `bash gradlew genEclipseRuns`  
 If you are using IntelliJ instead, `genEclipseRuns` would be replaced with `genIntellijRuns`.
 
-### Within the IDE
+### <a name="within-the-ide"></a>Within the IDE
 
 After executing the above commands, you will need to browse to your `forgemod/workspace` directory and launch it within your IDE. Depending on your IDE, you will need to do different steps to open your project workspace:  
 **Eclipse** - Go to `File`->`Import...`->`Existing Gradle Project` and click next. You will see a box that says `Project root directory` to which you will browse to your `forgemod/version` and then click `Finish`.  
 **IntelliJ** - Go to `File`->`Open` and navigate to your `forgemod/version` and click `OK`.
 From there, wait for gradle to finish importing your project and viola, the workspace is setup!
 
-## Additional Setup
+## <a name="additional-setup"></a>Additional Setup
 ---
 
 After you have set up the workspace, there are some additional features that might make programming in Eclipse a tiny bit easier for you.
 
-### Hierarchial Presentation
+### <a name="hierarchial-presentation"></a>Hierarchial Presentation
 
 The default setting in Eclipse is to list all the packages by their full name such as `net.minecraft.inventory.CraftingInventory` and `net.minecraft.inventory.DoubleSidedInventory` instead of using a subdirectory system like: 
 ```
@@ -411,11 +411,11 @@ net
 ```
 To be able to set it up in this way, go to the left side of the screen where you will find the `Project Explorer`. To the right of the tab is a drop down arrow. Go to `Package Presentation` and switch it from `Flat` to `Hierarchial` and it will be much easier to find whatever you are looking for.
 
-### Run Favorites
+### <a name="run-favorites"></a>Run Favorites
 
 Since the system in 1.16.1 does not run the Eclipse setup through the mdk, it might be a bit more difficult to select the `runClient`, `runData`, and `runServer` application used to test your mod in game. To set these as your favorites to easily find them, go to the Green Play button underneath the toolbar and click the drop down arrow to the right. Click `Organize Favorites`->`Add...`->`Select All`->`Ok`->`Ok` to set the applications as your favorites for easy access.
 
-### Removing TODO Auto Generated Messages
+### <a name="removing-todo-auto-generated-messages"></a>Removing TODO Auto Generated Messages
 
 Sometimes when auto-completing a method, the TODO message auto generates within as a comment. To disable this, go to `Window`->`Preferences`->`Java`->`Code Style`->`Code Templates` and edit the `Method body`, `Constructor body`, and `Catch block body` to remove all instances of this message. Then click `Apply and Close` and you should no longer have any auto generated messages appearing when auto-completing.
 

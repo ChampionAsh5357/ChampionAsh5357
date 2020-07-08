@@ -1,9 +1,9 @@
-# Main Mod File
+# <a name="main-mod-file"></a>Main Mod File
 ---
 
 Congrats on setting up your workspace! Welcome to part 2 of the introduction where we set up the basic mod file and folders for assets and data. You can delete any packages within `src/main/java` via the Project Explorer as we will be writing the code from scratch.
 
-## Java Class
+## <a name="java-class"></a>Java Class
 ---
 
 Let's start with the java class. Head over to the package explorer located by default on the left side of the screen. Right click `src/main/java` and go to `New`->`Class`. You should now see a screen where you can name the class and set the package. Usually, the package refers to the developer's website in reverse with an appended mod id, the same as we did for the `group` tag in [`build.gradle`](./getting_started#build.gradle). We will use `tutorial` as the mod id and the package as `io.github.championash5357.tutorial` in this example. As for the class name, you can use the name of the mod id (e.g. `Tutorial`). I will also check the box labeled `Constructors from superclass` as we will be using the constructor in our class. After setting these parameters, click `Finish` to create the class.
@@ -31,12 +31,12 @@ public static class Tutorial {
 }
 ```
 
-## Resources
+## <a name="resources"></a>Resources
 ---
 
 This is the barebones minimum needed to run a mod. To be able to set up the information, we will need to do a few more things.
 
-### mods.toml
+### <a name="mods.toml"></a>mods.toml
 
 Tom's Obvious, Minimal Language (or `TOML` for short) is a file format for easy reading and writing. In modding, it is our mod loading data that is handled by the game. There are mandatory and optional variables that can be set depending on the preferences of your mod. If you haven't deleted the file there by default, then anything you don't want to use can be commented out using a pound or hashtag (e.g. `var = value # This is commented out`).
 
@@ -92,7 +92,7 @@ The final part is the dependencies which are formatted like so:
 
 These were both taken directly from the default toml file. Obviously, `examplemod` is replaced by your own mod id when you set the dependencies (in our case `tutorial`).
 
-### pack.mceta
+### <a name="pack.mcmeta"></a>pack.mceta
 
 This MCMeta file is basically the configuration file for the assets used in your mod. It allows the game to know that your mod has assets to attach to it. Although it has a different file extension, it is written in the `JSON` format. All you need to do is create an object `pack` with a `description` and a `pack_format` of 5:
 
@@ -109,7 +109,7 @@ This is to be saved as **pack.mcmeta** in `src/main/resources`. If you again del
 
 After doing this, your main mod file should be complete.
 
-## Additional Setup
+## <a name="additional-setup"></a>Additional Setup
 ---
 
 To prepare for the next tutorials, we're going to do some pre-setup of the main mod file.
@@ -145,7 +145,7 @@ We will be using the first method throughout the tutorial, but feel free to use 
 
 If you want a more detailed explanation, you can check out the [Forge documentation](https://mcforge.readthedocs.io/en/latest/events/intro/).
 
-### Proxies
+### <a name="proxies"></a>Proxies
 
 One of the most important things about Minecraft is the fact that there are two sides: the `client` and the `server`. There is a bit of ambiguity between the terms, so I will try to make this as clear as I possibly can:  
 **Physical Client** - This refers to accessing `Minecraft` on your computer. Everything that runs are your computer when you open the game refers to this specific client.  
@@ -233,7 +233,7 @@ public class Tutorial {
 }
 ```
 
-### Lifecycle Events
+### <a name="lifecycle-events"></a>Lifecycle Events
 
 As metioned previously in [IEventBus](#ieventbus), the lifecycle events are what is used to initialize information specific to the mod. This is run parallelly so that multiple mods can be loaded at once.
 
