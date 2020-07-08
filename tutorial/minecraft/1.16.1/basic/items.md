@@ -114,13 +114,13 @@ Texture files are stored within `textures/item` as a **Portable Network Graphics
 
 PNG files have different bit-depths corresponding to how the image will be read. The two we will be reviewing is **PNG-24** and **PNG-32**. **PNG-24** supports all 16 million colors and some background index transparency/matte. If you're image is saved with a 24-bit depth, there will be no transparency rendered within your image whatsoever. **PNG-32** supports all 16 million colors including full alpha transparency. All images within Minecraft are saved in this format. Make sure when you create your image it is saved as a PNG file with 32-bit depth.
 
-For our case, I edited the emerald within Minecraft to make it look like a ruby for our example:
+For our case, I edited the emerald within Minecraft to make it look like a ruby:
 
 <div style="text-align:center">
 <img src="./images/ruby.png" alt="Ruby Texture" width="256" height="256" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
 </div>
 
-From here, I will save it as a PNG-32 file within our `textures/item` folder resulting in our file tree now looking like this:
+From here, I will save it as a PNG-32 file within our `textures/item` folder resulting in our file tree looking like this:
 
 ```
 assets/tutorial
@@ -134,7 +134,7 @@ assets/tutorial
 
 ### <a name="item-model"></a>Item Model
 
-Block and item models within Minecraft use exactly the same **JavaScript Object Notation (JSON)** format excluding their locations. If you want a more in-depth explanation of item models, check out the breakdown over at [Minecraft Wiki](https://minecraft.gamepedia.com/Model#Item_models). If you want to create your own, there are many different [modeling softwares](https://blockbench.net/) out there that will help you with that. I will not be going over either of these in-depth, just a basic implementation to get our item rendered in the game.
+Block and item models within Minecraft use exactly the same **JavaScript Object Notation (JSON)** format, excluding their locations. If you want a more in-depth explanation of item models, check out the breakdown over at [Minecraft Wiki](https://minecraft.gamepedia.com/Model#Item_models). If you want to create your own, there are many different [modeling softwares](https://blockbench.net/) out there that will help you with that. I will not be going over either of these in-depth, just a basic implementation to get our item rendered in the game.
 
 To create a basic item model, we need to first create a JSON file holding an object like so:
 
@@ -236,10 +236,10 @@ All `Item`s are initialized with a new instance of an `Item$Properties` object. 
 Method | Parameter(s) | Default | Use
 --- | :---: | :---: | ---
 `food` | `Food` foodIn | `null` | Makes an item edible. Applies the stats of the `Food` passed in.
-`maxStackSize` | `int` maxStackSizeIn | 64 | Sets the maximum amount of `Item`s this can stack.
-`defaultMaxDamage` | `int` maxDamageIn | 0 | Sets the maximum amount of damage the `Item` can have along with the maximum stack size to 1 assuming the value wasn't set already.
+`maxStackSize` | `int` maxStackSizeIn | 64 | Sets the maximum size of the stack for this `Item`.
+`defaultMaxDamage` | `int` maxDamageIn | 0 | Sets the maximum amount of damage the `Item` can have along with the maximum stack size to 1 assuming the maximum damage wasn't set already.
 `maxDamage` | `int` maxDamageIn | 0 | Sets the maximum amount of damage the `Item` can have along with the maximum stack size to 1.
-`containerItem` | `Item` containerItemIn | `null` | Set a container item. The container item will remain after this `Item` is crafted in recipes.
+`containerItem` | `Item` containerItemIn | `null` | Sets a container item. The container item will remain after this `Item` is crafted in recipes.
 `group` | `ItemGroup` groupIn | `null` | Sets the creative tab the `Item` will appear in.
 `rarity` | `Rarity` rarityIn | `COMMON` | Sets the "rarity" of the `Item`. This is only used to change the color of text the `Item` is displayed with.
 `setImmuneToFire (func_234689_a_)` | **NONE** | false | Sets the `Item` to be immune to fire damage.
@@ -275,59 +275,63 @@ src/main/java/io/github/championash5357/tutorial
 └── Tutorial.java
 ```
 
-If you wanted to do something when an item was right-clicked, for example, you would `@Override` a specific method and return your code associated with it. Here are all the method provided by the `Item` class that you might override or use.
+If you wanted to do something when an item was right-clicked, for example, you would `@Override` a specific method and implement your code within the method. Here are all the methods provided by the `Item` class that you might override or use.
 
 Implementation | Method | Parameter(s) | Return Type | Use
 --- | :---: | :---: | :---: | ---
-`Item` | `onUse` | `World` worldIn<br>`LivingEntity` livingEntityIn<br>`ItemStack` stack<br>`int` count | ##TODO | ##TODO |
-`Item` | `updateItemStackNBT` | ##TODO | ##TODO | ##TODO |
-`Item` | `canPlayerBreakBlockWhileHolding` | ##TODO | ##TODO | ##TODO |
-`Item` | `onItemUse` | ##TODO | ##TODO | ##TODO |
-`Item` | `getDestroySpeed` | ##TODO | ##TODO | ##TODO |
-`Item` | `onItemRightClick` | ##TODO | ##TODO | ##TODO |
-`Item` | `onItemUseFinish` | ##TODO | ##TODO | ##TODO |
-`Item` | ~~`getMaxStackSize`~~ | ##TODO | ##TODO | ##TODO |
-`Item` | ~~`getMaxDamage`~~ | ##TODO | ##TODO | ##TODO |
-`Item` | `isDamageable` | ##TODO | ##TODO | ##TODO |
-`Item` | `hitEntity` | ##TODO | ##TODO | ##TODO |
-`Item` | `onBlockDestroyed` | ##TODO | ##TODO | ##TODO |
-`Item` | `canHarvestBlock` | ##TODO | ##TODO | ##TODO |
-`Item` | `itemInteractionForEntity` | ##TODO | ##TODO | ##TODO |
-`Item` | `getName` | ##TODO | ##TODO | ##TODO |
-`Item` | `getDefaultTranslationKey` | ##TODO | ##TODO | ##TODO |
-`Item` | `getTranslationKey` | ##TODO | ##TODO | ##TODO |
-`Item` | `getTranslationKey` | ##TODO | ##TODO | ##TODO |
-`Item` | `shouldSyncTag` | ##TODO | ##TODO | ##TODO |
-`Item` | ~~`getContainerItem`~~ | ##TODO | ##TODO | ##TODO |
-`Item` | ~~`hasContainerItem`~~ | ##TODO | ##TODO | ##TODO |
-`Item` | `inventoryTick` | ##TODO | ##TODO | ##TODO |
-`Item` | `onCreated` | ##TODO | ##TODO | ##TODO |
-`Item` | `isComplex` | ##TODO | ##TODO | ##TODO |
-`Item` | `getUseAction` | ##TODO | ##TODO | ##TODO |
-`Item` | `getUseDuration` | ##TODO | ##TODO | ##TODO |
-`Item` | `onPlayerStoppedUsing` | ##TODO | ##TODO | ##TODO |
-`Item` | `addInformation` | ##TODO | ##TODO | ##TODO |
-`Item` | `getDisplayName` | ##TODO | ##TODO | ##TODO |
-`Item` | `hasEffect` | ##TODO | ##TODO | ##TODO |
-`Item` | `getRarity` | ##TODO | ##TODO | ##TODO |
-`Item` | `isEnchantable` | ##TODO | ##TODO | ##TODO |
-`Item` | `rayTrace` | ##TODO | ##TODO | ##TODO |
-`Item` | `getItemEnchantability` | ##TODO | ##TODO | ##TODO |
-`Item` | `fillItemGroup` | ##TODO | ##TODO | ##TODO |
-`Item` | `isInGroup` | ##TODO | ##TODO | ##TODO |
-`Item` | `getGroup` | ##TODO | ##TODO | ##TODO |
-`Item` | `getIsRepairable` | ##TODO | ##TODO | ##TODO |
-`Item` | ~~`getAttributeModifiers`~~ | ##TODO | ##TODO | ##TODO |
-`Item` | `isCrossbow` | ##TODO | ##TODO | ##TODO |
-`Item` | `getDefaultInstance` | ##TODO | ##TODO | ##TODO |
-`Item` | `isIn` | ##TODO | ##TODO | ##TODO |
-`Item` | `isFood` | ##TODO | ##TODO | ##TODO |
-`Item` | `getFood` | ##TODO | ##TODO | ##TODO |
-`Item` | `getDrinkSound` | ##TODO | ##TODO | ##TODO |
-`Item` | `getEatSound` | ##TODO | ##TODO | ##TODO |
-`Item` | `isImmuneToFire (func_234687_u_)` | ##TODO | ##TODO | ##TODO |
-`Item` | `isImmuneToFire (func_234685_a_)` | ##TODO | ##TODO | ##TODO |
-`IItemProvider` | `asItem` | ##TODO | ##TODO | ##TODO |
+`Object` | `toString` | NONE | `String` | Returns the registry path of the `Item`. |
+`Item` | `getIdFromItem` | `Item` itemIn | `int` | Returns the id of an `Item`. This is a **static** method that should not be used. |
+`Item` | `getItemById` | `int` id | `Item` | Returns the `Item` of the current id. This is a **static** method that should not be used. |
+`Item` | `getItemFromBlock` | `Block` blockIn | `Item` | Returns the `Item` corresponding to the `Block` registered. This is a **static** method. **Deprecated**Should use `IItemProvider::asItem`. |
+`Item` | `onUse` | `World` worldIn<br>`LivingEntity` livingEntityIn<br>`ItemStack` stack<br>`int` count | `void` | Called as the item is being used by an entity. Examples include a crossbow to determine what sounds should be played when loading. |
+`Item` | `updateItemStackNBT` | `CompoundNBT` nbt | `boolean` | Called when an ItemStack with NBT data is read to potentially that ItemStack's NBT data. Examples include writing the owner of a player head for a skull. |
+`Item` | `canPlayerBreakBlockWhileHolding` | `BlockState` state<br>`World` worldIn<br>`BlockPos` pos<br>`PlayerEntity` player | `boolean` | Returns whether the player can break a `Block` while holding this `Item`. Examples include swords and tridents to prevent a player from breaking the block while in creative. The debug stick uses it to cycle block states in creative and test destroy animations in survival. |
+`Item` | `onItemUse` | `ItemUseContext` context | `ActionResultType` | Called when this item is right-clicked when targetting a Block. |
+`Item` | `getDestroySpeed` | `ItemStack` stack<br>`BlockState` state | `float` | Gets how fast this `Item` can destroy a `Block`. Examples include tools increasing the value to their efficiency level over the default 1.0f. |
+`Item` | `onItemRightClick` | `World` worldIn<br>`PlayerEntity` playerIn<br>`Hand` handIn | `ActionResult<ItemStack>` | Called to trigger the `Item`'s "innate" right click behavior regardless of whether anything was clicked with it. |
+`Item` | `onItemUseFinish` | `ItemStack` stack<br>`World` worldIn<br>`LivingEntity` entityLiving | `ItemStack` | Called when the player finishes using this `Item` completely. |
+`Item` | ~~`getMaxStackSize`~~ | NONE | `int` | Returns the maximum size of the stack for a specific item. **Deprecated** Should use `IForgeItem::getItemStackLimit`. |
+`Item` | ~~`getMaxDamage`~~ | NONE | `int` | Returns the maximum damage an item can take. **Deprecated** Should use `IForgeItem::getMaxDamage`. |
+`Item` | `isDamageable` | NONE | `boolean` | Returns whether the `Item` can be damaged. |
+`Item` | `hitEntity` | `ItemStack` stack<br>`LivingEntity` target<br>`LivingEntity` attacker | boolean | Called when the `Item` is used to hit an entity. If true, it will trigger the stat `Stats::ITEM_USED` for the specific `Item`. |
+`Item` | `onBlockDestroyed` | `ItemStack` stack<br>`World` worldIn<br>`BlockState` state<br>`BlockPos` pos<br>`LivingEntity` entityLiving | `boolean` | Called when a Block is destroyed using this Item. If true, it will trigger the stat `Stats::ITEM_USED` for the specific `Item`. |
+`Item` | `canHarvestBlock` | `BlockState` blockIn | `boolean` | Returns whether this `Item` can harvest the given `Block`. |
+`Item` | `itemInteractionForEntity` | `ItemStack` stack<br>`PlayerEntity` playerIn<br>`LivingEntity` target<br>`Hand` hand | `ActionResultType` | Returns true if the item can be used on the given entity. Examples include shears or dye on sheep, saddles on `IEquipable` entities, and name tags. |
+`Item` | `getName` | NONE | `ITextComponent` | Returns the localized name (if present) of the `Item`. This is a **Client Side Only** method. |
+`Item` | `getDefaultTranslationKey` | NONE | `String` | Returns the standard unlocalized name (`item.modid.registry_name`) of the `Item`. |
+`Item` | `getTranslationKey` | NONE | `String` | Returns the unlocalized name of this `Item`. |
+`Item` | `getTranslationKey` | `ItemStack` stack | `String` | Returns the unlocalized name of this `Item`. This version can have different names based on the `ItemStack`'s damage or `INBT`. |
+`Item` | `shouldSyncTag` | NONE | `boolean` | Returns whether the `ItemStack`'s `INBT` tag should be sent to the client. This method is irrelevant if `Item::isDamageable` is true. |
+`Item` | ~~`getContainerItem`~~ | NONE | `Item` | Returns the container item. **Deprecated** Should use `IForgeItem::getContainerItem`. |
+`Item` | ~~`hasContainerItem`~~ | NONE | `boolean` | Returns whether the `Item` has a container item. **Deprecated** Should use `IForgeItem::hasContainerItem`. |
+`Item` | `inventoryTick` | `ItemStack` stack<br>`World` worldIn<br>`Entity` entityIn<br>`int` itemSlot<br>`boolean` isSelected | `void` | Called each tick while the `Item` is in a player's inventory. Examples include maps to update the current data and compasses to update where a lodestone is tracked and located. |
+`Item` | `onCreated` | `ItemStack` stack<br>`World` worldIn<br>`PlayerEntity` playerIn | `void` | Called when the `Item` is created in a recipe. Examples include maps adjusting their scale direction. |
+`Item` | `isComplex` | NONE | `boolean` | Returns true if the `Item` is complex. `Item` must extend `AbstractMapItem` if this is true or else an error will be thrown. |
+`Item` | `getUseAction` | `ItemStack` stack | `UseAction` | Returns the action that specifies what animation to play when the `Item` is being used. |
+`Item` | `getUseDuration` | `ItemStack` stack | `int` | Returns how long it takes to use or consume the `Item`. |
+`Item` | `onPlayerStoppedUsing` | `ItemStack` stack<br>`World` worldIn<br>`LivingEntity` entityLiving<br>`int` timeLeft | `void` | Called when the player stops using the `Item` regardless of whether the player finishes using it or not. |
+`Item` | `addInformation` | `ItemStack` stack<br>`@Nullable World` worldIn<br>`List<ITextComponent>` tooltip<br>`ITooltipFlag` flagIn | `void` | Allows items to add custom lines of information to the mouseover description. |
+`Item` | `getDisplayName` | `ItemStack` stack | `ITextComponent` | Returns the localized name (if present) of the `Item`. |
+`Item` | `hasEffect` | `ItemStack` stack | `boolean` | Returns true if this `Item` has an enchantment glint. |
+`Item` | `getRarity` | `ItemStack` stack | `Rarity` | Returns the rarity of the `Item`. This scaled up if it is enchanted. |
+`Item` | `isEnchantable` | `ItemStack` stack | `boolean` | Returns whether the `Item` can be enchanted. |
+`Item` | `rayTrace` | `World` worldIn<br>`PlayerEntity` player<br>`RayTraceContext.FluidMode` fluidMode | `BlockRayTraceResult` | Returns a ray trace of the player look vector within the specified reach distance. Examples include the eye of ender using ray trace to determine whether the correct `Block` is clicked to disable throwing it. |
+`Item` | `getItemEnchantability` | NONE | `int` | Returns the enchantability factor of the `Item`. |
+`Item` | `fillItemGroup` | `ItemGroup` group<br>`NonNullList<ItemStack>` items | `void` | Called to fill a creative tab with the specific `Item`. Examples include the potion adding a new `ItemStack` holding a different `Potion` to the list. |
+`Item` | `isInGroup` | `ItemGroup` group | `boolean` | Returns whether the `Item` has been set to appear in a specific creative tab. |
+`Item` | `getGroup` | NONE | `ItemGroup` | Returns the creative tab this `Item` is displayed on. |
+`Item` | `getIsRepairable` | `ItemStack` toRepair<br>`ItemStack` repair | `boolean` | Returns whether this `Item` is repairable in an anvil. |
+`Item` | ~~`getAttributeModifiers`~~ | `EquipmentSlotType` equipmentSlot | `Multimap<Attribute, AttributeModifier>` | Returns a map of attribute modifiers to apply to the player and be displayed on the `Item`. Examples include the sword getting an attack damage and attack speed modifier. **Deprecated** Should use `IForgeItem::getAttributeModifiers`. |
+`Item` | `isCrossbow` | `ItemStack stack` | `boolean` | Returns whether this `Item` is a crossbow. |
+`Item` | `getDefaultInstance` | NONE | `ItemStack` | Returns the default `ItemStack` instance. Examples include potions defaulting to `Potions::WATER`. |
+`Item` | `isIn` | `ITag<Item>` tagIn | `boolean` | Returns whether the `Item` is in the specified tag. |
+`Item` | `isFood` | NONE | `boolean` | Returns whether the `Item` is edible. |
+`Item` | `getFood` | NONE | `Food`| Returns the `Food` instance stored on the `Item`. |
+`Item` | `getDrinkSound` | NONE | `SoundEvent` | Returns the drink sound played from an `Item` with `UseAction::DRINK`. |
+`Item` | `getEatSound` | NONE | `SoundEvent` | Returns the eat sound played from an `Item` with `UseAction::EAT`. |
+`Item` | `isImmuneToFire (func_234687_u_)` | NONE | `boolean` | Returns whether the `Item` is immune to fire damage. |
+`Item` | `isImmune (func_234685_a_)` | `DamageSource` source (p_234685_1_) | `boolean` | Returns whether the `Item` is immune to the specific damage source. By default, this acts like `Item::isImmuneToFire (func_234687_u_)`. |
+`IItemProvider` | `asItem` | NONE | `Item` | Returns the `Item` associated with the provider. Examples include getting the `Item` instance of a `Block`. |
 `IForgeItem` | `getAttributeModifiers` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `onDroppedByPlayer` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `getHighlightTip` | ##TODO | ##TODO | ##TODO |
