@@ -225,8 +225,8 @@ Currently, I am going to edit the skin of a zombie. A zombie uses the standard `
 From here I can paint my textures directly into the program and see the result. Since I want to keep the continuity of Minecraft's armor setup, I will just use the default Layer 1 and Layer 2 setup and adjust accordingly. Using this, I can create my armor textures:
 
 <div style="text-align:center">
-<img src="./images/ruby_layer_1.png" alt="Ruby Layer 1 Texture" width="128" height="64" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
-<img src="./images/ruby_layer_2.png" alt="Ruby Layer 1 Texture" width="128" height="64" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+<img src="./images/ruby_layer_1.png" alt="Ruby Layer 1 Texture" width="256" height="128" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+<img src="./images/ruby_layer_2.png" alt="Ruby Layer 1 Texture" width="256" height="128" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
 </div>
 
 <div style="text-align:center">
@@ -269,7 +269,7 @@ There will be two methods explaining how to do this. The first method assumes yo
 
 ##TODO
 
-### Method 2: Global `ModelRenderer`s
+### Method 2: Global ModelRenderers
 
 ##TODO
 
