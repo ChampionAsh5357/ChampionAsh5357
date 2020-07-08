@@ -171,7 +171,7 @@ Variable | Type | Use
 --- | :---: | ---
 nameIn | `String` | The name of the material.
 maxDamageFactorIn | `int` | The durability factor of the material.
-damageReductionAmountArrayIn | `int[]` | The damage mitigation amount starting from `EquipmentSlotType::FEET` and going to `EquipmentSlotType::HEAD``.
+damageReductionAmountArrayIn | `int[]` | The damage mitigation amount starting from `EquipmentSlotType::FEET` and going to `EquipmentSlotType::HEAD`.
 enchantabilityIn | `int` | The enchantability of the material.
 soundEventIn | `SoundEvent` | The equip sound of the material.
 toughnessIn | `float` | The toughness of the material.
