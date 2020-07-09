@@ -388,13 +388,13 @@ public class RubyArmorModel extends EntityModel<Entity> {
 		rightLegSpike1.setRotationPoint(-0.1F, 10.0F, 1.0F);
 		bipedRightLeg.addChild(rightLegSpike1);
 		setRotationAngle(rightLegSpike1, -0.1745F, -0.1745F, 0.0F);
-		rightLegSpike1.setTextureOffset(0, 32).addBox(0.0F, -6.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+		rightLegSpike1.setTextureOffset(10, 32).addBox(0.0F, -6.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
 
 		rightLegSpike2 = new ModelRenderer(this);
 		rightLegSpike2.setRotationPoint(-0.1F, 10.0F, 1.0F);
 		bipedRightLeg.addChild(rightLegSpike2);
 		setRotationAngle(rightLegSpike2, -0.0873F, -0.0873F, 0.0F);
-		rightLegSpike2.setTextureOffset(0, 32).addBox(0.0F, -10.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+		rightLegSpike2.setTextureOffset(10, 32).addBox(0.0F, -10.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
 
 		bipedLeftLeg = new ModelRenderer(this);
 		bipedLeftLeg.setRotationPoint(1.9F, 12.0F, 0.0F);
@@ -410,13 +410,13 @@ public class RubyArmorModel extends EntityModel<Entity> {
 		leftLegSpike1.setRotationPoint(0.1F, 10.0F, 1.0F);
 		bipedLeftLeg.addChild(leftLegSpike1);
 		setRotationAngle(leftLegSpike1, -0.1745F, 0.1745F, 0.0F);
-		leftLegSpike1.setTextureOffset(0, 32).addBox(-1.0F, -6.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+		leftLegSpike1.setTextureOffset(10, 32).addBox(-1.0F, -6.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
 
 		leftLegSpike2 = new ModelRenderer(this);
 		leftLegSpike2.setRotationPoint(0.1F, 10.0F, 1.0F);
 		bipedLeftLeg.addChild(leftLegSpike2);
 		setRotationAngle(leftLegSpike2, -0.0873F, 0.0873F, 0.0F);
-		leftLegSpike2.setTextureOffset(0, 32).addBox(-1.0F, -10.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+		leftLegSpike2.setTextureOffset(10, 32).addBox(-1.0F, -10.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
 
 		bipedLeftArm = new ModelRenderer(this);
 		bipedLeftArm.setRotationPoint(5.0F, 2.0F, 0.0F);
@@ -493,13 +493,13 @@ public class RubyArmorModel extends BipedModel<LivingEntity> {
 		rightLegSpike1.setRotationPoint(-0.1F, 10.0F, 1.0F);
 		bipedRightLeg.addChild(rightLegSpike1);
 		setRotationAngle(rightLegSpike1, -0.1745F, -0.1745F, 0.0F);
-		rightLegSpike1.setTextureOffset(0, 32).addBox(0.0F, -6.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+		rightLegSpike1.setTextureOffset(10, 32).addBox(0.0F, -6.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
 
 		ModelRenderer rightLegSpike2 = new ModelRenderer(this);
 		rightLegSpike2.setRotationPoint(-0.1F, 10.0F, 1.0F);
 		bipedRightLeg.addChild(rightLegSpike2);
 		setRotationAngle(rightLegSpike2, -0.0873F, -0.0873F, 0.0F);
-		rightLegSpike2.setTextureOffset(0, 32).addBox(0.0F, -10.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+		rightLegSpike2.setTextureOffset(10, 32).addBox(0.0F, -10.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
 
 		ModelRenderer leftBootSpike = new ModelRenderer(this);
 		leftBootSpike.setRotationPoint(0.1F, 10.0F, 1.0F);
@@ -511,13 +511,13 @@ public class RubyArmorModel extends BipedModel<LivingEntity> {
 		leftLegSpike1.setRotationPoint(0.1F, 10.0F, 1.0F);
 		bipedLeftLeg.addChild(leftLegSpike1);
 		setRotationAngle(leftLegSpike1, -0.1745F, 0.1745F, 0.0F);
-		leftLegSpike1.setTextureOffset(0, 32).addBox(-1.0F, -6.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+		leftLegSpike1.setTextureOffset(10, 32).addBox(-1.0F, -6.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
 
 		ModelRenderer leftLegSpike2 = new ModelRenderer(this);
 		leftLegSpike2.setRotationPoint(0.1F, 10.0F, 1.0F);
 		bipedLeftLeg.addChild(leftLegSpike2);
 		setRotationAngle(leftLegSpike2, -0.0873F, 0.0873F, 0.0F);
-		leftLegSpike2.setTextureOffset(0, 32).addBox(-1.0F, -10.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+		leftLegSpike2.setTextureOffset(10, 32).addBox(-1.0F, -10.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
 	}
 
 	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {

@@ -249,7 +249,7 @@ Method | Parameter(s) | Default | Use
 
 > Note: The maximum stack size and maximum damage cannot coexist on a single item. An item can either have a stack size greater than 1 with no damage or a stack size of 1 with damage.
 
-> Note: `setNoRepair` is bugged in the latest release of Forge so that it always returns false. This list is only accurate as of **v32.0.57**.
+> Note: `setNoRepair` is bugged in the latest release of Forge so that it always returns false until **v32.0.60**. This list is only accurate as of **v32.0.61**.
 
 Since a standard gem is set within `ItemGroup::MATERIALS`, I will be chaining my property instance to include the `group` method to set this value.
 
@@ -392,7 +392,7 @@ Implementation | Method | Parameter(s) | Return Type | Use
 `IForgeItem` | `damageItem` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `isEnderMask` | ##TODO | ##TODO | ##TODO |
 
-> Note: Forge is reviewing most of the methods within IForgeItem and will update them accordingly. This list is only accurate as of **v32.0.57**.
+> Note: Forge is reviewing most of the methods within IForgeItem and will update them accordingly. This list is only accurate as of **v32.0.61**.
 
 For a more detailed explanation on some of these classes, check out their respective files in the source code.
 
