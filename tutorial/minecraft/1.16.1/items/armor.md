@@ -194,10 +194,10 @@ From here, we are now able to register our item once again using our [DeferredRe
 ```java
 public class TutorialItems {
 	...
-	public static final RegistryObject<Item> RUBY_HELMET = ITEMS.register("ruby_helmet", () -> new ArmorItem(TutorialArmorMaterial.RUBY, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)));
-	public static final RegistryObject<Item> RUBY_CHESTPLATE = ITEMS.register("ruby_chestplate", () -> new ArmorItem(TutorialArmorMaterial.RUBY, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)));
-	public static final RegistryObject<Item> RUBY_LEGGINGS = ITEMS.register("ruby_leggings", () -> new ArmorItem(TutorialArmorMaterial.RUBY, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)));
-	public static final RegistryObject<Item> RUBY_BOOTS = ITEMS.register("ruby_boots", () -> new ArmorItem(TutorialArmorMaterial.RUBY, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)));
+	public static final RegistryObject<ArmorItem> RUBY_HELMET = ITEMS.register("ruby_helmet", () -> new ArmorItem(TutorialArmorMaterial.RUBY, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)));
+	public static final RegistryObject<ArmorItem> RUBY_CHESTPLATE = ITEMS.register("ruby_chestplate", () -> new ArmorItem(TutorialArmorMaterial.RUBY, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)));
+	public static final RegistryObject<ArmorItem> RUBY_LEGGINGS = ITEMS.register("ruby_leggings", () -> new ArmorItem(TutorialArmorMaterial.RUBY, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)));
+	public static final RegistryObject<ArmorItem> RUBY_BOOTS = ITEMS.register("ruby_boots", () -> new ArmorItem(TutorialArmorMaterial.RUBY, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)));
 }
 ```
 
@@ -261,15 +261,9 @@ And now we have our armor within the game!
 ## <a name="custom-armor-model"></a>Custom Armor Model
 ---
 
-Custom Armor Models are one of the more difficult things to implement due to a lack of understanding and consistency between programmers. Today, I will attempt my best explanation of how to correctly implement and create a custom armor model for your player.
+Custom Armor Models are one of the more difficult things to implement due to a lack of understanding and consistency between programmers. Today, I will attempt my best explanation of how to correctly implement and create a custom armor model for your player. Child Models are by far the most popular method in rendering an armor model in Minecraft. However, the amount of detail required to correctly render one takes a bit of detail and effort.
 
-There will be two methods explaining how to do this. The first method assumes you will be using some semblance of the original Minecraft armor model. The second method will be if you decided to scrap how Minecraft renders its armor altogether and make your own from scratch.
-
-### <a name="method-1"></a>Method 1: Child Models
-
-Child Models are by far the most popular method in rendering an armor model in Minecraft. However, the amount of detail required to correctly render one takes a bit of detail and effort.
-
-#### <a name="armor-model"></a>Armor Model
+### <a name="armor-model"></a>Armor Model
 
 First, let's create our custom model. I'm going to build it off our ruby armor and just add some spikes coming out of the back of the armor. I will be using [Blockbench](https://blockbench.net/) once again for this.
 
@@ -281,6 +275,9 @@ There are a few things that you need to consider when creating your model:
 ![Blockbench Subdirectory](./images/blockbench_directory.png)
 
 As you can see, each folder represents a `ModelRenderer` while each cube represents a box. All of my added data is within a subdirectory of one of `BipedModel`'s `ModelRenderer`s.  
+
+> Note: Due to how armor models are called, global `ModelRenderer`s should never be used. They will be called incorrectly and never map to the player's rotation.
+
 **Texture Information** - If you decide to change the texture size for you model, please pay close attention. In respect to the set texture width and size, the first 64x32 pixels starting at the top left corner are reserved for the `BipedModel` `ModelRenderer`s. If you decide to add any extra texture data, make sure it is not within those bounds or else you will render some of your custom texture on the default `BipedModel`. Your default texture size will have to be larger than 64x32 if you would like to render any other texture to your model.  
 **EquipmentSlotType Sanity** - As mentioned [previously](#armor-layer-1-and-2), the legs are rendered at half size compared to the rest of the model. If you add anything specifically for the legs, you do need to take this into consideration and create the model separately. Of course, you could always go the one size fits all route, but then you would lose the point of having two layers for the armor.
 
@@ -313,11 +310,300 @@ src/main/java/io/github/championash5357/tutorial/client
 └── Tutorial.java
 ```
 
-#### <a name="model-class-cleanup"></a>Model Class Cleanup
+### <a name="model-class-cleanup"></a>Model Class Cleanup
 
-### Method 2: Global ModelRenderers
+Now we have a current model class that looks something similar to this:
 
-##TODO
+```java
+public class RubyArmorModel extends EntityModel<Entity> {
+	private final ModelRenderer bipedHead;
+	private final ModelRenderer bipedHeadwear;
+	private final ModelRenderer bipedBody;
+	private final ModelRenderer rightBodySpike1;
+	private final ModelRenderer leftBodySpike1;
+	private final ModelRenderer rightBodySpike2;
+	private final ModelRenderer leftBodySpike2;
+	private final ModelRenderer bipedRightLeg;
+	private final ModelRenderer rightBootSpike;
+	private final ModelRenderer rightLegSpike1;
+	private final ModelRenderer rightLegSpike2;
+	private final ModelRenderer bipedLeftLeg;
+	private final ModelRenderer leftBootSpike;
+	private final ModelRenderer leftLegSpike1;
+	private final ModelRenderer leftLegSpike2;
+	private final ModelRenderer bipedLeftArm;
+	private final ModelRenderer bipedRightArm;
+
+	public RubyArmorModel() {
+		textureWidth = 64;
+		textureHeight = 64;
+
+		bipedHead = new ModelRenderer(this);
+		bipedHead.setRotationPoint(0.0F, 0.0F, 0.0F);
+		bipedHead.setTextureOffset(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.0F, false);
+
+		bipedHeadwear = new ModelRenderer(this);
+		bipedHeadwear.setRotationPoint(0.0F, 24.0F, 0.0F);
+		bipedHeadwear.setTextureOffset(32, 0).addBox(-4.0F, -32.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.5F, false);
+
+		bipedBody = new ModelRenderer(this);
+		bipedBody.setRotationPoint(0.0F, 0.0F, 0.0F);
+		bipedBody.setTextureOffset(16, 16).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, 0.0F, false);
+
+		rightBodySpike1 = new ModelRenderer(this);
+		rightBodySpike1.setRotationPoint(-2.0F, 22.0F, 1.0F);
+		bipedBody.addChild(rightBodySpike1);
+		setRotationAngle(rightBodySpike1, 0.0F, -0.2618F, 0.0F);
+		rightBodySpike1.setTextureOffset(0, 32).addBox(0.0F, -16.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		leftBodySpike1 = new ModelRenderer(this);
+		leftBodySpike1.setRotationPoint(2.0F, 22.0F, 1.0F);
+		bipedBody.addChild(leftBodySpike1);
+		setRotationAngle(leftBodySpike1, 0.0F, 0.2618F, 0.0F);
+		leftBodySpike1.setTextureOffset(0, 32).addBox(-1.0F, -16.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		rightBodySpike2 = new ModelRenderer(this);
+		rightBodySpike2.setRotationPoint(-2.0F, 22.0F, 1.0F);
+		bipedBody.addChild(rightBodySpike2);
+		setRotationAngle(rightBodySpike2, 0.0873F, -0.1745F, 0.0F);
+		rightBodySpike2.setTextureOffset(0, 32).addBox(0.0F, -20.0F, 1.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		leftBodySpike2 = new ModelRenderer(this);
+		leftBodySpike2.setRotationPoint(2.0F, 22.0F, 1.0F);
+		bipedBody.addChild(leftBodySpike2);
+		setRotationAngle(leftBodySpike2, 0.0873F, 0.1745F, 0.0F);
+		leftBodySpike2.setTextureOffset(0, 32).addBox(-1.0F, -20.0F, 1.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		bipedRightLeg = new ModelRenderer(this);
+		bipedRightLeg.setRotationPoint(-1.9F, 12.0F, 0.0F);
+		bipedRightLeg.setTextureOffset(0, 16).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+
+		rightBootSpike = new ModelRenderer(this);
+		rightBootSpike.setRotationPoint(-0.1F, 10.0F, 1.0F);
+		bipedRightLeg.addChild(rightBootSpike);
+		setRotationAngle(rightBootSpike, -0.3491F, -0.2618F, 0.0F);
+		rightBootSpike.setTextureOffset(0, 32).addBox(0.0F, -2.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		rightLegSpike1 = new ModelRenderer(this);
+		rightLegSpike1.setRotationPoint(-0.1F, 10.0F, 1.0F);
+		bipedRightLeg.addChild(rightLegSpike1);
+		setRotationAngle(rightLegSpike1, -0.1745F, -0.1745F, 0.0F);
+		rightLegSpike1.setTextureOffset(0, 32).addBox(0.0F, -6.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		rightLegSpike2 = new ModelRenderer(this);
+		rightLegSpike2.setRotationPoint(-0.1F, 10.0F, 1.0F);
+		bipedRightLeg.addChild(rightLegSpike2);
+		setRotationAngle(rightLegSpike2, -0.0873F, -0.0873F, 0.0F);
+		rightLegSpike2.setTextureOffset(0, 32).addBox(0.0F, -10.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		bipedLeftLeg = new ModelRenderer(this);
+		bipedLeftLeg.setRotationPoint(1.9F, 12.0F, 0.0F);
+		bipedLeftLeg.setTextureOffset(0, 16).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, true);
+
+		leftBootSpike = new ModelRenderer(this);
+		leftBootSpike.setRotationPoint(0.1F, 10.0F, 1.0F);
+		bipedLeftLeg.addChild(leftBootSpike);
+		setRotationAngle(leftBootSpike, -0.3491F, 0.2618F, 0.0F);
+		leftBootSpike.setTextureOffset(0, 32).addBox(-1.0F, -2.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		leftLegSpike1 = new ModelRenderer(this);
+		leftLegSpike1.setRotationPoint(0.1F, 10.0F, 1.0F);
+		bipedLeftLeg.addChild(leftLegSpike1);
+		setRotationAngle(leftLegSpike1, -0.1745F, 0.1745F, 0.0F);
+		leftLegSpike1.setTextureOffset(0, 32).addBox(-1.0F, -6.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		leftLegSpike2 = new ModelRenderer(this);
+		leftLegSpike2.setRotationPoint(0.1F, 10.0F, 1.0F);
+		bipedLeftLeg.addChild(leftLegSpike2);
+		setRotationAngle(leftLegSpike2, -0.0873F, 0.0873F, 0.0F);
+		leftLegSpike2.setTextureOffset(0, 32).addBox(-1.0F, -10.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		bipedLeftArm = new ModelRenderer(this);
+		bipedLeftArm.setRotationPoint(5.0F, 2.0F, 0.0F);
+		bipedLeftArm.setTextureOffset(40, 16).addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, true);
+
+		bipedRightArm = new ModelRenderer(this);
+		bipedRightArm.setRotationPoint(-5.0F, 2.0F, 0.0F);
+		bipedRightArm.setTextureOffset(40, 16).addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
+	}
+
+	@Override
+	public void setRotationAngles(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
+		//previously the render function, render code was moved to a method below
+	}
+
+	@Override
+	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
+		bipedHead.render(matrixStack, buffer, packedLight, packedOverlay);
+		bipedHeadwear.render(matrixStack, buffer, packedLight, packedOverlay);
+		bipedBody.render(matrixStack, buffer, packedLight, packedOverlay);
+		bipedRightLeg.render(matrixStack, buffer, packedLight, packedOverlay);
+		bipedLeftLeg.render(matrixStack, buffer, packedLight, packedOverlay);
+		bipedLeftArm.render(matrixStack, buffer, packedLight, packedOverlay);
+		bipedRightArm.render(matrixStack, buffer, packedLight, packedOverlay);
+	}
+
+	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+		modelRenderer.rotateAngleX = x;
+		modelRenderer.rotateAngleY = y;
+		modelRenderer.rotateAngleZ = z;
+	}
+}
+```
+
+It's just a massive mess. So let's clean it up. First, we can remove `Model::render` and `EntityModel::setRotationAngles` since all our fields will be local and will be relative to the parent its attached to. Next, we can change the extension type to `BipedModel<LivingEntity>`. We also have to fix our constructor to take a `float modelSize` and call its `super`. After that, we can remove all instances of `biped...` within our file. They were used as temporary fields to organize. However, now, they will reference the actual fields within `BipedModel`. We should also add our package declaration to the right location. Finally, make all your `ModelRenderer` fields local so that they cannot be accessed outside the constructor. This part mainly adds sanity as we don't want to call any child without their parent. This should leave your model looking something like this:
+
+```java
+public class RubyArmorModel extends BipedModel<LivingEntity> {
+
+	public RubyArmorModel(float modelSize) {
+		super(modelSize, 0.0F, 64, 64);
+
+		ModelRenderer rightBodySpike1 = new ModelRenderer(this);
+		rightBodySpike1.setRotationPoint(-2.0F, 22.0F, 1.0F);
+		bipedBody.addChild(rightBodySpike1);
+		setRotationAngle(rightBodySpike1, 0.0F, -0.2618F, 0.0F);
+		rightBodySpike1.setTextureOffset(0, 32).addBox(0.0F, -16.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		ModelRenderer leftBodySpike1 = new ModelRenderer(this);
+		leftBodySpike1.setRotationPoint(2.0F, 22.0F, 1.0F);
+		bipedBody.addChild(leftBodySpike1);
+		setRotationAngle(leftBodySpike1, 0.0F, 0.2618F, 0.0F);
+		leftBodySpike1.setTextureOffset(0, 32).addBox(-1.0F, -16.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		ModelRenderer rightBodySpike2 = new ModelRenderer(this);
+		rightBodySpike2.setRotationPoint(-2.0F, 22.0F, 1.0F);
+		bipedBody.addChild(rightBodySpike2);
+		setRotationAngle(rightBodySpike2, 0.0873F, -0.1745F, 0.0F);
+		rightBodySpike2.setTextureOffset(0, 32).addBox(0.0F, -20.0F, 1.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		ModelRenderer leftBodySpike2 = new ModelRenderer(this);
+		leftBodySpike2.setRotationPoint(2.0F, 22.0F, 1.0F);
+		bipedBody.addChild(leftBodySpike2);
+		setRotationAngle(leftBodySpike2, 0.0873F, 0.1745F, 0.0F);
+		leftBodySpike2.setTextureOffset(0, 32).addBox(-1.0F, -20.0F, 1.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		ModelRenderer rightBootSpike = new ModelRenderer(this);
+		rightBootSpike.setRotationPoint(-0.1F, 10.0F, 1.0F);
+		bipedRightLeg.addChild(rightBootSpike);
+		setRotationAngle(rightBootSpike, -0.3491F, -0.2618F, 0.0F);
+		rightBootSpike.setTextureOffset(0, 32).addBox(0.0F, -2.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		ModelRenderer rightLegSpike1 = new ModelRenderer(this);
+		rightLegSpike1.setRotationPoint(-0.1F, 10.0F, 1.0F);
+		bipedRightLeg.addChild(rightLegSpike1);
+		setRotationAngle(rightLegSpike1, -0.1745F, -0.1745F, 0.0F);
+		rightLegSpike1.setTextureOffset(0, 32).addBox(0.0F, -6.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		ModelRenderer rightLegSpike2 = new ModelRenderer(this);
+		rightLegSpike2.setRotationPoint(-0.1F, 10.0F, 1.0F);
+		bipedRightLeg.addChild(rightLegSpike2);
+		setRotationAngle(rightLegSpike2, -0.0873F, -0.0873F, 0.0F);
+		rightLegSpike2.setTextureOffset(0, 32).addBox(0.0F, -10.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		ModelRenderer leftBootSpike = new ModelRenderer(this);
+		leftBootSpike.setRotationPoint(0.1F, 10.0F, 1.0F);
+		bipedLeftLeg.addChild(leftBootSpike);
+		setRotationAngle(leftBootSpike, -0.3491F, 0.2618F, 0.0F);
+		leftBootSpike.setTextureOffset(0, 32).addBox(-1.0F, -2.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		ModelRenderer leftLegSpike1 = new ModelRenderer(this);
+		leftLegSpike1.setRotationPoint(0.1F, 10.0F, 1.0F);
+		bipedLeftLeg.addChild(leftLegSpike1);
+		setRotationAngle(leftLegSpike1, -0.1745F, 0.1745F, 0.0F);
+		leftLegSpike1.setTextureOffset(0, 32).addBox(-1.0F, -6.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+
+		ModelRenderer leftLegSpike2 = new ModelRenderer(this);
+		leftLegSpike2.setRotationPoint(0.1F, 10.0F, 1.0F);
+		bipedLeftLeg.addChild(leftLegSpike2);
+		setRotationAngle(leftLegSpike2, -0.0873F, 0.0873F, 0.0F);
+		leftLegSpike2.setTextureOffset(0, 32).addBox(-1.0F, -10.0F, 0.0F, 1.0F, 2.0F, 4.0F, 0.0F, false);
+	}
+
+	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+		modelRenderer.rotateAngleX = x;
+		modelRenderer.rotateAngleY = y;
+		modelRenderer.rotateAngleZ = z;
+	}
+}
+```
+
+> Note: We are using the protected constructor for `BipedModel` as our `super`. This is because if we do not set the `textureWidth` and `textureHeight` before the `ModelRenderer` is called, then our armor file will be incorrectly mapped to the model.
+
+### <a name="item-class-and-clientproxy"></a>Item Class and ClientProxy
+
+Now we need to create an `Item` class that extends `ArmorItem`. This is because we need to implement a specific method to get our model to render on the player. There are two methods that can help with this:  
+**IForgeItem::getArmorModel** - This method allows us to return our own armor model to be rendered by the game.  
+**IForgeItem::ggetArmorTexture** - This method allows us to specify the location of the armor texture we have created.  
+
+> Note: Since we are still using both the same textures names as before, we don't necessarily need to use the second method.
+
+So let's construct our class that extends `ArmorItem` and override `IForgeItem::ggetArmorModel`. I will be putting this in my `item` package. We will also need to update our registry objects to mimic this.
+
+```java
+public class RubyArmorItem extends ArmorItem {
+	
+	public RubyArmorItem(IArmorMaterial materialIn, EquipmentSlotType slot, Properties properties) {
+		super(materialIn, slot, properties);
+	}
+	
+	@Override
+	public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
+		return null;
+	}
+}
+```
+
+```java
+public class TutorialItems {
+	...
+	public static final RegistryObject<RubyArmorItem> RUBY_HELMET = ITEMS.register("ruby_helmet", () -> new RubyArmorItem(TutorialArmorMaterial.RUBY, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)));
+	public static final RegistryObject<RubyArmorItem> RUBY_CHESTPLATE = ITEMS.register("ruby_chestplate", () -> new RubyArmorItem(TutorialArmorMaterial.RUBY, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)));
+	public static final RegistryObject<RubyArmorItem> RUBY_LEGGINGS = ITEMS.register("ruby_leggings", () -> new RubyArmorItem(TutorialArmorMaterial.RUBY, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)));
+	public static final RegistryObject<RubyArmorItem> RUBY_BOOTS = ITEMS.register("ruby_boots", () -> new RubyArmorItem(TutorialArmorMaterial.RUBY, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)));
+}
+```
+
+Now we could just create our constructors in the method and call it good, but that's an absolutely stupid method. Rendering an object on screen is called every tick and constructing a model every tick is just a massive waste of resources. We could register a global variable within the class, but then we couldn't run the mod on the physical server since `BipedModel` only exists on the physical client.
+
+So how do we get around this? This is where our [`ClientProxy`](../introduction/main_file#proxies) comes into play. Our proxy system is setup to only execute on the physical client, preventing any issues from coming to a physical server. So, let's construct our final references in there and create a method specific only to `ClientProxy` and not our `IProxy` interface that returns the same as `IForgeItem::getArmorModel`.
+
+```java
+public class ClientProxy implements IProxy {
+
+	private final RubyArmorModel rubyArmorModel = new RubyArmorModel(1.0f);
+	private final RubyArmorModel rubyArmorLeggings = new RubyArmorModel(0.5f);
+	...
+	@SuppressWarnings("unchecked")
+	public <A extends BipedModel<?>> A getRubyArmorModel(EquipmentSlotType armorSlot) {
+		return (A) (armorSlot == EquipmentSlotType.LEGS ? rubyArmorLeggings : rubyArmorModel);
+	}
+}
+```
+
+> Note: Although the `unchecked` warning does need to be supressed, it is not anything to worry about as `RubyArmorModel` extends `BipedModel` regardless.
+
+From there, let's do a sanity check to make sure that `Tutorial::PROXY` is an instance of our `ClientProxy` and to call our method if true and return `null` if false.
+
+```java
+public class RubyArmorItem extends ArmorItem {
+	
+	public RubyArmorItem(IArmorMaterial materialIn, EquipmentSlotType slot, Properties properties) {
+		super(materialIn, slot, properties);
+	}
+	
+	@Override
+	public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
+		return Tutorial.PROXY instanceof ClientProxy ? ((ClientProxy) Tutorial.PROXY).getRubyArmorModel(armorSlot) : null;
+	}
+}
+```
+
+Now if we load up the game, we should see our spikes rendered on the back of the armor.
+
+![Ruby Armor with Custom Model](./images/armor_custom.png)
+
+Now we have our custom model loaded in the game!
 
 ---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.57-web) under **Armor**.
