@@ -610,5 +610,6 @@ All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x
 
 There has been a small bug that has been fixed with overlaying armor issues in the **v32.0.61** [port](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.61-web) of the code under **Port to 32.0.61 And Armor Fix** in `RubyArmorModel` and `ruby_layer_2.png`.
 
+Review [Items](../basic/items)
 Back to [Item Extensions](../../#item-extensions).
 Back to [Minecraft Tutorials](../../)  
