@@ -530,6 +530,8 @@ public class RubyArmorModel extends BipedModel<LivingEntity> {
 
 > Note: We are using the protected constructor for `BipedModel` as our `super`. This is because if we do not set the `textureWidth` and `textureHeight` before the `ModelRenderer` is called, then our armor file will be incorrectly mapped to the model.
 
+> Note: All `ModelRenderer`s use a set texture offset either specified by the constructor or `ModelRenderer::setTextureOffset` If you are using a modeling software that uses an offset constructor, this will cause issues in your texture mapping. The texture offset is not relative, rather a global parameter. Every time you call `ModelRenderer::setTextureOffset`, it sets the value of texture offset to those two numbers you entered. This means that you should only use `new ModelRenderer(this)` when constructing your `ModelRenderer`.
+
 ### <a name="item-class-and-clientproxy"></a>Item Class and ClientProxy
 
 Now we need to create an `Item` class that extends `ArmorItem`. This is because we need to implement a specific method to get our model to render on the player. There are two methods that can help with this:  
