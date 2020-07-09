@@ -226,12 +226,12 @@ From here I can paint my textures directly into the program and see the result. 
 
 <div style="text-align:center">
 <img src="./images/ruby_layer_1.png" alt="Ruby Layer 1 Texture" width="256" height="128" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
-<img src="./images/ruby_layer_2.png" alt="Ruby Layer 1 Texture" width="256" height="128" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+<img src="./images/ruby_layer_2.png" alt="Ruby Layer 2 Texture" width="256" height="128" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
 </div>
 
 <div style="text-align:center">
 <img src="./images/ruby_layer_1_mapped.png" alt="Ruby Layer 1 Texture Mapped" width="225" height="400" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
-<img src="./images/ruby_layer_2_mapped.png" alt="Ruby Layer 1 Texture Mapped" width="225" height="400" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+<img src="./images/ruby_layer_2_mapped.png" alt="Ruby Layer 2 Texture Mapped" width="225" height="400" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
 </div>
 
 To get these textures to render on the model, I need to save them as `material_layer_1.png` and `material_layer_2.png` where material is our `IArmorMaterial` name (e.g. `ruby`). Since they are not technically items nor entities, they have their own special location to be saved. So let's once again open up our file tree all the way down to `assets/tutorial/textures`:
@@ -265,9 +265,55 @@ Custom Armor Models are one of the more difficult things to implement due to a l
 
 There will be two methods explaining how to do this. The first method assumes you will be using some semblance of the original Minecraft armor model. The second method will be if you decided to scrap how Minecraft renders its armor altogether and make your own from scratch.
 
-### Method 1: Child Models
+### <a name="method-1"></a>Method 1: Child Models
 
-##TODO
+Child Models are by far the most popular method in rendering an armor model in Minecraft. However, the amount of detail required to correctly render one takes a bit of detail and effort.
+
+#### <a name="armor-model"></a>Armor Model
+
+First, let's create our custom model. I'm going to build it off our ruby armor and just add some spikes coming out of the back of the armor. I will be using [Blockbench](https://blockbench.net/) once again for this.
+
+There are a few things that you need to consider when creating your model:
+**Box Size** - This is one of the biggest issues I see when people include custom models. They just add boxes and dont necessarily think of the consequences. Whenever you add a box into the game, if the number isn't an integer, then the texture will scale up to the size required to correct the ratio discrepency. So, if I had a box with the dimensions of 1, 1, and 1.5. From the standard texture of 64x32, I would need a texture of 128x64 to correctly render my box. Box sizes of 0 also are an issue as they just don't exist. A box dimension must be at least 0.005 to correctly render on the screen with no flickering.  
+**Box Position** - Just because they are floats doesn't mean you can you can a position of 1.4348927f. After a certain point the model movement will show absolutely nothing. Please try to stick with a precision of at most 0.001f.  
+**ModelRenderer Sanity** - There are two major distinctions of `ModelRenderer`s in Minecraft: Global `ModelRenderer`s and Local `ModelRenderer`s. In any example where your `ModelRenderer` is becoming a child, it should be a local `ModelRenderer`. Local `ModelRenderer`s are inaccessible outside of the constructor. However, since they inherit all their traits from the parent, it makes absolutely no difference since the data will be copied corresponding to its parent. In the case of Global `ModelRenderer`s, they should never be put as a child. In that case, copy the model angles of the part you want to mimic and then supply it in either `AgeableModel::getHeadParts` or `AgeableMode::getBodyParts` where applicable. There should be absolutely no reason to touch `Model::render` **AT ALL**. We must make sure that every box or `ModelRenderer` we create that they are always are in a sub directory of one of `BipedModel`'s `ModelRenderer`s.
+
+![Blockbench Subdirectory](./images/blockbench_subdirectory.png)
+
+As you can see, each folder represents a `ModelRenderer` while each cube represents a box. All of my added data is within a subdirectory of one of `BipedModel`'s `ModelRenderer`s.  
+**Texture Information** - If you decide to change the texture size for you model, please pay close attention. In respect to the set texture width and size, the first 64x32 pixels starting at the top left corner are reserved for the `BipedModel` `ModelRenderer`s. If you decide to add any extra texture data, make sure it is not within those bounds or else you will render some of your custom texture on the default `BipedModel`. Your default texture size will have to be larger than 64x32 if you would like to render any other texture to your model.  
+**EquipmentSlotType Sanity** - As mentioned [previously](#armor-layer-1-and-2), the legs are rendered at half size compared to the rest of the model. If you add anything specifically for the legs, you do need to take this into consideration and create the model separately. Of course, you could always go the one size fits all route, but then you would lose the point of having two layers for the armor.
+
+From there, you can export your [textures](#armor-layer-1-and-2) and the completed model. Make sure you name the textures `material_layer_(1/2).png` where material is your `IArmorMaterial` in `textures/models/armor`. 
+
+<div style="text-align:center">
+<img src="./images/ruby_layer_1_custom.png" alt="Custom Ruby Layer 1 Texture" width="256" height="256" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+<img src="./images/ruby_layer_2_custom.png" alt="Custom Ruby Layer 2 Texture" width="256" height="256" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+</div>
+
+<div style="text-align:center">
+<img src="./images/ruby_layer_1_custom_mapped.png" alt="Custom Ruby Layer 1 Texture Mapped" width="220" height="420" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+<img src="./images/ruby_layer_2_custom_mapped.png" alt="Custom Ruby Layer 2 Texture Mapped" width="220" height="420" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
+</div>
+
+Your model class will be saved to your client folder. Since I prefer to model my files similar to Minecraft, I will store my armor file as `RubyArmorModel` in `client.renderer.entity.model`.
+
+```
+src/main/java/io/github/championash5357/tutorial/client
+├── client
+│	├── proxy
+│	└── renderer
+│		└── entity
+│			└── model
+│				└── RubyArmorModel.java
+├── init
+├── item
+├── proxy
+├── server
+└── Tutorial.java
+```
+
+#### <a name="model-class-cleanup"></a>Model Class Cleanup
 
 ### Method 2: Global ModelRenderers
 
