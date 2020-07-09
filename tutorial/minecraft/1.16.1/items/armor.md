@@ -534,7 +534,7 @@ public class RubyArmorModel extends BipedModel<LivingEntity> {
 
 Now we need to create an `Item` class that extends `ArmorItem`. This is because we need to implement a specific method to get our model to render on the player. There are two methods that can help with this:  
 **IForgeItem::getArmorModel** - This method allows us to return our own armor model to be rendered by the game.  
-**IForgeItem::ggetArmorTexture** - This method allows us to specify the location of the armor texture we have created.  
+**IForgeItem::getArmorTexture** - This method allows us to specify the location of the armor texture we have created.  
 
 > Note: Since we are still using both the same textures names as before, we don't necessarily need to use the second method.
 
