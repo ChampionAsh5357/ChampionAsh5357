@@ -171,49 +171,53 @@ To be able to create an `AbstractBlock$Properties`, you need to supply the intia
 
 Material | `MaterialColor` | Liquid | Solid | Blocks Movement | Opaque | Flammable | Replaceable | `PushReaction`
 --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---:
-`AIR` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`STRUCTURE_VOID` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`PORTAL` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`CARPET` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`PLANTS` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`OCEAN_PLANT` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`TALL_PLANTS` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`SEA_GRASS` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`WATER` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`BUBBLE_COLUMN` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`LAVA` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`SNOW` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`FIRE` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`MISCELLANEOUS` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`WEB` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`REDSTONE_LIGHT` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`CLAY` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`EARTH` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`ORGANIC` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`PACKED_ICE` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`SAND` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`SPONGE` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`SHULKER` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`WOOD` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`NETHER_WOOD (field_237214_y_)` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`BAMBOO_SAPLING` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`BAMBOO` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`WOOL` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`TNT` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`LEAVES` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`GLASS` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`ICE` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`CACTUS` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`ROCK` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`IRON` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`SNOW_BLOCK` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`ANVIL` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`BARRIER` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`PISTON` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`CORAL` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`GOURD` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`DRAGON_EGG` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
-`CAKE` | `null` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
+`AIR` | `AIR` | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: | `NORMAL`
+`STRUCTURE_VOID` | `AIR` | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: | `NORMAL`
+`PORTAL` | `AIR` | :x: | :x: | :x: | :x: | :x: | :x: | `BLOCK`
+`CARPET` | `WOOL` | :x: | :x: | :x: | :x: | :heavy_check_mark: | :x: | `NORMAL`
+`PLANTS` | `FOLIAGE` | :x: | :x: | :x: | :x: | :x: | :x: | `DESTROY`
+`OCEAN_PLANT` | `WATER` | :x: | :x: | :x: | :x: | :x: | :x: | `DESTROY`
+`TALL_PLANTS` | `FOLIAGE` | :x: | :x: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | `DESTROY`
+`SEA_GRASS` | `WATER` | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: | `DESTROY`
+`WATER` | `WATER` | :heavy_check_mark: | :x: | :x: | :x: | :x: | :heavy_check_mark: | `DESTROY`
+`BUBBLE_COLUMN` | `WATER` | :heavy_check_mark: | :x: | :x: | :x: | :x: | :heavy_check_mark: | `DESTROY`
+`LAVA` | `TNT` | :heavy_check_mark: | :x: | :x: | :x: | :x: | :heavy_check_mark: | `DESTROY`
+`SNOW` | `SNOW` | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: | `DESTROY`
+`FIRE` | `AIR` | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: | `DESTROY`
+`MISCELLANEOUS` | `AIR` | :x: | :x: | :x: | :x: | :x: | :x: | `DESTROY`
+`WEB` | `WOOL` | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: | `DESTROY`
+`REDSTONE_LIGHT` | `AIR` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
+`CLAY` | `CLAY` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
+`EARTH` | `DIRT` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
+`ORGANIC` | `GRASS` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
+`PACKED_ICE` | `ICE` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
+`SAND` | `SAND` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
+`SPONGE` | `YELLOW` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
+`SHULKER` | `PURPLE` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
+`WOOD` | `WOOD` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | `NORMAL`
+`NETHER_WOOD (field_237214_y_)` | `WOOD` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
+`BAMBOO_SAPLING` | `WOOD` | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | `DESTROY`
+`BAMBOO` | `WOOD` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | `DESTROY`
+`WOOL` | `WOOL` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | `NORMAL`
+`TNT` | `TNT` | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | `NORMAL`
+`LEAVES` | `FOLIAGE` | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | `DESTROY`
+`GLASS` | `AIR` | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | `NORMAL`
+`ICE` | `ICE` | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | `NORMAL`
+`CACTUS` | `FOLIAGE` | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | `DESTROY`
+`ROCK` | `STONE` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
+`IRON` | `IRON` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
+`SNOW_BLOCK` | `SNOW` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `NORMAL`
+`ANVIL` | `IRON` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `BLOCK`
+`BARRIER` | `AIR` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `BLOCK`
+`PISTON` | `STONE` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `BLOCK`
+`CORAL` | `FOLIAGE` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `DESTROY`
+`GOURD` | `FOLIAGE` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `DESTROY`
+`DRAGON_EGG` | `FOLIAGE` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `DESTROY`
+`CAKE` | `AIR` | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | `DESTROY`
+
+If none of these `Material`s contain all the properties you need, you can just create your own using the constructor or through its static initializer (depending on if it has all the fields you need).
+
+> Note: If you want to add your own `MaterialColor`, it only supports a list of 64 colors. Currently, there are 59 already taken by vanilla Minecraft. So this leaves 5 colors remaining across all mods. So, I would just recommend sticking to what is already in the game.
 
 ### <a name="abstractblock-properties"></a>AbstractBlock$Properties
 
@@ -261,7 +265,193 @@ public class TutorialBlocks {
 }
 ```
 
-##TODO
+### <a name="extending-a-block"></a>Extending a Block
+
+If you want to add more complex behavior to your `Block`, you would most likely extend the class and store it within the `block` package:
+
+```
+src/main/java/io/github/championash5357/tutorial
+├── block
+│	└── ExtendedBlock.java
+├── client
+├── init
+├── item
+├── proxy
+├── server
+└── Tutorial.java
+```
+
+If you wanted to do something when an block was activated, for example, you would `@Override` a specific method and implement your code within the method. 
+
+Before I give you a list of all the methods within the class, I want to first mention something about **Deprecation**. Sometimes when Forge deprecates a method, it is because they added a more sensitive version to be used. Other times, there already exists a more sensitive version and that method should be called instead. So, to separate the two, here is what will happen. If I write **Deprecated Call**, this refers to the method should be accessed via a different class, most likely `BlockState`. If I write, **Deprecated Method**, this refers to that the method should not be accessed whatsoever and that a different method should be used instead.
+
+Here are all the methods provided by the `Block` class that you might override or use.
+
+Implementation | Method | Parameter(s) | Return Type | Use
+--- | :---: | :---: | :---: | ---
+`Object` | `toString` | TODO | TODO | TODO
+`AbstractBlock` | `updateDiagonalNeighbors` | TODO | TODO | TODO
+`AbstractBlock` | `allowsMovement` | TODO | TODO | TODO
+`AbstractBlock` | `updatePostPlacement` | TODO | TODO | TODO
+`AbstractBlock` | `isSideInvisible` | TODO | TODO | TODO
+`AbstractBlock` | `neighborChanged` | TODO | TODO | TODO
+`AbstractBlock` | `onBlockAdded` | TODO | TODO | TODO
+`AbstractBlock` | `onReplaced` | TODO | TODO | TODO
+`AbstractBlock` | `onBlockActivated` | TODO | TODO | TODO
+`AbstractBlock` | `eventReceived` | TODO | TODO | TODO
+`AbstractBlock` | `getRenderType` | TODO | TODO | TODO
+`AbstractBlock` | `isTransparent` | TODO | TODO | TODO
+`AbstractBlock` | `canProvidePower` | TODO | TODO | TODO
+`AbstractBlock` | `getPushReaction` | TODO | TODO | TODO
+`AbstractBlock` | `getFluidState` | TODO | TODO | TODO
+`AbstractBlock` | `hasComparatorInputOverride` | TODO | TODO | TODO
+`AbstractBlock` | `getOffsetType` | TODO | TODO | TODO
+`AbstractBlock` | `rotate` | TODO | TODO | TODO
+`AbstractBlock` | `mirror` | TODO | TODO | TODO
+`AbstractBlock` | `isReplaceable` | TODO | TODO | TODO
+`AbstractBlock` | `isReplaceable` | TODO | TODO | TODO
+`AbstractBlock` | `getDrops` | TODO | TODO | TODO
+`AbstractBlock` | `getPositionRandom` | TODO | TODO | TODO
+`AbstractBlock` | `getRenderShape` | TODO | TODO | TODO
+`AbstractBlock` | `func_230335_e_` | TODO | TODO | TODO
+`AbstractBlock` | `getRaytraceShape` | TODO | TODO | TODO
+`AbstractBlock` | `getOpacity` | TODO | TODO | TODO
+`AbstractBlock` | `getContainer` | TODO | TODO | TODO
+`AbstractBlock` | `isValidPosition` | TODO | TODO | TODO
+`AbstractBlock` | `getAmbientOcclusionLightValue` | TODO | TODO | TODO
+`AbstractBlock` | `getComparatorInputOverride` | TODO | TODO | TODO
+`AbstractBlock` | `getShape` | TODO | TODO | TODO
+`AbstractBlock` | `getCollisionShape` | TODO | TODO | TODO
+`AbstractBlock` | `func_230322_a_` | TODO | TODO | TODO
+`AbstractBlock` | `randomTick` | TODO | TODO | TODO
+`AbstractBlock` | `tick` | TODO | TODO | TODO
+`AbstractBlock` | `getPlayerRelativeBlockHardness` | TODO | TODO | TODO
+`AbstractBlock` | `spawnAdditionalDrops` | TODO | TODO | TODO
+`AbstractBlock` | `onBlockClicked` | TODO | TODO | TODO
+`AbstractBlock` | `getWeakPower` | TODO | TODO | TODO
+`AbstractBlock` | `onEntityCollision` | TODO | TODO | TODO
+`AbstractBlock` | `getStrongPower` | TODO | TODO | TODO
+`AbstractBlock` | `func_235695_q_` | TODO | TODO | TODO
+`AbstractBlock` | `getLootTable` | TODO | TODO | TODO
+`AbstractBlock` | `onProjectileCollision` | TODO | TODO | TODO
+`AbstractBlock` | `asItem` | TODO | TODO | TODO
+`AbstractBlock` | `func_230328_p_` | TODO | TODO | TODO
+`AbstractBlock` | `func_235697_s_` | TODO | TODO | TODO
+`Block` | `getStateId` | TODO | TODO | TODO
+`Block` | `getStateId` | TODO | TODO | TODO
+`Block` | `getBlockFromItem` | TODO | TODO | TODO
+`Block` | `nudgeEntitiesWithNewState` | TODO | TODO | TODO
+`Block` | `makeCuboidShape` | TODO | TODO | TODO
+`Block` | `isIn` | TODO | TODO | TODO
+`Block` | `func_235332_a_` | TODO | TODO | TODO
+`Block` | `getValidBlockForPosition` | TODO | TODO | TODO
+`Block` | `replaceBlock` | TODO | TODO | TODO
+`Block` | `func_241468_a_` | TODO | TODO | TODO
+`Block` | `cannotAttach` | TODO | TODO | TODO
+`Block` | `ticksRandomly` | TODO | TODO | TODO
+`Block` | `shouldSideBeRendered` | TODO | TODO | TODO
+`Block` | `hasSolidSideOnTop` | TODO | TODO | TODO
+`Block` | `hasEnoughSolidSide` | TODO | TODO | TODO
+`Block` | `hasSolidSide` | TODO | TODO | TODO
+`Block` | `doesSideFillSquare` | TODO | TODO | TODO
+`Block` | `isOpaque` | TODO | TODO | TODO
+`Block` | `propagatesSkylightDown` | TODO | TODO | TODO
+`Block` | `animateTick` | TODO | TODO | TODO
+`Block` | `onPlayerDestroy` | TODO | TODO | TODO
+`Block` | `getDrops` | TODO | TODO | TODO
+`Block` | `getDrops` | TODO | TODO | TODO
+`Block` | `spawnDrops` | TODO | TODO | TODO
+`Block` | `spawnDrops` | TODO | TODO | TODO
+`Block` | `spawnDrops` | TODO | TODO | TODO
+`Block` | `spawnAsEntity` | TODO | TODO | TODO
+`Block` | `dropXpOnBlockBreak` | TODO | TODO | TODO
+`Block` | `getExplosionResistance` | TODO | TODO | TODO
+`Block` | `onExplosionDestroy` | TODO | TODO | TODO
+`Block` | `onEntityWalk` | TODO | TODO | TODO
+`Block` | `getStateForPlacement` | TODO | TODO | TODO
+`Block` | `harvestBlock` | TODO | TODO | TODO
+`Block` | `onBlockPlacedBy` | TODO | TODO | TODO
+`Block` | `canSpawnInBlock` | TODO | TODO | TODO
+`Block` | `func_235333_g_` | TODO | TODO | TODO
+`Block` | `getTranslationKey` | TODO | TODO | TODO
+`Block` | `onFallenUpon` | TODO | TODO | TODO
+`Block` | `onLanded` | TODO | TODO | TODO
+`Block` | `getItem` | TODO | TODO | TODO
+`Block` | `fillItemGroup` | TODO | TODO | TODO
+`Block` | `getSlipperiness` | TODO | TODO | TODO
+`Block` | `getSpeedFactor` | TODO | TODO | TODO
+`Block` | `getJumpFactor` | TODO | TODO | TODO
+`Block` | `onBlockHarvested` | TODO | TODO | TODO
+`Block` | `fillWithRain` | TODO | TODO | TODO
+`Block` | `canDropFromExplosion` | TODO | TODO | TODO
+`Block` | `fillStateContainer` | TODO | TODO | TODO
+`Block` | `getStateContainer` | TODO | TODO | TODO
+`Block` | `setDefaultState` | TODO | TODO | TODO
+`Block` | `getDefaultState` | TODO | TODO | TODO
+`Block` | `getSoundType` | TODO | TODO | TODO
+`Block` | `isVariableOpacity` | TODO | TODO | TODO
+`Block` | `addInformation` | TODO | TODO | TODO
+`Block` | `func_230328_p_` | TODO | TODO | TODO
+`IItemProvider` | `asItem` | TODO | TODO | TODO
+`IForgeBlock` | `getBlock` | TODO | TODO | TODO
+`IForgeBlock` | `getSlipperiness` | TODO | TODO | TODO
+`IForgeBlock` | `getLightValue` | TODO | TODO | TODO
+`IForgeBlock` | `isLadder` | TODO | TODO | TODO
+`IForgeBlock` | `isBurning` | TODO | TODO | TODO
+`IForgeBlock` | `hasTileEntity` | TODO | TODO | TODO
+`IForgeBlock` | `createTileEntity` | TODO | TODO | TODO
+`IForgeBlock` | `canHarvestBlock` | TODO | TODO | TODO
+`IForgeBlock` | `removedByPlayer` | TODO | TODO | TODO
+`IForgeBlock` | `isBed` | TODO | TODO | TODO
+`IForgeBlock` | `canCreatureSpawn` | TODO | TODO | TODO
+`IForgeBlock` | `getBedSpawnPosition` | TODO | TODO | TODO
+`IForgeBlock` | `setBedOccupied` | TODO | TODO | TODO
+`IForgeBlock` | `getBedDirection` | TODO | TODO | TODO
+`IForgeBlock` | `isAir` | TODO | TODO | TODO
+`IForgeBlock` | `canBeReplacedByLeaves` | TODO | TODO | TODO
+`IForgeBlock` | `canBeReplacedByLogs` | TODO | TODO | TODO
+`IForgeBlock` | `getExplosionResistance` | TODO | TODO | TODO
+`IForgeBlock` | `canConnectRedstone` | TODO | TODO | TODO
+`IForgeBlock` | `getPickBlock` | TODO | TODO | TODO
+`IForgeBlock` | `addLandingEffects` | TODO | TODO | TODO
+`IForgeBlock` | `addRunningEffects` | TODO | TODO | TODO
+`IForgeBlock` | `addHitEffects` | TODO | TODO | TODO
+`IForgeBlock` | `addDestroyEffects` | TODO | TODO | TODO
+`IForgeBlock` | `canSustainPlant` | TODO | TODO | TODO
+`IForgeBlock` | `onPlantGrow` | TODO | TODO | TODO
+`IForgeBlock` | `isFertile` | TODO | TODO | TODO
+`IForgeBlock` | `isBeaconBase` | TODO | TODO | TODO
+`IForgeBlock` | `isConduitFrame` | TODO | TODO | TODO
+`IForgeBlock` | `isPortalFrame` | TODO | TODO | TODO
+`IForgeBlock` | `getExpDrop` | TODO | TODO | TODO
+`IForgeBlock` | `rotate` | TODO | TODO | TODO
+`IForgeBlock` | `getEnchantPowerBonus` | TODO | TODO | TODO
+`IForgeBlock` | `onNeighborChange` | TODO | TODO | TODO
+`IForgeBlock` | `observedNeighborChange` | TODO | TODO | TODO
+`IForgeBlock` | `shouldCheckWeakPower` | TODO | TODO | TODO
+`IForgeBlock` | `getWeakChanges` | TODO | TODO | TODO
+`IForgeBlock` | `getHarvestTool` | TODO | TODO | TODO
+`IForgeBlock` | `getHarvestLevel` | TODO | TODO | TODO
+`IForgeBlock` | `isToolEffective` | TODO | TODO | TODO
+`IForgeBlock` | `getSoundType` | TODO | TODO | TODO
+`IForgeBlock` | `getBeaconColorMultiplier` | TODO | TODO | TODO
+`IForgeBlock` | `getFogColor` | TODO | TODO | TODO
+`IForgeBlock` | `getStateAtViewpoint` | TODO | TODO | TODO
+`IForgeBlock` | `getAiPathNodeType` | TODO | TODO | TODO
+`IForgeBlock` | `isSlimeBlock` | TODO | TODO | TODO
+`IForgeBlock` | `isStickyBlock` | TODO | TODO | TODO
+`IForgeBlock` | `canStickTo` | TODO | TODO | TODO
+`IForgeBlock` | `getFlammability` | TODO | TODO | TODO
+`IForgeBlock` | `isFlammable` | TODO | TODO | TODO
+`IForgeBlock` | `catchFire` | TODO | TODO | TODO
+`IForgeBlock` | `getFireSpreadSpeed` | TODO | TODO | TODO
+`IForgeBlock` | `isFireSource` | TODO | TODO | TODO
+`IForgeBlock` | `canEntityDestroy` | TODO | TODO | TODO
+`IForgeBlock` | `canDropFromExplosion` | TODO | TODO | TODO
+`IForgeBlock` | `getTags` | TODO | TODO | TODO
+`IForgeBlock` | `onBlockExploded` | TODO | TODO | TODO
+`IForgeBlock` | `collisionExtendsVertically` | TODO | TODO | TODO
+`IForgeBlock` | `shouldDisplayFluidOverlay` | TODO | TODO | TODO
 
 ---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.61-web) under **Blocks**.

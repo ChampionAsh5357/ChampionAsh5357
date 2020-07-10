@@ -263,7 +263,7 @@ public class TutorialItems {
 
 ### <a name="extending-an-item"></a>Extending an Item
 
-If you want to add more complex behavior to your item, you would most likely extend the class and store it within the `item` package:
+If you want to add more complex behavior to your `Item`, you would most likely extend the class and store it within the `item` package:
 
 ```
 src/main/java/io/github/championash5357/tutorial
@@ -333,6 +333,7 @@ Implementation | Method | Parameter(s) | Return Type | Use
 `Item` | `isImmuneToFire (func_234687_u_)` | NONE | `boolean` | Returns whether the `Item` is immune to fire damage. |
 `Item` | `isImmune (func_234685_a_)` | `DamageSource` source (p\_234685\_1\_) | `boolean` | Returns whether the `Item` is immune to the specific damage source. By default, acts like `Item::isImmuneToFire (func_234687_u_)`. |
 `IItemProvider` | `asItem` | NONE | `Item` | Returns the `Item` associated with the provider. Examples include getting the `Item` instance of a `Block`. |
+`IForgeItem` | `getItem` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `getAttributeModifiers` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `onDroppedByPlayer` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `getHighlightTip` | ##TODO | ##TODO | ##TODO |
