@@ -18,11 +18,12 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 ### <a name="data-generators"></a>Data Generators
 
 [Introduction](./1.16.1/datagen/introduction) - An introduction into data generators and setting up  
-[Recipes](./1.16.1/datagen/recipes) - Generating recipes
-[Language Localization](./1.16.1/datagen/lang) - Generating language files
-[States and Models](./1.16.1/datagen/models) - Generating block states, block models, and item models
-[Loot Tables](./1.16.1/datagen/loot_tables) - Generating loot tables
-[Tags](./1.16.1/datagen/tags) - Generating tags
+[Recipes](./1.16.1/datagen/recipes) - Generating recipes  
+[Language Localization](./1.16.1/datagen/lang) - Generating language files  
+[States and Models](./1.16.1/datagen/models) - Generating block states, block models, and item models  
+[Loot Tables](./1.16.1/datagen/loot_tables) - Generating loot tables  
+[Tags](./1.16.1/datagen/tags) - Generating tags  
+[Advancements](./1.16.1/datagen/advancements) - Generating advancements  
 
 ### <a name="item-extensions"></a>Item Extensions
 
