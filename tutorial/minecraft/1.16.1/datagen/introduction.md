@@ -26,7 +26,7 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'dawnoffire', '--all', '--output', file('src/generated/resources/')
+            args '--mod', 'tutorial', '--all', '--output', file('src/generated/resources/')
 
             mods {
                 tutorial {
@@ -56,7 +56,7 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'dawnoffire', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'tutorial', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
                 tutorial {
