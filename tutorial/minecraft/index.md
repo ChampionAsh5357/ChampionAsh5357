@@ -13,10 +13,19 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 ### <a name="modding-101"></a>Modding 101
 
 [Items](./1.16.1/basic/items) - Create your first ever object within Minecraft: the Item!  
-[Blocks](./1.16.1/basic/blocks) - Create your first Block (and Item too)!
+[Blocks](./1.16.1/basic/blocks) - Create your first Block (and Item too)!  
+
+### <a name="data-generators"></a>Data Generators
+
+[Introduction](./1.16.1/datagen/introduction) - An introduction into data generators and setting up  
+[Recipes](./1.16.1/datagen/recipes) - Generating recipes
+[Language Localization](./1.16.1/datagen/lang) - Generating language files
+[States and Models](./1.16.1/datagen/models) - Generating block states, block models, and item models
+[Loot Tables](./1.16.1/datagen/loot_tables) - Generating loot tables
+[Tags](./1.16.1/datagen/tags) - Generating tags
 
 ### <a name="item-extensions"></a>Item Extensions
 
-[Armor](./1.16.1/items/armor) - Create your own armor to be worn into battle!
+[Armor](./1.16.1/items/armor) - Create your own armor to be worn into battle!  
 
 Back to [Home Page](../../)

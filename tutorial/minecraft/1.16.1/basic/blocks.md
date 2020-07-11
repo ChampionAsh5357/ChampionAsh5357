@@ -454,7 +454,7 @@ Implementation | Method | Parameter(s) | Return Type | Use
 `IForgeBlock` | `shouldDisplayFluidOverlay` | TODO | TODO | TODO
 
 ---
-All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.61-web) under **Blocks**.
+All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.61-web) under **Block**.
 
 If you want to find more specific examples about blocks, go to [Block Extensions](../../#block-extensions).
 
