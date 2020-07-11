@@ -96,4 +96,4 @@ All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x
 
 Now that you have the basics set up, it's time to move on to our first generation: [recipes](./recipes).
 
-Back to [Minecraft Tutorials](../../)  
+Back to [Minecraft Tutorials](../../index)  

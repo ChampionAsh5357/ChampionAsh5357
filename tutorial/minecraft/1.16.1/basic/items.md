@@ -3,6 +3,8 @@
 
 Welcome you novice modders! Congrats on completing the Introduction into Minecraft programming with Forge. In this tutorial, we will take a deep dive into creating items. Specifically, we will be creating a basic item along with a breakdown of everything within the class itself.
 
+**This page is incomplete. Method explanations at the bottom need to be written.**
+
 ## <a name="registry-setup"></a>Registry Setup
 ---
 

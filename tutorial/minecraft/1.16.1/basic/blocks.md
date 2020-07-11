@@ -3,6 +3,8 @@
 
 Now that you have created your first item. It's now time to expand your horizons into the world of blocks. In this tutorial, we will take a deep dive into creating blocks. Specifically, we will be creating a basic block (along with its item) along with a breakdown of everything within the class itself.
 
+**This page is incomplete. Method explanations at the bottom need to be written.**
+
 ## <a name="registry-setup"></a>Registry Setup
 ---
 

@@ -29,4 +29,4 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 
 [Armor](./1.16.1/items/armor) - Create your own armor to be worn into battle!  
 
-Back to [Home Page](../../)
+Back to [Home Page](../../index)
