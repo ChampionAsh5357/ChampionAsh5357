@@ -289,11 +289,11 @@ Here are all the methods provided by the `Block` class that you might override o
 
 Implementation | Method | Parameter(s) | Return Type | Use
 --- | :---: | :---: | :---: | ---
-`Object` | `toString` | TODO | TODO | TODO
-`AbstractBlock` | `updateDiagonalNeighbors` | TODO | TODO | TODO
-`AbstractBlock` | `allowsMovement` | TODO | TODO | TODO
-`AbstractBlock` | `updatePostPlacement` | TODO | TODO | TODO
-`AbstractBlock` | `isSideInvisible` | TODO | TODO | TODO
+`Object` | `toString` | NONE | `String` | Returns the registry path of the `Block`.
+`AbstractBlock` | `updateDiagonalNeighbors` | `BlockState` state<br>`IWorld` worldIn<br>`BlockPos` pos<br>`int` flags<br>`int` p\_196248\_5\_ | `void` | Updates the diagnoal neighbors of the block. p\_196248\_5\_ has something to do with notifications of neighbor reactions defaults to 512 or 511 a lot. **Deprecated Call** Should be referenced through `AbstractBlockState::updateDiagonalNeighbors` or `AbstractBlockState::func_241483_b_`.
+`AbstractBlock` | `allowsMovement` | `BlockState` state<br>`IBlockReader` worldIn<br>`BlockPos` pos<br>`PathType` type | `boolean` | Returns whether a certain `PathType` can move through the block. **Deprecated Call** Should be referenced through `AbstractBlockState::allowsMovement`.
+`AbstractBlock` | `updatePostPlacement` | `BlockState` stateIn<br>`Direction` facing<br>`BlockState` facingState<br>`IWorld` worldIn<br>`BlockPos` currentPos<br>`BlockPos` facingPos | `BlockState` | Update the provided state given the provided neighbor facing and neighbor state, returning a new state. **Deprecated Call** Should be referenced through `AbstractBlockState::updatePostPlacement`.
+`AbstractBlock` | `isSideInvisible` | `BlockState` state<br>`BlockState` adjacentBlockState<br>`Direction` side | `boolean` | Returns whether the side should be not rendered. **Deprecated Call** Should be referenced through `AbstractBlockState::isSideInvisible`.
 `AbstractBlock` | `neighborChanged` | TODO | TODO | TODO
 `AbstractBlock` | `onBlockAdded` | TODO | TODO | TODO
 `AbstractBlock` | `onReplaced` | TODO | TODO | TODO
