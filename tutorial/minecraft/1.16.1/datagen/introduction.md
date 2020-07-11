@@ -87,7 +87,7 @@ public class Tutorial {
 }
 ```
 
-> Note: I make the data generator a parameter since there will be multiple calls to it so it saves some resources.
+> Note: I make the data generator a parameter since there will be multiple calls to it, so it saves some resources.
 
 Now all we have to do is execute `runData` via our editor or the command line and it should output our generated data to `src/generated/resources`. From there, we can just copy it to `src/main/resources`.
 
