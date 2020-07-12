@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
 
-encoding: utf-8
+encoding: utf-16
 
 plugins:
   - jemoji
