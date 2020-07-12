@@ -101,19 +101,19 @@ public class TutorialLanguageProvider extends LanguageProvider {
 			addItem(TutorialItems.RUBY_BOOTS, "Ruby Boots");
 			break;
 		case "es_es":
-			addBlock(TutorialBlocks.RUBY_ORE, "Mena de rubí");
-			addItem(TutorialItems.RUBY, "Rubí");
-			addItem(TutorialItems.RUBY_HELMET, "Casco de rubí");
-			addItem(TutorialItems.RUBY_CHESTPLATE, "Peto de rubí");
-			addItem(TutorialItems.RUBY_LEGGINGS, "Grebas de rubí");
-			addItem(TutorialItems.RUBY_BOOTS, "Botas de rubí");
+			addBlock(TutorialBlocks.RUBY_ORE, "Mena de rubÃ­");
+			addItem(TutorialItems.RUBY, "RubÃ­");
+			addItem(TutorialItems.RUBY_HELMET, "Casco de rubÃ­");
+			addItem(TutorialItems.RUBY_CHESTPLATE, "Peto de rubÃ­");
+			addItem(TutorialItems.RUBY_LEGGINGS, "Grebas de rubÃ­");
+			addItem(TutorialItems.RUBY_BOOTS, "Botas de rubÃ­");
 			break;
 		case "fr_fr":
 			addBlock(TutorialBlocks.RUBY_ORE, "Minerai de rubis");
 			addItem(TutorialItems.RUBY, "Rubis");
 			addItem(TutorialItems.RUBY_HELMET, "Casque de rubis");
 			addItem(TutorialItems.RUBY_CHESTPLATE, "Plastron de rubis");
-			addItem(TutorialItems.RUBY_LEGGINGS, "Jambières de rubis");
+			addItem(TutorialItems.RUBY_LEGGINGS, "JambiÃ¨res de rubis");
 			addItem(TutorialItems.RUBY_BOOTS, "Bottes de rubis");
 			break;
 		default:
