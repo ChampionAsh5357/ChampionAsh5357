@@ -1,7 +1,7 @@
 # <a name="lang"></a>Data Generators Part 2: Language Localization
 ---
 
-Language localization is a topic we have in [previous sections](../basic/items#language-localization). As a quick recap, all strings that can show up in game should be specified by a translation key and then localized using whatever locale code specific to your area. This allows all your strings to be converted to different languages. This data provider created by Forge allows you to generate the names of all these translation keys.
+Language localization is a topic we reviewed in a [previous section](../basic/items#language-localization). As a quick recap, all strings that can show up in game should be specified by a translation key and then localized using whatever locale code specific to your area. This allows all your strings to be converted to different languages. This data provider created by Forge allows you to generate the names of all these translation keys.
 
 > Note: For each language localization you would like to create, you have to create a new `LanguageProvider`. Of course, you could also just specify the locale code outside and use if statements to generate accordingly.
 
