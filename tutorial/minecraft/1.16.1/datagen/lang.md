@@ -81,7 +81,7 @@ Method | Parameters | Use
 
 Although I do speak English, I also have a bit of background in Spanish and French as well. So, I will show a way to add multiple providers for locale codes.
 
-Let's first start by translating our six objects in the game. Since, I am using three locale codes ("en_us", "es_es", "fr_fr"), we should implement a if/else or switch statement to be used. In our case, since we are using a non-boolean attribute and we plan on expanding more in the future, we will use a switch statement within `RecipeProvider::addTranslations`.
+Let's first start by translating our six objects in the game. Since, I am using three locale codes (`en_us`, `es_es`, `fr_fr`), we should implement a if/else or switch statement to be used. In our case, since we are using a non-boolean attribute and we plan on expanding more in the future, we will use a switch statement within `RecipeProvider::addTranslations`.
 
 > Note: A switch statement provides about the same speed as an if/else statement if the number of elements iterating through is 5 or less. Any more and the hash list implementation of the switch statement is much better to use.
 
