@@ -3,8 +3,6 @@
 
 Now that you have created your first item. It's now time to expand your horizons into the world of blocks. In this tutorial, we will take a deep dive into creating blocks. Specifically, we will be creating a basic block (along with its item) along with a breakdown of everything within the class itself.
 
-**This page is incomplete. Method explanations at the bottom need to be written.**
-
 ## <a name="registry-setup"></a>Registry Setup
 ---
 
@@ -288,6 +286,8 @@ If you wanted to do something when an block was activated, for example, you woul
 Before I give you a list of all the methods within the class, I want to first mention something about **Deprecation**. Sometimes when Forge deprecates a method, it is because they added a more sensitive version to be used. Other times, there already exists a more sensitive version and that method should be called instead. So, to separate the two, here is what will happen. If I write **Deprecated Call**, this refers to the method should be accessed via a different class, most likely `BlockState`. If I write, **Deprecated Method**, this refers to that the method should not be accessed whatsoever and that a different method should be used instead.
 
 Here are all the methods provided by the `Block` class that you might override or use.
+
+**This list is incomplete. If you would like to help contribute, leave a PR on this webpage.**
 
 Implementation | Method | Parameter(s) | Return Type | Use
 --- | :---: | :---: | :---: | ---
