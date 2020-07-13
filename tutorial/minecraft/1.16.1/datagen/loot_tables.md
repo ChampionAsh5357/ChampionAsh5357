@@ -10,8 +10,6 @@ Unlike in other tutorials, I will not be showing off all the methods in each spe
 
 **If you would like to help contribute on making a documentation for these classes, leave a PR on this webpage.**
 
-### <a name="blockloottables"></a>BlockLootTables
-
 Since our only existing object with a loot table is a `Block`, we will be creating a class that overrides `BlockLootTables`.
 
 ```java
