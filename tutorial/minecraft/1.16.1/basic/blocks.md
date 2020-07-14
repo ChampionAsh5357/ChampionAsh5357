@@ -460,5 +460,7 @@ All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x
 
 If you want to find more specific examples about blocks, go to [Block Extensions](../../#block-extensions).
 
+Now that we have programmed a block, let's [generate](./ore_gen) it in the world.
+
 Back to [Items](./items)  
 Back to [Minecraft Tutorials](../../)  
