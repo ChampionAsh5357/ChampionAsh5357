@@ -1,4 +1,4 @@
-# <a name="blockstates"></a>BlockStates
+# <a name="blockstates"></a>Block States
 ---
 
 When you create a block in the world, it is placed in a specific position at a specific point of time. The rotation, positioning, and look of the models can be determined by its current placement among its surrounding neighbors. This is what's known as a 'state'. For a default block in the game, a block only has a single state. However, if the block does not need to store complex information and can be updated dynamically by the methods in the class, a `BlockState` can be used and specified.

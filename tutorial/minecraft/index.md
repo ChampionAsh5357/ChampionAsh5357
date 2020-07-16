@@ -32,6 +32,6 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 
 ### <a name="block-extensions"></a>Block Extensions
 
-[BlockState](./1.16.1/blocks/blockstate) - Give your blocks some states for a more dynamic creative block.
+[Block States](./1.16.1/blocks/blockstate) - Give your blocks some states for a more dynamic creative block.
 
 Back to [Home Page](../../index)
