@@ -18,7 +18,8 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 
 [Items](./1.16.1/basic/items) - Create your first ever object within Minecraft: the Item!  
 [Blocks](./1.16.1/basic/blocks) - Create your first Block (and Item too)!  
-[Introduction to Features: Ore Generation](./1.16.1/basic/ore_gen) - Introducing the system Minecraft uses to populate the terrain.
+[Introduction to Features: Ore Generation](./1.16.1/basic/ore_gen) - Introducing the system Minecraft uses to populate the terrain.  
+[Sounds](./1.16.1/basic/sounds) - It's time to add custom sounds to the game!
 
 ### <a name="data-generators"></a>Data Generators
 
