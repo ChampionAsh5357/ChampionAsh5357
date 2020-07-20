@@ -114,5 +114,5 @@ And as we can see, our ore is now generated!
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.61-web) under **Ore Generation**.
 
 Back to [Blocks](./blocks)  
-Back to [Data Generators](../../index#data-generators)  
+Back to [Basics](../../index#modding-101)  
 Back to [Minecraft Tutorials](../../index)  

@@ -5,7 +5,7 @@ Writing any JSON file by hand is tedious work. Whether it's creating a language 
 
 Enter `DataGenerator`. Data Generators are programs within Minecraft that are used to automate writing JSON files for their code. This allows them to just copy and paste a single method with a few changes to get some their assets generated. There are specific cases that cannot be handled such as custom models. However, the process to implement them can be added to a data generator.
 
-This will be a six part explanation with each part explaining how to create and use a different `DataGenerator`. Forge has a great [example](https://github.com/MinecraftForge/MinecraftForge/blob/1.15.x/src/test/java/net/minecraftforge/debug/DataGeneratorTest.java) that shows how to utilize these generators to their fullest extent.
+This will be an explanation on how to create and use different `DataGenerator`s. Forge has a great [example](https://github.com/MinecraftForge/MinecraftForge/blob/1.15.x/src/test/java/net/minecraftforge/debug/DataGeneratorTest.java) that shows how to utilize these generators to their fullest extent.
 
 ## <a name="baic-setup"></a>Basic Setup
 
