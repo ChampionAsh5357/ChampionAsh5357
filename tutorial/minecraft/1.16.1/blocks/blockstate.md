@@ -1,7 +1,7 @@
 # <a name="blockstates"></a>Block States
 ---
 
-When you create a block in the world, it is placed in a specific position at a specific point of time. The rotation, positioning, and look of the models can be determined by its current placement among its surrounding neighbors. This is what's known as a 'state'. For a default block in the game, a block only has a single state. However, if the block does not need to store complex information and can be updated dynamically by the methods in the class, a `BlockState` can be used and specified.
+When you create a block in the world, it is placed in a specific position at a specific point of time. The rotation, positioning, and look of the models can be determined by its current placement among its surrounding neighbors. This is what's known as a 'state'. For a default block in the game, a block only has a single state. However, if the block does not need to store complex information and can be updated dynamically by the methods in the class, a [`BlockState`](https://mcforge.readthedocs.io/en/latest/blocks/states/) can be used and specified.
 
 ## <a name="properties"></a>Properties
 ---
@@ -52,6 +52,7 @@ public class WasherBlock extends Block {
 There are a few methods that are extremely important when dealing with `Blockstate`s. Although we won't be using all of them, I will still go over all the major ones.
 
 Method | Parameter(s) | Use
+--- | :---: | ---
 `getStateForPlacement` | `BlockItemUseContext` context | Gets the state of the block when placed in the world.
 `updatePostPlacement` | `BlockState` stateIn<br>`Direction` facing<br>`BlockState` facingState<br>`IWorld` worldIn<br>`BlockPos` currentPos<br>`BlockPos` facingPos | Updates the `BlockState` based on a neighbor changing.
 `rotate` | `BlockState` state<br>`Rotation` rot | Rotates the `BlockState` if it has some sort of horizontal rotation.

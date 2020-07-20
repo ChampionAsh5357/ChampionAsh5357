@@ -146,8 +146,32 @@ public class Tutorial {
 
 Now execute `runData`, copy `src/generated/resources` to `src/main/resources`, and run the game. Now your tags should be implemented.
 
+## Changes
+---
+As of **32.0.62**, `Tags$Items::BEACON_PAYMENT` is no longer a field along with `IForgeItem::isBeaconPayment`. Minecraft already has a hook into this method. For that reason, we will remove it from our item tags provider.
+
+```java
+public class TutorialItemTagsProvider extends ItemTagsProvider {
+	...
+	@Override
+	protected void registerTags() {
+		func_240521_a_(Tags.Blocks.ORES, Tags.Items.ORES);
+		func_240521_a_(TutorialTags.Blocks.ORES_RUBY, TutorialTags.Items.ORES_RUBY);
+		
+		func_240522_a_(Tags.Items.GEMS).func_240531_a_(TutorialTags.Items.GEMS_RUBY);
+		
+		func_240522_a_(TutorialTags.Items.GEMS_RUBY).func_240534_a_(TutorialItems.RUBY.get());
+		
+		func_240522_a_(ItemTags.field_232908_Z_).func_240534_a_(TutorialItems.RUBY.get());
+		func_240522_a_(Tags.Items.BEACON_PAYMENT).func_240534_a_(TutorialItems.RUBY.get());
+	}
+}
+```
+
 ---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.61-web) under **Tags**.
+
+All changes are uploaded to this [branch](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.70-web) under **Tags Port**.
 
 Finish off this six part tutorial with [advancements](./advancements).
 

@@ -380,7 +380,7 @@ Implementation | Method | Parameter(s) | Return Type | Use
 `IForgeItem` | `getHarvestLevel` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `getItemEnchantability` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `canApplyAtEnchantingTable` | ##TODO | ##TODO | ##TODO |
-`IForgeItem` | `isBeaconPayment` | ##TODO | ##TODO | ##TODO |
+`IForgeItem` | ~~`isBeaconPayment`~~ | ##TODO | ##TODO | This method no longer exists as of **32.0.62**. |
 `IForgeItem` | `shouldCauseReequipAnimation` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `shouldCauseBlockBreakReset` | ##TODO | ##TODO | ##TODO |
 `IForgeItem` | `canContinueUsing` | ##TODO | ##TODO | ##TODO |

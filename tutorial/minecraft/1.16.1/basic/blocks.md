@@ -253,14 +253,14 @@ Method | Parameter(s) | Default | Use
 `causesSuffocation (func_235847_c_)` | `AbstractBlock.IPositionPredicate` positionTestFunction (p\_235828\_1\_) | `Material` blocks movement and is opaque | Sets a function to determine whether this `AbstractBlock` can cause suffocation. Used to determine the overlay the player sees when suffocating.
 `needsPostProcessing (func_235852_d_)` | `AbstractBlock.IPositionPredicate` positionTestFunction (p\_235828\_1\_) | false | Sets a function to determine whether this block needs some post processing when being set in the world (e.g. mushrooms and magma blocks).
 `isEmissiveRendering (func_235856_e_)` | `AbstractBlock.IPositionPredicate` positionTestFunction (p\_235828\_1\_) | false | Sets a function to determine if this block uses emissive rendering. Only effects light map coordinates by setting it to 0xF000F0.
-`requiresTool (func_235861_h_)` | NONE | false | Determines whether this `AbstractBlock` needs a tool to be harvested.
+`setRequiresTool (func_235861_h_)` | NONE | false | Determines whether this `AbstractBlock` needs a tool to be harvested.
 
 Since I want my ruby ore to have a hardness and resistance of 3 along with a harvest level of an iron pickaxe, I need to chain my methods to include these properties.
 
 ```java
 public class TutorialBlocks {
 	...
-	public static final RegistryObject<Block> RUBY_ORE = register("ruby_ore", new Block(AbstractBlock.Properties.create(Material.ROCK).func_235861_h_().hardnessAndResistance(3.0f).harvestTool(ToolType.PICKAXE).harvestLevel(2)), block -> new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+	public static final RegistryObject<Block> RUBY_ORE = register("ruby_ore", new Block(AbstractBlock.Properties.create(Material.ROCK).setRequiresTool().hardnessAndResistance(3.0f).harvestTool(ToolType.PICKAXE).harvestLevel(2)), block -> new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
 	...
 }
 ```
@@ -458,9 +458,11 @@ Implementation | Method | Parameter(s) | Return Type | Use
 ---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.61-web) under **Block**.
 
-If you want to find more specific examples about blocks, go to [Block Extensions](../../#block-extensions).
+All fixed mappings as of **20200707-1.16.1** are uploaded to this [branch](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.70-web) under **Block Mappings**.
+
+If you want to find more specific examples about blocks, go to [Block Extensions](../../index#block-extensions).
 
 Now that we have programmed a block, let's [generate](./ore_gen) it in the world.
 
 Back to [Items](./items)  
-Back to [Minecraft Tutorials](../../)  
+Back to [Minecraft Tutorials](../../index)  
