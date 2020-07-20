@@ -6,7 +6,7 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 
 ### <a name="changelogs"></a>Changelogs
 
-[32.0.70](./1.16.1/changelog/32070) - Changes to the code as of 32.0.70 that are not already specified somewhere else.
+[32.0.70](./1.16.1/changelog/32070) - Changes to the code as of 32.0.70 that are not already specified somewhere else  
 
 ### <a name="introduction"></a>Introduction
 
