@@ -76,7 +76,7 @@ public class TutorialSounds {
 ## <a name="soundsprovider"></a>SoundsProvider
 ---
 
-Because I am lazy when it comes to writing JSON files, I have writen a data generator to write sounds for me. As it hasn't currently been verified as proper standard by Forge, I will not create a tutorial on it. You can check out the code in the GitHub however if you want to try it.
+Because I am lazy when it comes to writing JSON files, I have writen a data generator to create sounds for me. As it hasn't currently been verified as proper standard by Forge, I will not create a tutorial on it. You can check out the code in the GitHub however if you want to try it.
 
 ---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.70-web) under **Sounds**.
