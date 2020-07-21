@@ -1,11 +1,11 @@
-# <a name="models"></a>Data Generators Part 3: States and Models
+# Data Generators Part 3: States and Models
 ---
 
 States and models were one of the hardest topics to review (excluding loot tables) due to the sheer amount of data that could be specified and developed. There are highly impressive block and item models out there that are just insane in terms of what Minecraft can handle. Now, however, we have data generators, making it hundreds of times easier to develop model files.
 
 > Note: Although Minecraft supports its own model provider system, Forge as kept theirs in. We will be using Forge's system as it is deobfuscated and formatted much better.
 
-## <a name="modelprovider"></a>ModelProvider
+## <a name="modelprovider"></a>ModelProvider <a href="#modelprovider"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 Both `BlockModelProvider` and `ItemModelProvider` extends a class known as `ModelProvider`. This holds all the default model creating methods used by both classes as all models are created the same way. First, let's review a few extra methods.
@@ -79,7 +79,7 @@ Implementation | Method | Parameter(s) | Use
 `ModelProvider` | `torchWall` | `String` name<br>`ResourceLocation` torch | Gets a builder with a wall torch parent and textures for the specified model.
 `ModelProvider` | `carpet` | `String` name<br>`ResourceLocation` wool | Gets a builder with a cube carpet and textures for the specified model.
 
-## <a name="modelprovider"></a>BlockStateProvider
+## <a name="blockstateprovider"></a>BlockStateProvider <a href="#blockstateprovider"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 One extra property blocks have is the addition to switch their model depending on their state. So, they also come with a whole range of methods that integrate the above ones to make an easily accessible and dynamic system.
@@ -151,7 +151,7 @@ Method | Parameter(s) | Return Type | Use
 
 > Note: As of **v32.0.61**, the `BlockStateProvider::wallBlock` methods are broken due to a change in state parameters.
 
-## <a name="application"></a>Application
+## <a name="application"></a>Application <a href="#application"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 So, let's once again create our basic `BlockStateProvider` and `ItemModelProvider` and register them within `GatherDataEvent`.

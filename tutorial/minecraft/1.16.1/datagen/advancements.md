@@ -1,9 +1,9 @@
-﻿# <a name="tags"></a>Data Generators Part 6: Advancements
+﻿# Data Generators Part 6: Advancements
 ---
 
 Advancements were the start of the upgraded Minecraft system beginning in 1.12. Data generators didn't exist as of yet since they were first implemented in 1.13. As 1.13 came about and so many recipes and advancements were written by hand, data generators were the efficient way of parsing information into files and outputting it. Now in 1.16, all JSON files can be parsed by data generators in some way whether through Forge or Minecraft. So, let's finish this tutorial off by talking about advancements.
 
-## <a name="advancement-builder"></a>Advancement$Builder
+## <a name="advancement-builder"></a>Advancement$Builder <a href="#advancement-builde"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 JSON serialization is actually handled by the advancement class and not through any special class. This is because the advancement system was already in place and stored in builders through JSON and `PacketBuffer`, so it was much easier to just add a serialization method. Everything within `Advancement$Builder` can be chained and is created once `Advancement$Builder::register` is called to create a new `Advancement`.
@@ -22,7 +22,7 @@ Method | Parameter(s) | Use
 `withCriterion` | `String` key<br>`Criterion` criterionIn | Sets a criteria required to unlock this advancement.
 `withRequirementsStrategy` | `IRequirementsStrategy` strategy | Sets whether the criteria is ORed together or ANDed together.
 
-### <a name="conditionaladvancement"></a>ConditionalAdvancement
+### <a name="conditionaladvancement"></a>ConditionalAdvancement <a href="#conditionaladvancement"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 `ConditionalAdvancement` is made for the sole purpose of being implemented with [`ConditionalRecipe`](./recipes#conditionalrecipe) as its JSON call to write the file doesn't exist anywhere else. It can still be implemented as a standalone, it just takes a tiny bit more creativity to get it working.
 
@@ -32,7 +32,7 @@ Method | Parameter(s) | Use
 `addAdvancement` | `Consumer<Consumer<Advancement.Builder>>` callable | Adds an advancement with the previous conditions. Conditions are then cleared.
 `addAdvancement` | `Advancement.Builder` recipe | Adds an advancement with the previous conditions. Conditions are then cleared. 
 
-## <a name="application"></a>Application
+## <a name="application"></a>Application <a href="#application"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 In this case only, I will rewrite `AdvancementProvider` instead of extending it. The main reason is that the class is completely inaccessible to modders who want to append to vanilla advancements. Also, we would have arbritrary data stored that can't be overwritten in any way which is just pointless. The class was made with literally no implementation of extending it. So we have to rewrite the class to support modder implementation. Lucky for us, we can use the knowledge that `Advancement$Builder` holds the serialize method and work around this issue. I will implement a system similar to `IFinishedRecipe`.

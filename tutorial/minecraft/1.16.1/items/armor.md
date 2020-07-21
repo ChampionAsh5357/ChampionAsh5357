@@ -1,9 +1,9 @@
-# <a name="armor"></a>Armor
+# Armor
 ---
 
 Hello warriors of the west! Welcome to your introduction to creating custom armor within Minecraft. In this tutorial, we will be going over a basic implementation of armor as well as how to customize your model to the fullest.
 
-## <a name="registry-setup"></a>Registry Setup
+## <a name="registry-setup"></a>Registry Setup <a href="#registry-setup"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 Let's first go over how we are going to create our custom armor. Since our example `Item` was ruby, we will use for this example **ruby armor**.
@@ -15,7 +15,7 @@ Let's first go over how we are going to create our custom armor. Since our examp
 <img src="./images/ruby_boots.png" alt="Ruby Boots Texture" width="128" height="128" style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; object-fit: cover">
 </div>
 
-### <a name="iarmormaterial"></a>IArmorMaterial
+### <a name="iarmormaterial"></a>IArmorMaterial <a href="#iarmormaterial"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 All `ArmorItem`s take in an interface known as `IArmorMaterial`. This holds all stats about the armor from its enchantability to its durability to its repair material. By vanilla standards, `IArmorMaterial` is implemented on the enum `ArmorMaterial` and called from there. Although the enum is not extensible, there is no specific case where `ArmorMaterial` is cast to the code. This allows us to create our own enum `TutorialArmorMaterial` that implements `IArmorMaterial`:
 
@@ -187,7 +187,7 @@ public enum TutorialArmorMaterial implements IArmorMaterial {
 }
 ```
 
-### <a name="item-registry"></a>Item Registry
+### <a name="item-registry"></a>Item Registry <a href="#item-registry"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 From here, we are now able to register our item once again using our [DeferredRegister](../basic/items#registry-setup). We will create an item for each `EquipmentSlotType` (`HEAD`, `CHEST`, `LEGS`, `FEET`) and group them within `ItemGroup::COMBAT`.
 
@@ -207,12 +207,13 @@ From there all we need to is setup our [resources](../basic/items#resource-setup
 
 Well everything seems to be rendering...except for, you know, the armor model. This is because armor models aren't handled by a simple texture, but are rather a layer applied via a `BipedArmorLayer` and texture using an `BipedModel` format.
 
-## <a name="extra-resouces"></a>Extra Resources
+## <a name="extra-resouces"></a>Extra Resources <a href="#extra-resouces"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 So, now we neeed to create the `BipedModel` textures for our `ArmorItem`.
 
-### <a name="armor-layer-1-and-2"></a>Armor Layer 1 and 2
+### <a name="armor-layer-1-and-2"></a>Armor Layer 1 and 2 <a href="#"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+
 
 All armor model textures has four layers: `armor_layer_1`, `armor_layer_2`, `armor_layer_1_overlay`, and `armor_layer_2_overlay`. Layer 1 is scaled normally and usually holds the head, chest, and feet textures. Layer 2 is scaled to half size and usually holds the legs texture. Layer 1 and Layer 2 are always rendered with the default `BipedModel`. Layer 1 Overlay and Layer 2 Overlay are only rendered if the `ArmorItem` used is implemented with `IDyeableArmorItem`. These two are usually used for rendering dynamic color on the armor model.
 
@@ -258,12 +259,12 @@ Now if we go back into the game, we should see our model fully loaded on our pla
 
 And now we have our armor within the game!
 
-## <a name="custom-armor-model"></a>Custom Armor Model
+## <a name="custom-armor-model"></a>Custom Armor Model <a href="#custom-armor-model"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 Custom Armor Models are one of the more difficult things to implement due to a lack of understanding and consistency between programmers. Today, I will attempt my best explanation of how to correctly implement and create a custom armor model for your player. Child Models are by far the most popular method in rendering an armor model in Minecraft. However, the amount of detail required to correctly render one takes a bit of detail and effort.
 
-### <a name="armor-model"></a>Armor Model
+### <a name="armor-model"></a>Armor Model <a href="#"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 First, let's create our custom model. I'm going to build it off our ruby armor and just add some spikes coming out of the back of the armor. I will be using [Blockbench](https://blockbench.net/) once again for this.
 
@@ -310,7 +311,7 @@ src/main/java/io/github/championash5357/tutorial/client
 └── Tutorial.java
 ```
 
-### <a name="model-class-cleanup"></a>Model Class Cleanup
+### <a name="model-class-cleanup"></a>Model Class Cleanup <a href="#model-class-cleanup"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 Now we have a current model class that looks something similar to this:
 
@@ -532,7 +533,7 @@ public class RubyArmorModel extends BipedModel<LivingEntity> {
 
 > Note: All `ModelRenderer`s use a set texture offset either specified by the constructor or `ModelRenderer::setTextureOffset` If you are using a modeling software that uses an offset constructor, this will cause issues in your texture mapping. The texture offset is not relative, rather a global parameter. Every time you call `ModelRenderer::setTextureOffset`, it sets the value of texture offset to those two numbers you entered. This means that you should only use `new ModelRenderer(this)` when constructing your `ModelRenderer`.
 
-### <a name="item-class-and-clientproxy"></a>Item Class and ClientProxy
+### <a name="item-class-and-clientproxy"></a>Item Class and ClientProxy <a href="#item-class-and-clientproxy"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 Now we need to create an `Item` class that extends `ArmorItem`. This is because we need to implement a specific method to get our model to render on the player. There are two methods that can help with this:  
 **IForgeItem::getArmorModel** - This method allows us to return our own armor model to be rendered by the game.  
@@ -613,5 +614,5 @@ All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x
 There has been a small bug that has been fixed with overlaying armor issues in the **v32.0.61** [port](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.61-web) of the code under **Port to 32.0.61 And Armor Fix** in `RubyArmorModel` and `ruby_layer_2.png`.
 
 Review [Items](../basic/items)  
-Back to [Item Extensions](../../#item-extensions)  
-Back to [Minecraft Tutorials](../../)  
+Back to [Item Extensions](../../index#item-extensions)  
+Back to [Minecraft Tutorials](../../index)  

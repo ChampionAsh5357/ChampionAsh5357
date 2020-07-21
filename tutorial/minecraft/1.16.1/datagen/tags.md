@@ -1,9 +1,9 @@
-﻿# <a name="tags"></a>Data Generators Part 5: Tags
+﻿# Data Generators Part 5: Tags
 ---
 
 Tags are the Minecraft implementation of Ore Dictionary that took over in 1.13. They are use in almost everything from recipes to what blocks can infinitely burn to even what an enderman can pick up. Tags are by far the easiest to implement with data generators only made a bit difficult by the fact that all the methods are obfuscated.
 
-## <a name="tagsprovider"></a>TagsProvider
+## <a name="tagsprovider"></a>TagsProvider <a href="#tagsprovider"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 `TagsProvider` is the base class that `BlockTagsProvider`, `ItemTagsProvider`, and `FluidTagsProvider` all extend to implement their current features. There are two main methods within the class that are extremely important to know about.
@@ -26,7 +26,7 @@ Method | Parameter | Return Type | Use
 
 To be able to get a specific tag, they are either referenced through Minecraft's `BlockTags`, `ItemTags`, or `FluidTags` and Forge's `Tags`. You can add your own tags as well by creating your own tag class. More on that in a bit.
 
-## <a name="application"></a>Application
+## <a name="application"></a>Application <a href="#application"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 Let's first review our six objects: ruby, ruby ore, and ruby armor. Now, let's look up a list of tags these could all fall under and create a list.
@@ -146,7 +146,7 @@ public class Tutorial {
 
 Now execute `runData`, copy `src/generated/resources` to `src/main/resources`, and run the game. Now your tags should be implemented.
 
-## Changes
+## <a name="changes"></a>Changes <a href="#changes"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 As of **32.0.62**, `Tags$Items::BEACON_PAYMENT` is no longer a field along with `IForgeItem::isBeaconPayment`. Minecraft already has a hook into this method. For that reason, we will remove it from our item tags provider.
 

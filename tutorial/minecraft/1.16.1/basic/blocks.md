@@ -1,9 +1,9 @@
-# <a name="blocks"></a>Blocks
+# Blocks
 ---
 
 Now that you have created your first item. It's now time to expand your horizons into the world of blocks. In this tutorial, we will take a deep dive into creating blocks. Specifically, we will be creating a basic block (along with its item) along with a breakdown of everything within the class itself.
 
-## <a name="registry-setup"></a>Registry Setup
+## <a name="registry-setup"></a>Registry Setup <a href="#registry-setup"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 First let's setup a `DeferredRegister` and add it to our event bus via `Tutorial::addRegistries` where `Tutorial` is our main mod file. This should be done similarly to how we did it within the [`DeferredRegister`](../introduction/registries#deferredregister) section of the registries overview;
@@ -57,7 +57,7 @@ public class TutorialBlocks {
 
 > Note: `AbstractBlock$Properties`'s constructor is private so it must be accessed through `AbstractBlock$Properties::create`. The most basic implementation takes in a `Material`. So, I will use `Material::ROCK` until we go over in-depth what everything is.
 
-## <a name="resource-setup"></a>Resource Setup
+## <a name="resource-setup"></a>Resource Setup <a href="#resource-setup"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 Now we are missing a few things. I will not be going over the [texture file](./items#texture-file) or [language localization](./items#language-localization) as those remain exactly the same besides each item instance being replaced with block. So, let create that file tree now:
@@ -79,7 +79,7 @@ assets/tutorial
 
 There are a few things I will discuss, such as the block state mapper, block model, item model. However, anything else is just excess baggage until we get to [Data Generators](#). This will allow us to generate everything (except for custom models and textures) without needing to write it by hand.
 
-### <a name="block-and-item-model"></a> Block and Item Model
+### <a name="block-and-item-model"></a> Block and Item Model <a href="#block-and-item-model"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 I have already discussed a basic understanding of this back in [Items](./items) so if you like to have a shallow dive into it, take a look there. In this case, we won't be doing anything special, so let's just create a basic block and item model to use.
 
@@ -120,7 +120,7 @@ assets/tutorial
 
 > Note: The block model does not have to be named `ruby_ore.json` as it is called via reference from a block state mapper. However, a good practice is to name your block models such that it includes the name of the `Block` somewhere within it.
 
-### <a name="block-state-mapper"></a> Block State Mapper
+### <a name="block-state-mapper"></a> Block State Mapper <a href="#block-state-mapper"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 [Block States](https://mcforge.readthedocs.io/en/latest/blocks/states/) are one of the most important things to know for creating more advanced blocks that I won't be covering right now. The link above will giev you a decent rundown for anyone wanting a better understanding until we cover it. 
 
@@ -158,14 +158,14 @@ assets/tutorial
 
 As you can see, we now have our `Block` fully added to the game!
 
-## <a name="blocks-in-depth"></a>Block In-Depth
+## <a name="blocks-in-depth"></a>Block In-Depth <a href="#blocks-in-depth"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 Now that we have completed the main portion of our tutorial, it's now time to take a more in-depth perspective in regards to the `Block` class and the `AbstractBlock$Properties` it provides.
 
 > Note: Although you can create a `AbstractBlock`, the only purpose is to specify the bare minimum to be a `Block` and to hold the properties. You should always use the `Block` class when extending.
 
-### <a name="material"></a>Material
+### <a name="material"></a>Material <a href="#material"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 To be able to create an `AbstractBlock$Properties`, you need to supply the intializer function with a `Material`. Which `Material` you choose depends on the specific scenario. Here are all the default materials to choose from.
 
@@ -219,7 +219,7 @@ If none of these `Material`s contain all the properties you need, you can just c
 
 > Note: If you want to add your own `MaterialColor`, it only supports a list of 64 colors. Currently, there are 59 already taken by vanilla Minecraft. So this leaves 5 colors remaining across all mods. So, I would just recommend sticking to what is already in the game.
 
-### <a name="abstractblock-properties"></a>AbstractBlock$Properties
+### <a name="abstractblock-properties"></a>AbstractBlock$Properties <a href="#abstractblock-properties"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 All `Block`s are initialized with a new instance of an `AbstractBlock$Properties` object called via `AbstractBlock$Properties::create`. This class determines the various properties of our `Block`. Each method can be [chained](https://www.geeksforgeeks.org/method-chaining-in-java-with-examples/) I will be adding some of these properties to our ruby ore to make it act more like an actual `Block`.
 
@@ -246,13 +246,13 @@ Method | Parameter(s) | Default | Use
 `variableOpacity` | NONE | false | Sets that the `AbstractBlock` has a varying level of transparency.
 `noDrops` | NONE | `LootTables::EMPTY` | Makes the `AbstractBlock` not drop anything.
 `lootFrom` | `Block` blockIn | Block Loot Table Location | Sets the `AbstractBlock` to drop loot corresponding to another `Block`.
-`air (func_235859_g_)` | NONE | false | Sets the `AbstractBlock` to be recognized as air. This should not be used unless you are creating a new type of air.
-`canEntitySpawnOn (func_235827_a_)` | `AbstractBlock.IExtendedPositionPredicate<EntityType<?>>` spawnTestFunction (p\_235827\_1\_) | `Block` is solid (on spawn side) and light is less than 14 | Sets a function to determine if an `Entity` can spawn on this `AbstractBlock`. This is just a general caes for all entities and can be more specifically tuned from an entity spawn placement function.
-`isNormalCube (func_235828_a_)` | `AbstractBlock.IPositionPredicate` positionTestFunction (p\_235828\_1\_) | `Material` and `BlockState` opaque | Sets a function to determine whether this `AbstractBlock` should be treated normally (e.g. allow redstone wire on, allow chests to open when above, etc.).
-`canSuffocate (func_235842_b_)` | `AbstractBlock.IPositionPredicate` positionTestFunction (p\_235828\_1\_) | `Material` blocks movement and is opaque | Sets a function to determine whether this `AbstractBlock` can suffocate the player.
-`causesSuffocation (func_235847_c_)` | `AbstractBlock.IPositionPredicate` positionTestFunction (p\_235828\_1\_) | `Material` blocks movement and is opaque | Sets a function to determine whether this `AbstractBlock` can cause suffocation. Used to determine the overlay the player sees when suffocating.
-`needsPostProcessing (func_235852_d_)` | `AbstractBlock.IPositionPredicate` positionTestFunction (p\_235828\_1\_) | false | Sets a function to determine whether this block needs some post processing when being set in the world (e.g. mushrooms and magma blocks).
-`isEmissiveRendering (func_235856_e_)` | `AbstractBlock.IPositionPredicate` positionTestFunction (p\_235828\_1\_) | false | Sets a function to determine if this block uses emissive rendering. Only effects light map coordinates by setting it to 0xF000F0.
+`setAir (func_235859_g_)` | NONE | false | Sets the `AbstractBlock` to be recognized as air. This should not be used unless you are creating a new type of air.
+`setPropagatesDownwards (func_235827_a_)` | `AbstractBlock.IExtendedPositionPredicate<EntityType<?>>` spawnTestFunction (p\_235827\_1\_) | `Block` is solid (on spawn side) and light is less than 14 | Sets a function to determine if an `Entity` can spawn on this `AbstractBlock`. This is just a general caes for all entities and can be more specifically tuned from an entity spawn placement function.
+`setOpaque (func_235828_a_)` | `AbstractBlock.IPositionPredicate` positionTestFunction (p\_235828\_1\_) | `Material` and `BlockState` opaque | Sets a function to determine whether this `AbstractBlock` should be treated normally (e.g. allow redstone wire on, allow chests to open when above, etc.).
+`setSuffocates (func_235842_b_)` | `AbstractBlock.IPositionPredicate` positionTestFunction (p\_235828\_1\_) | `Material` blocks movement and is opaque | Sets a function to determine whether this `AbstractBlock` can suffocate the player.
+`setBlocksVision (func_235847_c_)` | `AbstractBlock.IPositionPredicate` positionTestFunction (p\_235828\_1\_) | `Material` blocks movement and is opaque | Sets a function to determine whether this `AbstractBlock` can cause suffocation. Used to determine the overlay the player sees when suffocating.
+`setNeedsPostProcessing (func_235852_d_)` | `AbstractBlock.IPositionPredicate` positionTestFunction (p\_235828\_1\_) | false | Sets a function to determine whether this block needs some post processing when being set in the world (e.g. mushrooms and magma blocks).
+`setEmmisiveRendering (func_235856_e_)` | `AbstractBlock.IPositionPredicate` positionTestFunction (p\_235828\_1\_) | false | Sets a function to determine if this block uses emissive rendering. Only effects light map coordinates by setting it to 0xF000F0.
 `setRequiresTool (func_235861_h_)` | NONE | false | Determines whether this `AbstractBlock` needs a tool to be harvested.
 
 Since I want my ruby ore to have a hardness and resistance of 3 along with a harvest level of an iron pickaxe, I need to chain my methods to include these properties.
@@ -265,7 +265,7 @@ public class TutorialBlocks {
 }
 ```
 
-### <a name="extending-a-block"></a>Extending a Block
+### <a name="extending-a-block"></a>Extending a Block <a href="#extending-a-block"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 If you want to add more complex behavior to your `Block`, you would most likely extend the class and store it within the `block` package:
 

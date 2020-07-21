@@ -1,30 +1,30 @@
-# <a name="blockstates"></a>Block States
+# Block States
 ---
 
 When you create a block in the world, it is placed in a specific position at a specific point of time. The rotation, positioning, and look of the models can be determined by its current placement among its surrounding neighbors. This is what's known as a 'state'. For a default block in the game, a block only has a single state. However, if the block does not need to store complex information and can be updated dynamically by the methods in the class, a [`BlockState`](https://mcforge.readthedocs.io/en/latest/blocks/states/) can be used and specified.
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>Properties <a href="#properties"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 To create a state in the game, a block must be given a `Property`. Properties define what state a block is currently in. There are four different classes that define property types: `IntegerProperty`, `BooleanProperty`, `DirectionProperty`, and `EnumProperty`. Anything that can't be represented by these properties most likely should not be implemented as a `BlockState`.
 
-### <a name="integerproperty"></a>IntegerProperty
+### <a name="integerproperty"></a>IntegerProperty <a href="#integerproperty"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 `IntegerProperty` creates a property that contains an integer value that can be between the set minimum and maximum bounds.
 
-### <a name="booleanproperty"></a>BooleanProperty
+### <a name="booleanproperty"></a>BooleanProperty <a href="#booleanproperty"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 `BooleanProperty` creates a property that creates a boolean value.
 
-### <a name="enumproperty"></a>EnumProperty
+### <a name="enumproperty"></a>EnumProperty <a href="#enumproperty"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 `EnumProperty` creates a property that can be defined as any value in the specified enum.
 
-### <a name="directionproperty"></a>DirectionProperty
+### <a name="directionproperty"></a>DirectionProperty <a href="#directionproperty"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 `DirectionProperty` is a basic extension of `EnumProperty` specifically handled for rotation.
 
-### <a name="blockstateproperties"></a>BlockStateProperties
+### <a name="blockstateproperties"></a>BlockStateProperties <a href="#blockstateproperties"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 `BlockStateProperties` is a class that holds a list of all defined properties within Minecraft. If you want to create a `Property`, you should check to see if it first exists within this class.
 
@@ -32,7 +32,7 @@ In our case, I will be implementing a basic washer that can be rotated in one of
 
 ![Washer Model](./images/blockstate_model.gif)
 
-## <a name="block-class"></a>Block Class
+## <a name="block-class"></a>Block Class <a href="#block-class"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 So, let's create our default block class. We're just going to have it extend `Block`. Then we will declare a static final version of `BlockStateProperties::HORIZONTAL_FACING` within our class and the set the default state within the constructor via `StateHolder::with`.
@@ -104,7 +104,7 @@ So, now if we load up the game our block should be in it and rotating.
 
 Well, there seems to be a slight issue with our block. Since I decided to make it not a full block, the box seems to be showing through the world. This has to do with how Minecraft rendering works. It assumes that a full block will not show any side of the blocks behind it, so it renders the side as invisible. The way to get around this is to fix our `VoxelShape` using `AbstractBlock::getShape`.
 
-## <a name="collision-rotation"></a>Collision Rotation
+## <a name="collision-rotation"></a>Collision Rotation <a href="#collision-rotation"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 Creating a collision box is simple. All we need to do is call `Block::makeCuboidShape` and then input it into `AbstractBlock::getShape`. If we needed a more complex shape, we could always use `VoxelShapes::or` to add a bunch of them together. But how would we rotate a collision box?

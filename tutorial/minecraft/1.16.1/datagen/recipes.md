@@ -1,9 +1,9 @@
-﻿# <a name="recipes"></a>Data Generators Part 1: Recipes
+﻿# Data Generators Part 1: Recipes
 ---
 
 Now that you have completed the basic setup. Let's go into making your first `DataGenerator`. In this tutorial, we will be covering the basics of recipes and their builders. Whenever we get around to doing custom recipes, I will show you how to create the builders required to get them working with this data generator.
 
-## <a name="recipeprovider"></a>RecipeProvider
+## <a name="recipeprovider"></a>RecipeProvider <a href="#recipeprovider"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 Recipes are usually registered in two parts. The first is the actual recipe that is created. The second is the advancement that causes the recipe unlocked trigger. This advancement allows us to populate the recipe book. The best way to go about making both of these is to create a class that extends `RecipeProvider`. This provider contains everything we need to generate recipes.
@@ -56,14 +56,14 @@ public class Tutorial {
 
 > Note: We have it so that recipes are only generated if the server is included. This is because recipes are stored and looked up on the logical server side and synced to the logical client.
 
-## <a name="recipe-builders"></a>Recipe Builders
+## <a name="recipe-builders"></a>Recipe Builders <a href="#recipe-builders"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 To register our recipes, we have to build an `IFinishedRecipe` version of them. So, recipe builders are used to construct these recipes to be used. We will go over each builder implementation and what methods you can use to construct your own recipe. All usable methods are chainable until `build` is called.
 
 All builders will include three versions of `build`. The first requires only the `Consumer<IFinishedRecipe>`. The second requires a `String` for the name of the location tp save the recipe. The third takes in a `ResourceLocation` rather than a string. We will only be using the first and third of these build methods as the second is just a dumbed down version of the third.
 
-### <a name="icriterioninstance"></a>RecipeProvider: ICriterionInstance
+### <a name="icriterioninstance"></a>RecipeProvider: ICriterionInstance <a href="#icriterioninstance"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 One of the major inclusions of triggers in advancements is the four `ICriterionInstance`s created in `RecipeProvider`. These four methods handle how recipes are unlocked within the game. If you would like to use your own criterion, you may go ahead and use it. However, if you just want to check whether the player has an item or entered a specific block, these are the methods for you.
 
@@ -76,7 +76,7 @@ Method | Parameter(s) | Return Type | Use
 
 > Note: These are all protected static methods meaning that they can only be accessed within your `RecipeProvider` and any extension of it. It should also be accessed statically.
 
-### <a name="shapedrecipebuilder"></a>ShapedRecipeBuilder
+### <a name="shapedrecipebuilder"></a>ShapedRecipeBuilder <a href="#shapedrecipebuilder"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 `ShapedRecipeBuilder` is used for creating shaped recipes. There are a couple of requirements needed for validation:  
 - There must be a pattern defined that is greater than a size of 1.
@@ -97,7 +97,7 @@ Method | Parameter(s) | Use
 
 > Note: This does not support NBT tags in the result. That is something Forge added, so you will need to create a custom builder if you would like to generate it.
 
-### <a name="shapelessrecipebuilder"></a>ShapelessRecipeBuilder
+### <a name="shapelessrecipebuilder"></a>ShapelessRecipeBuilder <a href="#shapelessrecipebuilder"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 `ShapelessRecipeBuilder` is used for creating shapeless recipes. There is only one requirement needed for validation:  
 - There must be a criteria to obtain the recipe in the recipe book.
@@ -114,7 +114,7 @@ Method | Parameter(s) | Use
 `addCriterion` | `String` name<br>`ICriterionInstance` criterionIn | Adds a critertia to unlock this recipe. The name is what the variable will be called.
 `setGroup` | `String` groupIn | Sets the group this result will appear in the recipe book.
 
-### <a name="customrecipebuilder"></a>CustomRecipeBuilder
+### <a name="customrecipebuilder"></a>CustomRecipeBuilder <a href="#customrecipebuilder"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 `CustomRecipeBuilder` is used for recipes that are not deterministic. This is ususally used for handling items that return NBT tags (e.g. fireworks, dyed armor). This should only be used if the recipe you are creating is dynamic for large amounts of data. NBT tags for one item should just have its own builder created.
 
@@ -124,7 +124,7 @@ Method | Parameter(s) | Use
 --- | :---: | ---
 `customRecipe` | `SpecialRecipeSerializer<?>` serializer (p\_218656\_0\_) | Creates a builder with the following serializer.
 
-### <a name="cookingrecipebuilder"></a>CookingRecipeBuilder
+### <a name="cookingrecipebuilder"></a>CookingRecipeBuilder <a href="#cookingrecipebuilder"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 `CookingRecipeBuilder` is used for recipes within the furnace types. There is only one requirement needed for validation:  
 - There must be a criteria to obtain the recipe in the recipe book.
@@ -137,7 +137,7 @@ Method | Parameter(s) | Use
 
 > Note: The specific smelters (e.g. Blast Furnace, Smoker) usually take half as much time to smelt as the Furnace.
 
-### <a name="singleitemrecipebuilder"></a>SingleItemRecipeBuilder
+### <a name="singleitemrecipebuilder"></a>SingleItemRecipeBuilder <a href="#singleitemrecipebuilder"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 `SingleItemRecipeBuilder` is used for recipes with a one to one output. There is only one requirement needed for validation:  
 - There must be a criteria to obtain the recipe in the recipe book.
@@ -148,7 +148,7 @@ Method | Parameter(s) | Use
 `stonecuttingRecipe` | `Ingredient` ingredientIn<br>`IItemProvider` resultIn<br>`int` countIn | Creates a stonecutter recipe with the following ingredient and result amount.
 `addCriterion` | `String` name<br>`ICriterionInstance` criterionIn | Adds a critertia to unlock this recipe. The name is what the variable will be called.
 
-### <a name="smithingrecipebuilder"></a>SmithingRecipeBuilder
+### <a name="smithingrecipebuilder"></a>SmithingRecipeBuilder <a href="#smithingrecipebuilder"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 `SmithingRecipeBuilder` is used for smithing recipes. There is only one requirement needed for validation:  
 - There must be a criteria to obtain the recipe in the recipe book.
@@ -160,7 +160,7 @@ Method | Parameter(s) | Use
 `smithingRecipe (func_240502_a_)` | `Ingredient` inputIn (p\_240502\_0\_)<br>`Ingredient` ingredientIn (p\_240502\_1\_)<br>`Item` resultIn (p\_240502\_2\_) | Creates a smithing recipe with the following input and ingredient to make the result.
 `addCriterion (func_240503_a_)` | `String` name (p\_240503\_1\_)<br>`ICriterionInstance` criterionIn (p\_240503\_2\_) | Adds a critertia to unlock this recipe. The name is what the variable will be called.
 
-### <a name="conditionalrecipe"></a>ConditionalRecipe
+### <a name="conditionalrecipe"></a>ConditionalRecipe <a href="#conditionalrecipe"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 `CondtionalRecipe` is a recipe system added by Forge. This allows you to create conditions of whether to use certain recipes.
 
@@ -188,7 +188,7 @@ Method | Parameter(s) | Use
 `setAdvancement` | `String` namespace<br>`String` path<br>`ConditionalAdvancement.Builder` advancement | Sets the conditional advancment to be used with the conditional recipe.
 `setAdvancement` | `ResourceLocation` id<br>`ConditionalAdvancement.Builder` advancement | Sets the conditional advancment to be used with the conditional recipe.
 
-## <a name="application"></a>Application
+## <a name="application"></a>Application <a href="#application"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 Currently we have a ruby, ruby ore, and some ruby armor. Let's create a diagram to map how everything ties into each other.

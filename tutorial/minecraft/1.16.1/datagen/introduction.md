@@ -1,4 +1,4 @@
-# <a name="introduction-to-data-generators"></a>Introduction to Data Generators
+# Introduction to Data Generators
 ---
 
 Writing any JSON file by hand is tedious work. Whether it's creating a language file, a loot table, or a block state, it takes a copious amount of effort to just create and copy them over and over. It would be much better if it could be automated and added to our current assets and data rather than writing it out by hand.
@@ -7,7 +7,8 @@ Enter `DataGenerator`. Data Generators are programs within Minecraft that are us
 
 This will be an explanation on how to create and use different `DataGenerator`s. Forge has a great [example](https://github.com/MinecraftForge/MinecraftForge/blob/1.15.x/src/test/java/net/minecraftforge/debug/DataGeneratorTest.java) that shows how to utilize these generators to their fullest extent.
 
-## <a name="baic-setup"></a>Basic Setup
+## <a name="basic-setup"></a>Basic Setup <a href="#basic-setup"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
+---
 
 To be able to run a `DataGenerator`, two things must be setup. If you have been following this series from the beginning, then you already have completed step 1 when setting up [build.gradle](../introduction/getting_started#build-gradle). For those who haven't, we will focusing on this section within `build.gradle`:
 

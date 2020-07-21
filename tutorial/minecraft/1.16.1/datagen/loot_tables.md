@@ -1,9 +1,9 @@
-# <a name="loot_tables"></a>Data Generators Part 4: Loot Tables
+# Data Generators Part 4: Loot Tables
 ---
 
 Loot Tables are the voodoo magic of Minecraft. They make absolutely perfect sense 100% of the time and fail 99% of the time due to incorrect formatting or just logic issues within the system itself. However, with data generators, the system becomes a little less difficult as you understand the nuances that make the loot table system what it is today.
 
-## <a name="application"></a>Application
+## <a name="application"></a>Application <a href="#application"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 Unlike in other tutorials, I will not be showing off all the methods in each specific file. The reason is that `LootTable` is massive spanning over many files each having their own implementation. I do not have the time nor the patience to copy all those methods over. If you would like to go and review each method for yourself, take a look through `net.minecraft.loot`. Get acquainted with all the files if you can. It will be imperative as we create more and more custom tables.

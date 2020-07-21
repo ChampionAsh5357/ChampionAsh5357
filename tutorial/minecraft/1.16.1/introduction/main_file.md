@@ -1,9 +1,9 @@
-# <a name="main-mod-file"></a>Main Mod File
+# Main Mod File
 ---
 
 Congrats on setting up your workspace! Welcome to part 2 of the introduction where we set up the basic mod file and folders for assets and data. You can delete any packages within `src/main/java` via the Project Explorer as we will be writing the code from scratch.
 
-## <a name="java-class"></a>Java Class
+## <a name="java-class"></a>Java Class <a href="#java-class"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 Let's start with the java class. Head over to the package explorer located by default on the left side of the screen. Right click `src/main/java` and go to `New`->`Class`. You should now see a screen where you can name the class and set the package. Usually, the package refers to the developer's website in reverse with an appended mod id, the same as we did for the `group` tag in [`build.gradle`](./getting_started#build-gradle). We will use `tutorial` as the mod id and the package as `io.github.championash5357.tutorial` in this example. As for the class name, you can use the name of the mod id (e.g. `Tutorial`). I will also check the box labeled `Constructors from superclass` as we will be using the constructor in our class. After setting these parameters, click `Finish` to create the class.
@@ -31,12 +31,12 @@ public static class Tutorial {
 }
 ```
 
-## <a name="resources"></a>Resources
+## <a name="resources"></a>Resources <a href="#resources"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 This is the barebones minimum needed to run a mod. To be able to set up the information, we will need to do a few more things.
 
-### <a name="mods-toml"></a>mods.toml
+### <a name="mods-toml"></a>mods.toml <a href="#mods-toml"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 Tom's Obvious, Minimal Language (or `TOML` for short) is a file format for easy reading and writing. In modding, it is our mod loading data that is handled by the game. There are mandatory and optional variables that can be set depending on the preferences of your mod. If you haven't deleted the file there by default, then anything you don't want to use can be commented out using a pound or hashtag (e.g. `var = value # This is commented out`).
 
@@ -92,7 +92,7 @@ The final part is the dependencies which are formatted like so:
 
 These were both taken directly from the default toml file. Obviously, `examplemod` is replaced by your own mod id when you set the dependencies (in our case `tutorial`).
 
-### <a name="pack-mcmeta"></a>pack.mceta
+### <a name="pack-mcmeta"></a>pack.mceta <a href="#pack-mcmeta"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 This MCMeta file is basically the configuration file for the assets used in your mod. It allows the game to know that your mod has assets to attach to it. Although it has a different file extension, it is written in the `JSON` format. All you need to do is create an object `pack` with a `description` and a `pack_format` of 5:
 
@@ -109,12 +109,12 @@ This is to be saved as **pack.mcmeta** in `src/main/resources`. If you again del
 
 After doing this, your main mod file should be complete.
 
-## <a name="additional-setup"></a>Additional Setup
+## <a name="additional-setup"></a>Additional Setup <a href="#additional-setup"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 To prepare for the next tutorials, we're going to do some pre-setup of the main mod file.
 
-### <a name="ieventbus"></a>IEventBus
+### <a name="ieventbus"></a>IEventBus <a href="#ieventbus"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 `IEventBus` is an interface where we register specific events handled by Forge to. There are two main event buses in the game: our mod's event bus and Forge's event bus. The mod event bus is used for listening to lifecycle events (where mods initialize). The Forge event bus handles all the intercepts of vanilla code within the game. 
 
@@ -145,7 +145,7 @@ We will be using the first method throughout the tutorial, but feel free to use 
 
 If you want a more detailed explanation, you can check out the [Forge documentation](https://mcforge.readthedocs.io/en/latest/events/intro/).
 
-### <a name="proxies"></a>Proxies
+### <a name="proxies"></a>Proxies <a href="#proxies"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 One of the most important things about Minecraft is the fact that there are two sides: the `client` and the `server`. There is a bit of ambiguity between the terms, so I will try to make this as clear as I possibly can:  
 **Physical Client** - This refers to accessing `Minecraft` on your computer. Everything that runs are your computer when you open the game refers to this specific client.  
@@ -233,7 +233,7 @@ public class Tutorial {
 }
 ```
 
-### <a name="lifecycle-events"></a>Lifecycle Events
+### <a name="lifecycle-events"></a>Lifecycle Events <a href="#lifecycle-events"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 As metioned previously in [IEventBus](#ieventbus), the lifecycle events are what is used to initialize information specific to the mod. This is run parallelly so that multiple mods can be loaded at once.
 
@@ -281,4 +281,4 @@ All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x
 Before we get started with programming something into the game, let's talk about [registries](./registries).
 
 Back to [Getting Started](./getting_started)  
-Back to [Minecraft Tutorials](../../)  
+Back to [Minecraft Tutorials](../../index)  

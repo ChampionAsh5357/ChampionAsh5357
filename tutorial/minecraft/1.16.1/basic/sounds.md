@@ -1,9 +1,9 @@
-﻿# <a name="sounds"></a>Sounds
+﻿# Sounds
 ---
 
 Have you ever wanted to hear something within the game? Well with this tutorial, you'll be able to add custom sounds and call them within your code.
 
-## <a name="sounds-json"></a>sounds.json
+## <a name="sounds-json"></a>sounds.json <a href="#sounds-json"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 To be able to represent a sound within the game, you must first declare the sound within a `sounds.json` file. Here is an overview of all the [parameters](https://minecraft.gamepedia.com/Sounds.json#File_structure) that can appear in one of these files. However, we will only be focusing on three values.
@@ -53,7 +53,7 @@ assets/tutorial
 
 Remember to add the localization key for the subtitle in your lang JSON. I wrote a little code for the provider that converts the next section into these translation keys for me.
 
-## <a name="soundevent"></a>SoundEvent
+## <a name="soundevent"></a>SoundEvent <a href="#soundevent"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 Once again, we will need to setup a [`DeferredRegister`](../introduction/registries#deferredregister). However, we won't be doing the same simple repeat. Each `SoundEvent` has a parameter to point to the reference within `sounds.json`. This just so happens to be the same as our registry name. So, let's create a method that optimizes this transfer. The easiest method to do this is to pass in a function that takes in a `ResourceLocation` and returns an object that extends `SoundEvent`. Then we can register our sound in the game like normal.
@@ -73,7 +73,7 @@ public class TutorialSounds {
 
 > Note: `SoundEvent`s are only needed to call a sound within the code. All sounds can be called in the game with only a `sounds.json`.
 
-## <a name="soundsprovider"></a>SoundsProvider
+## <a name="soundsprovider"></a>SoundsProvider <a href="#soundsprovider"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 Because I am lazy when it comes to writing JSON files, I have writen a data generator to create sounds for me. As it hasn't currently been verified as proper standard by Forge, I will not create a tutorial on it. You can check out the code in the GitHub however if you want to try it.
