@@ -569,7 +569,18 @@ public class TutorialItems {
 
 Now we could just create our constructors in the method and call it good, but that's an absolutely stupid method. Rendering an object on screen is called every tick and constructing a model every tick is just a massive waste of resources. We could register a global variable within the class, but then we couldn't run the mod on the physical server since `BipedModel` only exists on the physical client.
 
-So how do we get around this? This is where our [`ClientProxy`](../introduction/main_file#proxies) comes into play. Our proxy system is setup to only execute on the physical client, preventing any issues from coming to a physical server. So, let's construct our final references in there and create a method specific only to `ClientProxy` and not our `IProxy` interface that returns the same as `IForgeItem::getArmorModel`.
+So how do we get around this? This is where our [`ClientProxy`](../introduction/main_file#proxies) comes into play. Our proxy system is setup to only execute on the physical client, preventing any issues from coming to a physical server. So, let's construct our final references in there and create a method for our `IProxy` interface that returns a generic that can be applied to the same as `IForgeItem::getArmorModel`.
+
+```java
+public interface IProxy {
+	...
+	default <A> A getRubyArmorModel(EquipmentSlotType armorSlot) {
+		return null;
+	}
+}
+```
+
+From there, we can override it in our `ClientProxy` to return our cached instance of our armor model classes. This will make it so that our model will only render on the client and return null on the server.
 
 ```java
 public class ClientProxy implements IProxy {
@@ -578,7 +589,8 @@ public class ClientProxy implements IProxy {
 	private final RubyArmorModel rubyArmorLeggings = new RubyArmorModel(0.5f);
 	...
 	@SuppressWarnings("unchecked")
-	public <A extends BipedModel<?>> A getRubyArmorModel(EquipmentSlotType armorSlot) {
+	@Override
+	public <A> A getRubyArmorModel(EquipmentSlotType armorSlot) {
 		return (A) (armorSlot == EquipmentSlotType.LEGS ? rubyArmorLeggings : rubyArmorModel);
 	}
 }
@@ -586,7 +598,7 @@ public class ClientProxy implements IProxy {
 
 > Note: Although the `unchecked` warning does need to be supressed, it is not anything to worry about as `RubyArmorModel` extends `BipedModel` regardless.
 
-From there, let's do a sanity check to make sure that `Tutorial::PROXY` is an instance of our `ClientProxy` and to call our method if true and return `null` if false.
+From there, we can implement the method through our `IProxy` reference in the main mod class.
 
 ```java
 public class RubyArmorItem extends ArmorItem {
@@ -597,7 +609,7 @@ public class RubyArmorItem extends ArmorItem {
 	
 	@Override
 	public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
-		return Tutorial.PROXY instanceof ClientProxy ? ((ClientProxy) Tutorial.PROXY).getRubyArmorModel(armorSlot) : null;
+		return Tutorial.PROXY.getRubyArmorModel(armorSlot);
 	}
 }
 ```
@@ -614,6 +626,8 @@ All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x
 There has been a small bug that has been fixed with overlaying armor issues in the **v32.0.61** [port](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.61-web) of the code under **Port to 32.0.61 And Armor Fix** in `RubyArmorModel` and `ruby_layer_2.png`.
 
 Blockbench has their own custom model template that might be easier to use. I have made it locatable [here](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.70-web) under **Armor** if you cannot find it or get access to it.
+
+There has been a small bug that has been fixed with reaching across logical sides in the **v32.0.70** [port](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.70-web) of the code under **Armor Sides Fix**.
 
 Review [Items](../basic/items)  
 Back to [Item Extensions](../../index#item-extensions)  
