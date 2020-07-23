@@ -602,11 +602,7 @@ From there, we can implement the method through our `IProxy` reference in the ma
 
 ```java
 public class RubyArmorItem extends ArmorItem {
-	
-	public RubyArmorItem(IArmorMaterial materialIn, EquipmentSlotType slot, Properties properties) {
-		super(materialIn, slot, properties);
-	}
-	
+	...
 	@Override
 	public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
 		return Tutorial.PROXY.getRubyArmorModel(armorSlot);
