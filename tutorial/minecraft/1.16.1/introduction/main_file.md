@@ -53,6 +53,7 @@ There are currently 13 variables and two dependencies that are written in defaul
 | **displayName** | Display name for the mod (e.g. `Example Mod` or `Tutorial`in our case). |
 | **description** | Description text for the mod written in multi-line format (e.g. `This is our tutorial for programming Minecraft!`). Multi-line format is specified by three apostrophes (`'''`) at the start and end of the text. This can still be replaced with the standard quotation marks for single line format. |
 | **[[mods]]** | Stores a list of mods to be loaded. |
+| **license** | Stores the license used by the mod. This has been added as of **32.0.90** and breaks all mods made before this version. |
 
 Now let's move on to the optional variables:  
 
