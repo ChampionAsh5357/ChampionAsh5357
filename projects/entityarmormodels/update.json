@@ -2,7 +2,7 @@
 	"homepage": "https://www.curseforge.com/minecraft/mc-mods/entity-armor-models",
 	"1.16.1": {
 		"1.16.1-0.0.8.0": "Added support for creepers. Yes, they need armor for some reason."
-	}
+	},
 	"promos": {
 		"1.16.1-latest": "1.16.1-0.0.8.0"
 	}
