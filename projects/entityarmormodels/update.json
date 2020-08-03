@@ -5,7 +5,7 @@
 		"1.16.1-0.0.9.0": "Added support for endermen. Their screams tend to go through head layers.",
 		"1.16.1-0.0.10.0": "Added support for all biped renderers. You can now see arrows in these mobs and a bit of armor for the vex.",
 		"1.16.1-0.0.11.0": "Added support for piglins. I forgot they existed as biped renderers.",
-		"1.16.1-0.0.12.0": "Added support for slimes...and magma cubes. Can't forget the magma cubes... Fixes vex legs not rendering correct for armor."
+		"1.16.1-0.0.12.0": "Added support for slimes...and magma cubes. Can't forget the magma cubes... Fixes vex legs not rendering correct for armor. Fixes an issue with the creeper head layer when skulls are applied."
 	},
 	"promos": {
 		"1.16.1-latest": "1.16.1-0.0.11.0",
