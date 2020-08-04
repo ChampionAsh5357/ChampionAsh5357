@@ -8,7 +8,10 @@
 		"1.16.1-0.0.12.0": "Added support for slimes...and magma cubes. Can't forget the magma cubes... Fixes vex legs not rendering correct for armor. Fixes an issue with the creeper head layer when skulls are applied.",
 		"1.16.1-0.0.13.0": "Definitely forgot about the magma cubes. Now there's magma cubes.",
 		"1.16.1-0.0.14.0": "Code cleanup and hierarchy fixes. Switched from ATs to reflection storages for faster load times and better compatibility. Still need to implement ageable model difference AgeableModels. Also added that annoying update message. No worries, it can be disabled in the config :)",
-		"1.16.1-0.0.15.0": "Implemented AgeableModel interface using Method storage via reflection. Restructured config to allow disabling of specific layers to change amount of resource allocation. Also added horses support."
+		"1.16.1-0.0.15.0": "Implemented AgeableModel interface using Method storage via reflection. Restructured config to allow disabling of specific layers to change amount of resource allocation. Also added horses support.",
+		"1.16.1-0.0.16.0": "The well known overworld's spider and witch have been added to the game. They should've been added earlier but shhh.",
+		"1.16.1-0.0.17.0": "The nether has leaked in! Blazes and ghasts are now supported!",
+		"1.16.1-0.0.18.0": "Fortress mobs time! Well mob. Added support for silverfish. Wait...endermites too."
 	},
 	"promos": {
 		"1.16.1-latest": "1.16.1-0.0.15.0",
