@@ -14,7 +14,7 @@
 		"1.16.1-0.0.18.0": "Fortress mobs time! Well mob. Added support for silverfish. Wait...endermites too. Major fixes with textures not completely being set to the correct size causing incorrect mappings."
 	},
 	"promos": {
-		"1.16.1-latest": "1.16.1-0.0.15.0",
-		"1.16.1-recommended": "1.16.1-0.0.15.0"
+		"1.16.1-latest": "1.16.1-0.0.18.0",
+		"1.16.1-recommended": "1.16.1-0.0.18.0"
 	}
 }
