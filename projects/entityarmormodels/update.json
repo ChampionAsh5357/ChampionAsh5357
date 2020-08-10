@@ -15,7 +15,7 @@
 		"1.16.1-0.0.19.0": "Reorganized entire system to allow for mod development. Wrote javadocs for interfaces that should be used. Exclude sources that are irrelevant to utilizing this mod as a base. The file storage is currently named 'base' as 'api' does not seem to reflect the this mod very well.",
 		"1.16.1-0.0.20.0": "Added the illagers. (They were so similar to witches). Renamed 'base' to 'api' because that's what it's supposed to be. Also, it would get confusing for other programmers. Also broke some more api, which is fine until 1.0 get released.",
 		"1.16.1-0.0.21.0": "Added support for custom armor models. Mods using this must be ordered after this one. Also, guardians are a thing now.",
-		"1.16.1-0.0.22.0": "Added support for custom armor models. Mods using this must be ordered after this one. Also, guardians are a thing now."
+		"1.16.1-0.0.22.0": ""
 	},
 	"promos": {
 		"1.16.1-latest": "1.16.1-0.0.20.0",
