@@ -15,7 +15,9 @@
 		"1.16.1-0.0.19.0": "Reorganized entire system to allow for mod development. Wrote javadocs for interfaces that should be used. Exclude sources that are irrelevant to utilizing this mod as a base. The file storage is currently named 'base' as 'api' does not seem to reflect the this mod very well.",
 		"1.16.1-0.0.20.0": "Added the illagers. (They were so similar to witches). Renamed 'base' to 'api' because that's what it's supposed to be. Also, it would get confusing for other programmers. Also broke some more api, which is fine until 1.0 get released.",
 		"1.16.1-0.0.21.0": "Added support for custom armor models. Mods using this must be ordered after this one. Also, guardians are a thing now.",
-		"1.16.1-0.0.22.0": ""
+		"1.16.1-0.0.22.0": "Added javadocs to ItemRendererExtension and LayerRenderers. Added support for the hoglins and zoglins of the world.",
+		"1.16.1-0.0.23.0": "Added javadocs to the models explaining some usage. Fixed an issue with child renderers. Fixed an issue with the other child renderers. Updated to v32.0.108.",
+		"1.16.1-0.0.24.0": "Added support for phantoms. Reconfigured custom armor models to use functional interface over a singular model."
 	},
 	"promos": {
 		"1.16.1-latest": "1.16.1-0.0.20.0",
