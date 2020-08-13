@@ -20,7 +20,7 @@
 		"1.16.1-0.0.24.0": "Added support for phantoms. Reconfigured custom armor models to use functional interface over a singular model."
 	},
 	"promos": {
-		"1.16.1-latest": "1.16.1-0.0.20.0",
-		"1.16.1-recommended": "1.16.1-0.0.20.0"
+		"1.16.1-latest": "1.16.1-0.0.24.0",
+		"1.16.1-recommended": "1.16.1-0.0.24.0"
 	}
 }
