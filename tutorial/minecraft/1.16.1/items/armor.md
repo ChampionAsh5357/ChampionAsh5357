@@ -264,7 +264,7 @@ And now we have our armor within the game!
 
 Custom Armor Models are one of the more difficult things to implement due to a lack of understanding and consistency between programmers. Today, I will attempt my best explanation of how to correctly implement and create a custom armor model for your player. Child Models are by far the most popular method in rendering an armor model in Minecraft. However, the amount of detail required to correctly render one takes a bit of detail and effort.
 
-### <a name="armor-model"></a>Armor Model <a href="#"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+### <a name="armor-model"></a>Armor Model <a href="#armor-model"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 First, let's create our custom model. I'm going to build it off our ruby armor and just add some spikes coming out of the back of the armor. I will be using [Blockbench](https://blockbench.net/) once again for this.
 
