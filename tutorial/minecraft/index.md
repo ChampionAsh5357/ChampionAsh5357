@@ -21,12 +21,12 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 [Items](./1.16.1/basic/items) - Create your first ever object within Minecraft: the Item!  
 [Blocks](./1.16.1/basic/blocks) - Create your first Block (and Item too)!  
 [Introduction to Features: Ore Generation](./1.16.1/basic/ore_gen) - Introducing the system Minecraft uses to populate the terrain.  
-[Sounds](./1.16.1/basic/sounds) - It's time to add custom sounds to the game!
+[Sounds](./1.16.1/basic/sounds) - It's time to add custom sounds to the game!  
 
 ### <a name="modding-202"></a>Modding 202 <a href="#modding-202"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
-[Recipes](./1.16.1/intermediate/recipes) - Time to create some custom recipes.
-[Containers and Screens](./1.16.1/intermediate/cas) - Implementations of GUI handling.
+[Recipes](./1.16.1/intermediate/recipes) - Time to create some custom recipes.  
+[Containers and Screens](./1.16.1/intermediate/cas) - Implementations of GUI handling.  
 
 ### <a name="data-generators"></a>Data Generators <a href="#data-generators"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
