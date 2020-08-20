@@ -58,7 +58,7 @@ Method | Use
 `trackIntArray` | Allows an array of integers to be synced between the client and server when changed.
 `addListener` | Adds a listener to sync client and server changes.
 `removeListener` | This method is **client only**. Remove the given listener.
-`getInventory` | Returns a list if `ItemStack`s.
+`getInventory` | Returns a list of `ItemStack`s.
 `detectAndSendChanges` | Looks for changes made in the container.
 `enchantItem` | Handles the given button-click on the server.
 `getSlot` | Gets the current slot based on the id.
@@ -148,7 +148,7 @@ public boolean canInteractWith(PlayerEntity playerIn) {
 
 > Note: The function being passed in has been implemented in `ItemHandlerTileEntity` and overriden in `WasherTileEntity` for fancy implementations.
 
-With this, we 'tehcnically' have our container implemented. The only difference is that almost all special functionality is non-existant and will probably crash our container if tried. To fix any crashes with shift-click, we need to override `Container::transferStackInSlot`. This will specify how our containers should merge its stacks between containers. The basic implementation of this class can be take from any container. The only thing you need to do is adjust the index variable to correctly match up with your slots. Slots are registered globally in the order you add them. So in our case, slot 0-8 is our inventory and slot 9-44 is the player inventory. We just have to try and merge the `ItemStack` from one group to the other.
+With this, we 'technically' have our container implemented. The only difference is that almost all special functionality is non-existant and will probably crash our container if tried. To fix any crashes with shift-click, we need to override `Container::transferStackInSlot`. This will specify how our containers should merge its stacks between containers. The basic implementation of this class can be take from any container. The only thing you need to do is adjust the index variable to correctly match up with your slots. Slots are registered globally in the order you add them. So in our case, slot 0-8 is our inventory and slot 9-44 is the player inventory. We just have to try and merge the `ItemStack` from one group to the other.
 
 ```java
 @Override
