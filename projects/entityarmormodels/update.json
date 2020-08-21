@@ -1,5 +1,11 @@
 {
 	"homepage": "https://www.curseforge.com/minecraft/mc-mods/entity-armor-models",
+	"1.15.1": {
+		"1.15.1-1.0.0.0": "Ported from 1.15.2. Downgraded code to support."
+	},
+	"1.15.2": {
+		"1.15.2-1.0.0.0": "Ported from 1.16.1. Removed 1.16 mobs. Added zombie pigman support. Fixed mappings and imports."
+	},
 	"1.16.1": {
 		"1.16.1-0.0.8.0": "Added support for creepers. Yes, they need armor for some reason.",
 		"1.16.1-0.0.9.0": "Added support for endermen. Their screams tend to go through head layers.",
@@ -17,10 +23,23 @@
 		"1.16.1-0.0.21.0": "Added support for custom armor models. Mods using this must be ordered after this one. Also, guardians are a thing now.",
 		"1.16.1-0.0.22.0": "Added javadocs to ItemRendererExtension and LayerRenderers. Added support for the hoglins and zoglins of the world.",
 		"1.16.1-0.0.23.0": "Added javadocs to the models explaining some usage. Fixed an issue with child renderers. Fixed an issue with the other child renderers. Updated to v32.0.108.",
-		"1.16.1-0.0.24.0": "Added support for phantoms. Reconfigured custom armor models to use functional interface over a singular model."
+		"1.16.1-0.0.24.0": "Added support for phantoms. Reconfigured custom armor models to use functional interface over a singular model.",
+		"1.16.1-0.0.25.0": "Added support for ravagers. Changed some access points for ModelRenderer arrays in favor of immutable lists. Added another LayerRenderer for armor that supports no customization for improved performance.",
+		"1.16.1-0.0.26.0": "Added support for shulkers. This is the final beta before v1.0 release.",
+		"1.16.1-1.0.0.0": "Code cleanup and optimization. Removed the elytra layer from the horse since it will never be displayed in any scenario. Added horse armor to zombie and skeleton horse."
+	},
+	"1.16.2": {
+		"1.16.2-1.0.0.0": "Ported from 1.16.1. Added piglin brute support.",
+		"1.16.2-1.0.1.0": "The Big Surprise Update. Added support for giant, iron golem, and polar bear."
 	},
 	"promos": {
-		"1.16.1-latest": "1.16.1-0.0.24.0",
-		"1.16.1-recommended": "1.16.1-0.0.24.0"
+		"1.15.1-latest": "1.15.1-1.0.0.0",
+		"1.15.1-recommended": "1.15.1-1.0.0.0",
+		"1.15.2-latest": "1.15.2-1.0.0.0",
+		"1.15.2-recommended": "1.15.2-1.0.0.0",
+		"1.16.1-latest": "1.16.1-1.0.0.0",
+		"1.16.1-recommended": "1.16.1-1.0.0.0",
+		"1.16.2-latest": "1.16.2-1.0.0.0",
+		"1.16.2-recommended": "1.16.2-1.0.0.0"
 	}
 }
