@@ -26,7 +26,7 @@
 		"1.16.1-0.0.24.0": "Added support for phantoms. Reconfigured custom armor models to use functional interface over a singular model.",
 		"1.16.1-0.0.25.0": "Added support for ravagers. Changed some access points for ModelRenderer arrays in favor of immutable lists. Added another LayerRenderer for armor that supports no customization for improved performance.",
 		"1.16.1-0.0.26.0": "Added support for shulkers. This is the final beta before v1.0 release.",
-		"1.16.1-1.0.0.0": "Code cleanup and optimization. Removed the elytra layer from the horse since it will never be displayed in any scenario. Added horse armor to zombie and skeleton horse. Support will be dropped in favor of 1.16.2."
+		"1.16.1-1.0.0.0": "Code cleanup and optimization. Removed the elytra layer from the horse since it will never be displayed in any scenario. Added horse armor to zombie and skeleton horse."
 	},
 	"1.16.2": {
 		"1.16.2-1.0.0.0": "Ported from 1.16.1. Added piglin brute support.",
