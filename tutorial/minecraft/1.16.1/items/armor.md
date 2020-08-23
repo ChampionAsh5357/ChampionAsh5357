@@ -271,7 +271,7 @@ First, let's create our custom model. I'm going to build it off our ruby armor a
 There are a few things that you need to consider when creating your model:  
 **Box Size** - This is one of the biggest issues I see when people include custom models. They just add boxes and dont necessarily think of the consequences. Whenever you add a box into the game, if the number isn't an integer, then the texture will scale up to the size required to correct the ratio discrepency. So, if I had a box with the dimensions of 1, 1, and 1.5. From the standard texture of 64x32, I would need a texture of 128x64 to correctly render my box. Box sizes of 0 also are an issue as they just don't exist. A box dimension must be at least 0.005 to correctly render on the screen with no flickering.  
 **Box Position** - Just because they are floats doesn't mean you can you can a position of 1.4348927f. After a certain point the model movement will show absolutely nothing. Please try to stick with a precision of at most 0.001f.  
-**ModelRenderer Sanity** - There are two major distinctions of `ModelRenderer`s in Minecraft: Global `ModelRenderer`s and Local `ModelRenderer`s. In any example where your `ModelRenderer` is becoming a child, it should be a local `ModelRenderer`. Local `ModelRenderer`s are inaccessible outside of the constructor. However, since they inherit all their traits from the parent, it makes absolutely no difference since the data will be copied corresponding to its parent. In the case of Global `ModelRenderer`s, they should never be put as a child. In that case, copy the model angles of the part you want to mimic and then supply it in either `AgeableModel::getHeadParts` or `AgeableMode::getBodyParts` where applicable. There should be absolutely no reason to touch `Model::render` **AT ALL**. We must make sure that every box or `ModelRenderer` we create that they are always are in a sub directory of one of `BipedModel`'s `ModelRenderer`s.
+**ModelRenderer Sanity** - There are two major distinctions of `ModelRenderer`s in Minecraft: Global `ModelRenderer`s and Local `ModelRenderer`s. In any example where your `ModelRenderer` is becoming a child, it should be a local `ModelRenderer`. Local `ModelRenderer`s are inaccessible outside of the constructor. However, since they inherit all their traits from the parent, it makes absolutely no difference since the data will be copied corresponding to its parent. In the case of Global `ModelRenderer`s, they should never be put as a child. In that case, copy the model angles of the part you want to mimic and then supply it in either `AgeableModel::getHeadParts` or `AgeableModel::getBodyParts` where applicable. There should be absolutely no reason to touch `Model::render` **AT ALL**. We must make sure that every box or `ModelRenderer` we create that they are always are in a sub directory of one of `BipedModel`'s `ModelRenderer`s.
 
 ![Blockbench Subdirectory](./images/blockbench_directory.png)
 
@@ -299,14 +299,12 @@ Your model class will be saved to your client folder. Since I prefer to model my
 ```
 src/main/java/io/github/championash5357/tutorial/client
 ├── client
-│	├── proxy
 │	└── renderer
 │		└── entity
 │			└── model
 │				└── RubyArmorModel.java
 ├── init
 ├── item
-├── proxy
 ├── server
 └── Tutorial.java
 ```
@@ -533,7 +531,9 @@ public class RubyArmorModel extends BipedModel<LivingEntity> {
 
 > Note: All `ModelRenderer`s use a set texture offset either specified by the constructor or `ModelRenderer::setTextureOffset` If you are using a modeling software that uses an offset constructor, this will cause issues in your texture mapping. The texture offset is not relative, rather a global parameter. Every time you call `ModelRenderer::setTextureOffset`, it sets the value of texture offset to those two numbers you entered. This means that you should only use `new ModelRenderer(this)` when constructing your `ModelRenderer`.
 
-### <a name="item-class-and-clientproxy"></a>Item Class and ClientProxy <a href="#item-class-and-clientproxy"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+In the current state, we have hardcoded all of the model sizes to work for a 1.0f inflation for the helmet, chestplate, and boots and a 0.5f inflation for the leggings. If this weren't the case and we left it dynamic, there would be ratio issues at larger sizes. It requires a bit of tinkering to get it to work perfectly for any scenario. Since each of the spikes are 1x2x4, they would need a lot of extra calculations to get it to scale correctly. However, since we know the armor layer will only be applied for the two values provided, no real work is needed.
+
+### <a name="item-class-and-clientreference"></a>Item Class and ClientReference <a href="#item-class-and-clientreference"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 Now we need to create an `Item` class that extends `ArmorItem`. This is because we need to implement a specific method to get our model to render on the player. There are two methods that can help with this:  
 **IForgeItem::getArmorModel** - This method allows us to return our own armor model to be rendered by the game.  
@@ -541,7 +541,7 @@ Now we need to create an `Item` class that extends `ArmorItem`. This is because 
 
 > Note: Since we are still using both the same textures names as before, we don't necessarily need to use the second method.
 
-So let's construct our class that extends `ArmorItem` and override `IForgeItem::ggetArmorModel`. I will be putting this in my `item` package. We will also need to update our registry objects to mimic this.
+So let's construct our class that extends `ArmorItem` and override `IForgeItem::getArmorModel`. I will be putting this in my `item` package. We will also need to update our registry objects to mimic this.
 
 ```java
 public class RubyArmorItem extends ArmorItem {
@@ -569,10 +569,10 @@ public class TutorialItems {
 
 Now we could just create our constructors in the method and call it good, but that's an absolutely stupid method. Rendering an object on screen is called every tick and constructing a model every tick is just a massive waste of resources. We could register a global variable within the class, but then we couldn't run the mod on the physical server since `BipedModel` only exists on the physical client.
 
-So how do we get around this? This is where our [`ClientProxy`](../introduction/main_file#proxies) comes into play. Our proxy system is setup to only execute on the physical client, preventing any issues from coming to a physical server. So, let's construct our final references in there and create a method for our `IProxy` interface that returns a generic that can be applied to the same as `IForgeItem::getArmorModel`.
+So how do we get around this? This is where our [`ClientReference`](../introduction/main_file#sided-references) comes into play. Our client reference is setup to only execute on the physical client, preventing any issues from coming to a physical server. So, let's construct our final references in there and create a method for our `ISidedReference` interface that returns a generic that can be applied to the same as `IForgeItem::getArmorModel`.
 
 ```java
-public interface IProxy {
+public interface ISidedReference {
 	...
 	default <A> A getRubyArmorModel(EquipmentSlotType armorSlot) {
 		return null;
@@ -580,10 +580,10 @@ public interface IProxy {
 }
 ```
 
-From there, we can override it in our `ClientProxy` to return our cached instance of our armor model classes. This will make it so that our model will only render on the client and return null on the server.
+From there, we can override it in our `ClientReference` to return our cached instance of our armor model classes. This will make it so that our model will only render on the client and return null on the server.
 
 ```java
-public class ClientProxy implements IProxy {
+public class ClientReference implements ISidedReference {
 
 	private final RubyArmorModel rubyArmorModel = new RubyArmorModel(1.0f);
 	private final RubyArmorModel rubyArmorLeggings = new RubyArmorModel(0.5f);
@@ -598,14 +598,14 @@ public class ClientProxy implements IProxy {
 
 > Note: Although the `unchecked` warning does need to be supressed, it is not anything to worry about as `RubyArmorModel` extends `BipedModel` regardless.
 
-From there, we can implement the method through our `IProxy` reference in the main mod class.
+From there, we can implement the method through our `ISidedReference` reference in the main mod class.
 
 ```java
 public class RubyArmorItem extends ArmorItem {
 	...
 	@Override
 	public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
-		return Tutorial.PROXY.getRubyArmorModel(armorSlot);
+		return Tutorial.SIDED_SYSTEM.getRubyArmorModel(armorSlot);
 	}
 }
 ```
@@ -616,6 +616,12 @@ Now if we load up the game, we should see our spikes rendered on the back of the
 
 Now we have our custom model loaded in the game!
 
+## <a name="Overengineering"></a>Overengineering <a href="#Overengineering"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
+
+As I mentioned above, this model will look fine at a base level. However, if scaled, you'll notice a considerable flaw in the programming. This is mainly because as boxes scale upwards, their ratios start to differentiate. For example, let's say that I have a box of size 1 and a box of size 4. This has a ratio of 4:1. Now, if I increase the model size, it scales by one in both directions giving me a box of size 3 and a box of size 6. This now has a ratio of 2:1. The higher the numbers go, the more they diverge. In my example above, there are three main ways it can diverge: the model incorrectly scales to the size present, the model doesn't adjust its location to match where it should have been, and finally the model doesn't keep a ratio between its counterparts. The github code will have a semi-overengineered version lacking the ratio between its counterparts. Please rememeber this is not necessary at any time and is just if you want to have armor model sizes greater than 1.0f.
+
+> Note: There should never be a scenario where you have an armor layer greater than 1.0f on the player at any time. It is perfectly fine to hardcode the values. This is just me explaining what would need to be done to have it scale correctly.
+
 ---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.57-web) under **Armor**.
 
@@ -624,6 +630,8 @@ There has been a small bug that has been fixed with overlaying armor issues in t
 Blockbench has their own custom model template that might be easier to use. I have made it locatable [here](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.70-web) under **Armor** if you cannot find it or get access to it.
 
 There has been a small bug that has been fixed with reaching across logical sides in the **v32.0.70** [port](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.70-web) of the code under **Armor Sides Fix**.
+
+Thank you to `JTK222` for giving me feedback to revise this slightly for better understanding and usage. Not all of his opinions are reflected in this since I don't necessarily agree on those particular issues when it comes to this topic.
 
 Review [Items](../basic/items)  
 Back to [Item Extensions](../../index#item-extensions)  

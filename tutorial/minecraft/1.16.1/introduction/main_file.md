@@ -146,7 +146,7 @@ We will be using the first method throughout the tutorial, but feel free to use 
 
 If you want a more detailed explanation, you can check out the [Forge documentation](https://mcforge.readthedocs.io/en/latest/events/intro/).
 
-### <a name="proxies"></a>Proxies <a href="#proxies"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+### <a name="sided-references"></a>Sided References <a href="#sided-references"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 One of the most important things about Minecraft is the fact that there are two sides: the `client` and the `server`. There is a bit of ambiguity between the terms, so I will try to make this as clear as I possibly can:  
 **Physical Client** - This refers to accessing `Minecraft` on your computer. Everything that runs are your computer when you open the game refers to this specific client.  
@@ -157,12 +157,12 @@ If you would like more information, check out the [Forge documentation](https://
 
 So, if you haven't already guessed, we can't really get information on the logical client from the logical server or vice versa without the use of packets. If we did, our mod could never execute on a physical server and would cause a whole number of other issues within the code. So, we need to separate our code such that logical client information is never called on the physical server.
 
-Enter, proxies. What a proxy allows us to do is execute certain methods exclusively on either the physical client or physical server. This prevents reaching across sides and lets our code run smoothly on both sides.
+Enter, `DistExecutor`. What `DistExecutor` allows us to do is execute certain methods exclusively on either the physical client or physical server. This prevents reaching across sides and lets our code run smoothly on both sides.
 
-To do this, we are going to setup an interface. Go to your `Package Explorer` and right-click your main package. Click `New`->`Interface`. We are going to extend our package name by putting `.proxy` after it and name the interface `IProxy`. Once you have clicked `Finish`, you should see this:
+To do this, we are going to setup an interface to store the reference to. Go to your `Package Explorer` and right-click your main package. Click `New`->`Interface`. We are going to name the interface `ISidedReference`. Once you have clicked `Finish`, you should see this:
 
 ```java
-public interface IProxy {
+public interface ISidedReference {
 
 }
 ```
@@ -170,7 +170,7 @@ public interface IProxy {
 Within here, we are going to add a new method called `setup` that will take two `IEventBus` parameters like so:
 
 ```java
-public interface IProxy {
+public interface ISidedReference {
 	
 	void setup(IEventBus modEventBus, IEventBus forgeEventBus);
 }
@@ -179,16 +179,16 @@ public interface IProxy {
 These two parameters refer to our mod's event bus and Forge's event bus. We take in two parameters as we will have these variables already initialized in our main mod class to save a bit of resources from calling the method redundantly.
 
 Once we have done that, we are going to create two new classes:  
-**ClientProxy** - This will be stored within the package `.client.proxy`  
-**ServerProxy** - This will be stored within the package `.server.proxy`  
+**ClientReference** - This will be stored within the package `.client`  
+**DedicatedServerReference** - This will be stored within the package `.server.dedicated`  
 We want to keep logical client specific and logical server specific code separate from the common code. So, subclassing them in packages is the easiest way to keep track of them.
 
-If you want to add your interface via the creation menu, click `Add...` and type in `IProxy`. Double-click the entry, click `Ok`, make sure `Inherited abstract methods` is selected, and then click `Finish`.
+If you want to add your interface via the creation menu, click `Add...` and type in `ISidedReference`. Double-click the entry, click `Ok`, make sure `Inherited abstract methods` is selected, and then click `Finish`.
 
 This will generate the following two files:
 
 ```java
-public class ClientProxy implements IProxy {
+public class ClientReference implements ISidedReference {
 
 	@Override
 	public void setup(IEventBus modEventBus, IEventBus forgeEventBus) {}
@@ -196,7 +196,7 @@ public class ClientProxy implements IProxy {
 ```
 
 ```java
-public class ServerProxy implements IProxy {
+public class DedicatedServerReference implements ISidedReference {
 
 	@Override
 	public void setup(IEventBus modEventBus, IEventBus forgeEventBus) {}
@@ -205,31 +205,31 @@ public class ServerProxy implements IProxy {
 
 From here, we have to be able to call `setup` for our proxies. But how do we necessarily call each method so that they only exist on a specific physical side? Enter `DistExecutor`. This allows us to create a variable that is set to one class if it is the physical client and the other class if it is the physical server.
 
-Once again, go into your main mod file and create a public static final variable with an `IProxy` type. We use `IProxy` instead of the specific class name because we want to be able to access either class from this specific variable. We will set this equal to `DistExecutor::safeRunForDist` which takes in a [supplier](https://www.geeksforgeeks.org/supplier-interface-in-java-with-examples/) holding a new `IProxy` instance:
+Once again, go into your main mod file and create a public static final variable with an `ISidedReference` type. We use `ISidedReference` instead of the specific class name because we want to be able to access either class from this specific variable. We will set this equal to `DistExecutor::safeRunForDist` which takes in a [supplier](https://www.geeksforgeeks.org/supplier-interface-in-java-with-examples/) holding a new `ISidedReference` instance:
 
 ```java
 ...
 public class Tutorial {
 	...
-	public static final IProxy PROXY = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> ServerProxy::new);
+	public static final ISidedReference SIDED_SYSTEM = DistExecutor.safeRunForDist(() -> ClientReference::new, () -> DedicatedServerReference::new);
 	
 	public Tutorial() {}
 }
 ```
 
-From here we can create two variables within our constructor that hold `FMLJavaModLoadingContext::getModEventBus` for our mod's event bus and `MinecraftForge::EVENT_BUS` for Forge's event bus and pass them into our proxy variable:
+From here we can create two variables within our constructor that hold `FMLJavaModLoadingContext::getModEventBus` for our mod's event bus and `MinecraftForge::EVENT_BUS` for Forge's event bus and pass them into our method holder:
 
 ```java
 ...
 public class Tutorial {
 	...
-	public static final IProxy PROXY = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> ServerProxy::new);
+	public static final ISidedReference SIDED_SYSTEM = DistExecutor.safeRunForDist(() -> ClientReference::new, () -> DedicatedServerReference::new);
 	
 	public Tutorial() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus(),
 				forgeEventBus = MinecraftForge.EVENT_BUS;
 		
-		PROXY.setup(modEventBus, forgeEventBus);
+		SIDED_SYSTEM.setup(modEventBus, forgeEventBus);
 	}
 }
 ```
@@ -248,7 +248,7 @@ Lifecycle Events | Description
 **InterModEnqueueEvent** | Send messages to other mods loaded.   
 **InterModProcessEvent** | Receives messages from other mods loaded.  
 
-In our case, we will only be setting up two since the rest are irrelevant at the current moment: `FMLCommonSetupEvent` and `FMLClientSetupEvent`. We will setup the methods as mentioned above in our main mod file for the common event and our `ClientProxy` for the client event:
+In our case, we will only be setting up two since the rest are irrelevant at the current moment: `FMLCommonSetupEvent` and `FMLClientSetupEvent`. We will setup the methods as mentioned above in our main mod file for the common event and our `ClientReference` for the client event:
 
 ```java
 public class Tutorial {
@@ -265,7 +265,7 @@ public class Tutorial {
 ```
 
 ```java
-public class ClientProxy implements IProxy {
+public class ClientReference implements ISidedReference {
 
 	@Override
 	public void setup(IEventBus modEventBus, IEventBus forgeEventBus) {
@@ -278,6 +278,8 @@ public class ClientProxy implements IProxy {
 
 ---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.47-web) under **Main Mod File**.
+
+Thanks to `JTK222` for recommending that the system should be renamed. Proxies have been discouraged since 1.7.10. You can check out the renames [here](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.70-web) under **Renames**.
 
 Before we get started with programming something into the game, let's talk about [registries](./registries).
 

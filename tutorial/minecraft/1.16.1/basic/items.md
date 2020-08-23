@@ -57,15 +57,13 @@ src
 	│			└── championash5357
 	│				└── tutorial
 	│					├── client
-	│					│	└── proxy
-	│					│		└── ClientProxy.java
+	│					│	└── ClientReference.java
 	│					├── init
 	│					│	└── TutorialItems.java
-	│					├── proxy
-	│					│	└── IProxy.java
 	│					├── server
-	│					│	└── proxy
-	│					│		└── ServerProxy.java
+	│					│	└── dedicated
+	│					│		└── DedicatedServerReference.java
+	│					├── ISidedReference.java
 	│					└── Tutorial.java
 	│
 	└── resources
@@ -271,7 +269,6 @@ src/main/java/io/github/championash5357/tutorial
 ├── init
 ├── item
 │	└── ExtendedItem.java
-├── proxy
 ├── server
 └── Tutorial.java
 ```

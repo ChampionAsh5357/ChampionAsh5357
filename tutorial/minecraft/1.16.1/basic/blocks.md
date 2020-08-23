@@ -276,7 +276,6 @@ src/main/java/io/github/championash5357/tutorial
 ├── client
 ├── init
 ├── item
-├── proxy
 ├── server
 └── Tutorial.java
 ```
