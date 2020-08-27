@@ -1,0 +1,10 @@
+{
+	"homepage": "https://championash5357.github.io/ChampionAsh5357",
+	"1.16.2": {
+		"1.16.2-1.0.0.0": "Allow entities to spawn with armor."
+	},
+	"promos": {
+		"1.16.2-latest": "1.16.2-1.0.0.0",
+		"1.16.2-recommended": "1.16.2-1.0.0.0"
+	}
+}
