@@ -5,7 +5,7 @@
 	},
 	"1.15.2": {
 		"1.15.2-1.0.0.0": "Ported from 1.16.1. Removed 1.16 mobs. Added zombie pigman support. Fixed mappings and imports.",
-		"1.15.2-1.0.1.0": "The Big Surprise Update. Added support for giant, iron golem, and polar bear."
+		"1.15.2-1.0.1.0": "The Big Surprise Update. Added support for giant, iron golem, and polar bear. Support will be suspended until mod completion due to other mod compatibilities in development versions."
 	},
 	"1.16.1": {
 		"1.16.1-0.0.8.0": "Added support for creepers. Yes, they need armor for some reason.",
@@ -33,16 +33,16 @@
 	"1.16.2": {
 		"1.16.2-1.0.0.0": "Ported from 1.16.1. Added piglin brute support.",
 		"1.16.2-1.0.1.0": "The Big Surprise Update. Added support for giant, iron golem, and polar bear.",
-		"1.16.2-1.1.0.0": "A Bool Of Humans Update. Added support for villager and wandering trader. Rearranged package structure. Added support for back slot renders."
+		"1.16.2-1.1.0.0": "A Bool Of Humans Update. Added support for villager and wandering trader. Rearranged package structure. Added support for back slot renders. Uploaded project to maven for download."
 	},
 	"promos": {
 		"1.15.1-latest": "1.15.1-1.0.0.0",
 		"1.15.1-recommended": "1.15.1-1.0.0.0",
-		"1.15.2-latest": "1.15.2-1.0.0.0",
-		"1.15.2-recommended": "1.15.2-1.0.0.0",
-		"1.16.1-latest": "1.16.1-1.0.0.0",
-		"1.16.1-recommended": "1.16.1-1.0.0.0",
-		"1.16.2-latest": "1.16.2-1.0.0.0",
-		"1.16.2-recommended": "1.16.2-1.0.0.0"
+		"1.15.2-latest": "1.15.2-1.0.1.0",
+		"1.15.2-recommended": "1.15.2-1.0.1.0",
+		"1.16.1-latest": "1.16.1-1.0.1.0",
+		"1.16.1-recommended": "1.16.1-1.0.1.0",
+		"1.16.2-latest": "1.16.2-1.0.1.0",
+		"1.16.2-recommended": "1.16.2-1.0.1.0"
 	}
 }
