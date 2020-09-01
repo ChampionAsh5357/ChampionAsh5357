@@ -202,7 +202,7 @@ public class WasherBlock extends Block {
 }
 ```
 
-Now our `TileEntity` is within the game. However, to be able to get information from it, we are going to need to create a [`Container` and `Screen`](../intermediate/cas). Since we also want to have some recipes for our washer, we need to create a custom [`IRecipe`](../intermediate/recipes) and [tag](../datagen/tags) as well.
+Now our `TileEntity` is within the game. However, to be able to get information from it, we are going to need to create a [`Container` and `Screen`](../intermediate/cas.md). Since we also want to have some recipes for our washer, we need to create a custom [`IRecipe`](../intermediate/recipes) and [tag](../datagen/tags) as well.
 
 ---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/tree/1.16.1-32.0.70-web) under **TileEntity**.
