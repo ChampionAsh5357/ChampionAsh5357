@@ -44,7 +44,7 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 
 ### <a name="block-extensions"></a>Block Extensions <a href="#block-extensions"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
-[Block States](./1.16.1/blocks/blockstate) - Give your blocks some states for a more dynamic creative block.
-[Tile Entities](./1.16.1/blocks/tileentity) - Give your block a more dynamic storage and tickable progress.
+[Block States](./1.16.1/blocks/blockstate) - Give your blocks some states for a more dynamic creative block.  
+[Tile Entities](./1.16.1/blocks/tileentity) - Give your block a more dynamic storage and tickable progress.  
 
 Back to [Home Page](../../index)
