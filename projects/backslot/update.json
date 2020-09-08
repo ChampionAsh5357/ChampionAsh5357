@@ -5,9 +5,10 @@
 		"1.16.2-1.0.0.1": "Fixed an issue with entity data not syncing.",
 		"1.16.2-1.0.0.2": "Fixed an issue with mob loots.",
 		"1.16.2-1.1.0.0": "Reformatted entire code to work on json system."
+		"1.16.2-1.1.0.1": "Updated to 33.0.42"
 	},
 	"promos": {
-		"1.16.2-latest": "1.16.2-1.1.0.0",
-		"1.16.2-recommended": "1.16.2-1.1.0.0"
+		"1.16.2-latest": "1.16.2-1.1.0.1",
+		"1.16.2-recommended": "1.16.2-1.1.0.1"
 	}
 }
