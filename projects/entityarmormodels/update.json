@@ -33,7 +33,10 @@
 	"1.16.2": {
 		"1.16.2-1.0.0.0": "Ported from 1.16.1. Added piglin brute support.",
 		"1.16.2-1.0.1.0": "The Big Surprise Update. Added support for giant, iron golem, and polar bear.",
-		"1.16.2-1.1.0.0": "A Bool Of Humans Update. Added support for villager and wandering trader. Rearranged package structure. Added support for back slot renders. Uploaded project to maven for download."
+		"1.16.2-1.1.0.0": "A Bool Of Humans Update. Added support for villager and wandering trader, mule and donkey, and the llama and trader llama. Rearranged package structure. Added support for back slot renders. Uploaded project to maven for download. Support will be dropped for minor version."
+	},
+	"1.16.3": {
+		"1.16.3-1.1.0.0": "A Bool Of Humans Update. Added support for villager and wandering trader, mule and donkey, and the llama and trader llama. Rearranged package structure. Added support for back slot renders. Uploaded project to maven for download."
 	},
 	"promos": {
 		"1.15.1-latest": "1.15.1-1.0.0.0",
@@ -43,6 +46,8 @@
 		"1.16.1-latest": "1.16.1-1.0.1.0",
 		"1.16.1-recommended": "1.16.1-1.0.1.0",
 		"1.16.2-latest": "1.16.2-1.0.1.0",
-		"1.16.2-recommended": "1.16.2-1.0.1.0"
+		"1.16.2-recommended": "1.16.2-1.0.1.0",
+		"1.16.3-latest": "1.16.3-1.1.0.0",
+		"1.16.3-recommended": "1.16.3-1.1.0.0"
 	}
 }
