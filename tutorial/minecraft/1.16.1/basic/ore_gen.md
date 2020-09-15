@@ -3,6 +3,8 @@
 
 Ore Generation is a topic that doesn't deserve its own tutorial for. It's just a simple example for a much larger topic: `Feature`s. A `Feature` is how Minecraft populates the terrain after it generates. Anything from trees to lakes to veins is considered a `Feature`. In this tutorial, we will be talking about how to implement existing features into the game. Creating a feature will be reviewed in a later tutorial.
 
+Do note that this tutorial is specifically for 1.16.1. 1.16.2 does not support ore generation and 1.16.3 supports some in forge version 34.0.5 via an event.
+
 ## <a name="features-at-a-glance"></a>Features at a Glance <a href="#features-at-a-glance"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 

@@ -1,7 +1,7 @@
 # Getting Started
 ---
 
-Hello Minecraft programmers! Welcome to modification making for 1.16.1.
+Hello Minecraft programmers! Welcome to modification making for 1.16.x.
 
 To get started, first you are going to need to download the following items:
 
@@ -18,7 +18,7 @@ Minecraft Forge is currently supported by gradle importation within either Eclip
 
 ### <a name="forge"></a>[Minecraft Forge](https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.16.1.html) <a href="#forge"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
-When deciding which version of Forge to use, I prefer going with the recommended version. However, if there is no recommended version suggest, the latest version should do just fine. Make sure to download the mdk onto your computer.
+When deciding which version of Forge to use, I prefer going with the recommended version. However, if there is no recommended version suggest, the latest minor version should do just fine. Make sure to download the mdk onto your computer.
 
 ## <a name="optional"></a>Optional <a href="#optional"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
@@ -34,15 +34,15 @@ When creating assets, it is a good idea to use a photo editing software of some 
 ## <a name="starting-off"></a>Starting Off <a href="#starting-off"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
-Now that you have downloaded a JDK 8+, Eclipse, and Forge 32.x.x, we can get started creating the workspace. Open the JDK .jar file and download the required contents. There is no need to move the default install location or change any of the download parameters.
+Now that you have downloaded a JDK 8+, Eclipse, and Forge 3x.x.x, we can get started creating the workspace. Open the JDK .jar file and download the required contents. There is no need to move the default install location or change any of the download parameters.
 
 ### <a name="file-setup"></a>File Setup <a href="#file-setup"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
-First, you will need to extract the Forge mdk to a folder. Preferably you should have a default folder with the name of the mod with a subfolder inside of it which contains the extracted Forge mdk. So if you have a mod folder named `forgemod`, you should extract the mdk to `forgemod/version` where version is the `1.16.1-32.x.x` for the current release of Forge:
+First, you will need to extract the Forge mdk to a folder. Preferably you should have a default folder with the name of the mod with a subfolder inside of it which contains the extracted Forge mdk. So if you have a mod folder named `forgemod`, you should extract the mdk to `forgemod/version` where version is the `1.16.x-3x.x.x` for the current release of Forge:
 
 ```
 forgemod
-└── 1.16.1-32.x.x
+└── 1.16.x-3x.x.x
 	├── gradle
 	│	└── wrapper
 	│		├── gradle-wrapper.jar
@@ -75,7 +75,7 @@ Also within that `forgemod` folder, you should create another subfolder titled w
 
 ```
 forgemod
-├── 1.16.1-32.x.x
+├── 1.16.x-3x.x.x
 │	├── gradle
 │	│	└── wrapper
 │	│		├── gradle-wrapper.jar
@@ -109,7 +109,7 @@ For simplicity, I will condense down the file directory to those files that are 
 
 ```
 forgemod
-├── 1.16.1-32.x.x
+├── 1.16.x-3x.x.x
 │	├── gradle
 │	├── src
 │	├── build.gradle

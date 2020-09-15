@@ -3,7 +3,7 @@
 
 Here is a list of tutorials for Minecraft Modding that have been converted into text form for easy reading.
 
-## <a name="minecraft-1-16-1"></a>Minecraft 1.16.1 <a href="#minecraft-1-16-1"><img src="../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
+## <a name="minecraft-1-16-1"></a>Minecraft 1.16.x <a href="#minecraft-1-16-1"><img src="../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 ### <a name="changelogs"></a>Changelogs <a href="#changelogs"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
@@ -20,7 +20,7 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 
 [Items](./1.16.1/basic/items) - Create your first ever object within Minecraft: the Item!  
 [Blocks](./1.16.1/basic/blocks) - Create your first Block (and Item too)!  
-[Introduction to Features: Ore Generation](./1.16.1/basic/ore_gen) - Introducing the system Minecraft uses to populate the terrain.  
+[Introduction to Features: Ore Generation (1.16.1)](./1.16.1/basic/ore_gen) - Introducing the system Minecraft uses to populate the terrain.  
 [Sounds](./1.16.1/basic/sounds) - It's time to add custom sounds to the game!  
 
 ### <a name="modding-202"></a>Modding 202 <a href="#modding-202"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
