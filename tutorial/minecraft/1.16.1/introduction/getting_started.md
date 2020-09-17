@@ -8,17 +8,17 @@ To get started, first you are going to need to download the following items:
 ## <a name="required"></a>Required <a href="#required"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
-### <a name="jdk"></a>[Java Development Kit (JDK)](https://www.oracle.com/java/technologies/javase-downloads.html) <a href="#jdk"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+### <a name="jdk"></a>[Java Development Kit (JDK)](https://adoptopenjdk.net/) <a href="#jdk"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
-Minecraft was originally developed in a language called Java developed by the Oracle Corporation. Currently, the latest commercial release is for Java 8 while the latest development release is for Java 14. When deciding on a JDK version, I recommend using the latest commercial relase since its most likely the one everyone has on their computer. Either way, you need at least Java 8 in some capacity to be able to run the Forge development environment on your computer.
+Minecraft was originally developed in a language called Java developed by James Gosling. Currently, the LTS release is for Java 8 while the latest development release is for Java 14. When deciding on a JDK version, I recommend using the LTS relase since its most likely the one everyone has on their computer. It is also the only version officially supported by Forge and Minecraft. Either way, you need at least Java 8 in some capacity to be able to run the Forge development environment on your computer.
 
 ### <a name="ide"></a>Java Integrated Development Environment ([Eclipse](https://www.eclipse.org/downloads/packages/release/2020-06/r/eclipse-ide-enterprise-java-developers) or [IntelliJ IDEA](https://www.jetbrains.com/idea/download/)) <a href="#ide"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
-Minecraft Forge is currently supported by gradle importation within either Eclipse or IntelliJ. For the purpose of these tutorials, I will be using Eclipse, however, either environment works for the situation.
+Minecraft Forge is currently supported by gradle importation within either Eclipse or IntelliJ. Technically any IDE can be used; however, you will most likely need to figure it out yourself. For the purpose of these tutorials, I will be using Eclipse, however, either environment works for the situation.
 
 ### <a name="forge"></a>[Minecraft Forge](https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.16.1.html) <a href="#forge"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
-When deciding which version of Forge to use, I prefer going with the recommended version. However, if there is no recommended version suggest, the latest minor version should do just fine. Make sure to download the mdk onto your computer.
+When deciding which version of Forge to use, I prefer going with the latest minor version. Make sure to download the mdk onto your computer.
 
 ## <a name="optional"></a>Optional <a href="#optional"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
