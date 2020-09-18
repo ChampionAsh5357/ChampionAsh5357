@@ -33,7 +33,7 @@ There are some exceptions for some methods such as those in the `Block` class. T
 1. Use `@Override` when you intend to override methods. This helps tremendously when updating your code to new versions of Minecraft, but in general is good practice. Read this [Stack Overflow answer](https://stackoverflow.com/questions/94361/when-do-you-use-javas-override-annotation-and-why/94411#94411) for an explanation.
 1. Do not abuse inheritance for code-reuse. This often manifests in classes like `BaseItem`. Using this pattern prevents you from extending other essential classes such as `ArmorItem` requiring a large level of code duplication and events/mixins. Prefer composition or utility methods instead to reuse code.
 1. There should not be any reason to reference `@OnlyIn` anywhere within your code. This is handled interally to remove certain classes/methods in the server jar. Any sided code should be handled properly via `DistExecutor`.
-1. All JSON files should be created via [Data Generators](https://mcforge.readthedocs.io/en/latest/datagen/intro/) instead of copying and pasting. The only exception to this is a custom model file.
+1. All JSON files should be created via [Data Generators](https://mcforge.readthedocs.io/en/latest/datagen/intro/) instead of copy-pasting/handwriting. The only exception to this is a custom model file.
 
 ## General Issues
 
