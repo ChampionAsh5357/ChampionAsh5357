@@ -12,7 +12,7 @@ This post will be updated as needed. If you would like to suggest something, eit
 ---
 
 1. Please use the [registry events](https://mcforge.readthedocs.io/en/latest/concepts/registries/#registering-things) or a [deferred register](https://mcforge.readthedocs.io/en/latest/concepts/registries/#deferredregister) to add your blocks, items, and other registry entries if a forge registry exists for them.  
-*Should add when not applicable, I believe this is defer registering until common setup or static initializer.*
+If this is not applicable, the entry should be deferred and registered in an existing registry event for most cases.
 1. Do not reach across logical sides. This will cause subtle and not-so-subtle issues that may occur randomly and very rarely. One of the most common side effects is having a dedicated server crash with a `ClassNotFoundException`. Read the [documentation about sides](https://mcforge.readthedocs.io/en/latest/concepts/sides/) to understand why this is a bad idea. Instead isolate and reference the code via `DistExecutor`.
 1. Any `IForgeRegistryEntry` is singleton-like. That means there is only one instance of your object class. This means you cannot store dynamic data as instance fields on your object class. For example, there is not a new `Block` instance for every position in the world or a new `Item` instance for every `ItemStack`. Instead, you must use a `TileEntity` or the NBT data on an `ItemStack` respectively.
 1. Do not use methods that are deprecated in Forge or vanilla Minecraft. Usually there will be a comment above the method explaining what to use instead.  
