@@ -29,6 +29,7 @@ There are some exceptions for some methods such as those in the `Block` class. T
 1. Handle exceptions properly. Do not avoid a game crash at all costs. It is sometimes okay to crash the game. Read [this article](https://docs.microsoft.com/en-us/archive/blogs/ericlippert/vexing-exceptions) for more information.
 
 ## Code Style
+---
 
 1. The point of the `DistExecutor` system is to abstract over physical client and server specific behavior, the opposite of "common". Common code should go in your main mod class.
 1. Use `@Override` when you intend to override methods. This helps tremendously when updating your code to new versions of Minecraft, but in general is good practice. Read this [Stack Overflow answer](https://stackoverflow.com/questions/94361/when-do-you-use-javas-override-annotation-and-why/94411#94411) for an explanation.
@@ -37,6 +38,7 @@ There are some exceptions for some methods such as those in the `Block` class. T
 1. All JSON files should be created via [Data Generators](https://mcforge.readthedocs.io/en/latest/datagen/intro/) instead of copy-pasting/handwriting. The only exception to this is a custom model file.
 
 ## General Issues
+---
 
 1. Do not use "export" or "create jar file" functionalities of your IDE or other means to creat your final mod file. You must use the `gradlew build` task.
 1. When creating a git repository for your mod, the repository root should be where your `build.gradle` file is. The MDK ships with a default `.gitignore` file so that the only necessary files will be added to version control.
