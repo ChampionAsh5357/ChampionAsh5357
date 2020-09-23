@@ -41,7 +41,7 @@ You can also update your mappings inside `build.gradle` to the latest version wh
 Credits to the MMD Discord for this image.
 1. Do not abuse inheritance for code-reuse. This often manifests in classes like `BaseItem`. Using this pattern prevents you from extending other essential classes such as `ArmorItem` requiring a large level of code duplication and events. Prefer composition or utility methods instead to reuse code.
 1. There should not be any reason to use `@OnlyIn` anywhere within your code regardless of if the extended method has the annotation. This is handled interally to remove certain classes/methods in the server jar. Any sided code should be handled properly via `DistExecutor`.
-1. All JSON files should be created via [Data Generators](https://mcforge.readthedocs.io/en/latest/datagen/intro/) instead of copy-pasting/handwriting. The only exception to this is a custom model file.
+1. JSON files should be created via [Data Generators](https://mcforge.readthedocs.io/en/latest/datagen/intro/) whenever possible instead of copy-pasting/handwriting.
 1. The point of the `DistExecutor` system is to abstract over physical client and server specific behavior, the opposite of "common". Common code should go in your main mod class.
 
 ## General Issues
