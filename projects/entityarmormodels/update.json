@@ -38,7 +38,7 @@
 	"1.16.3": {
 		"1.16.3-1.1.0.0": "A Bool Of Humans Update. Added support for villager and wandering trader, mule and donkey, and the llama and trader llama. Rearranged package structure. Added support for back slot renders. Uploaded project to maven for download.",
 		"1.16.3-1.1.0.1": "Fix issues with unsafe url grab.",
-		"1.16.3-1.1.1.0": "Defer renderer attachment to end of mod initialization to fix dependency update. Fix texture missing issue. Update to RB."
+		"1.16.3-1.1.1.0": "Defer renderer attachment to end of mod initialization to fix dependency update. Fix texture missing issue. Update to RB. Push Back Slot optional to v1.2.0."
 	},
 	"promos": {
 		"1.15.1-latest": "1.15.1-1.0.0.0",
