@@ -22,7 +22,7 @@ Originally, this mod was supposed to be a direct replica of the original Super M
 
 ### [Minecraft Modifications](./tutorial/minecraft/index)
 
-This is a list of tutorials I do for Minecraft modding. The current version being worked on is 1.16.1 and is still in early development in text form. I suggest watching the videos if you would like to catch up to the current work being done.
+This is a list of tutorials I do for Minecraft modding. The current version being worked on is 1.16.x and is still in early development in text form. I suggest watching the videos if you would like to catch up to the current work being done.
 
 
 Thank you to everyone who has supported me over the years and continue to support!

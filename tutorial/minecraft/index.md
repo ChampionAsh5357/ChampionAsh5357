@@ -3,12 +3,10 @@
 
 Here is a list of tutorials for Minecraft Modding that have been converted into text form for easy reading.
 
-## <a name="minecraft-1-16-1"></a>Minecraft 1.16.x <a href="#minecraft-1-16-1"><img src="../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
+**DISCLAIMER: This entire site will be rewritten over the next following days to update to the current standards of RB. I do not recommend any of the information below until that happens.**
+
+## <a name="minecraft-1-16-x"></a>Minecraft 1.16.x <a href="#minecraft-1-16-x"><img src="../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
-
-### <a name="changelogs"></a>Changelogs <a href="#changelogs"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
-
-[32.0.70](./1.16.1/changelog/32070) - Changes to the code as of 32.0.70 that are not already specified somewhere else  
 
 ### <a name="introduction"></a>Introduction <a href="#introduction"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
