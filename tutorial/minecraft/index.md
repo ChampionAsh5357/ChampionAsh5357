@@ -10,6 +10,19 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 
 ### <a name="introduction"></a>Introduction <a href="#introduction"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
+<!--
+### <a name="modding-101"></a>Modding 101 <a href="#modding-101"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+
+### <a name="modding-202"></a>Modding 202 <a href="#modding-202"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+
+### <a name="data-generators"></a>Data Generators <a href="#data-generators"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+
+### <a name="item-extensions"></a>Item Extensions <a href="#item-extensions"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+
+### <a name="block-extensions"></a>Block Extensions <a href="#block-extensions"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+---
+### <a name="introduction"></a>Introduction <a href="#introduction"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+
 [Getting Started](./1.16.1/introduction/getting_started) - Setting up the workspace and getting ready to program  
 [Main Mod File](./1.16.1/introduction/main_file) - Creating the main mod file and setting up asset folder  
 [Registries](./1.16.1/introduction/registries) - Just a talk about registering objects within the game  
@@ -44,5 +57,6 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 
 [Block States](./1.16.1/blocks/blockstate) - Give your blocks some states for a more dynamic creative block.  
 [Tile Entities](./1.16.1/blocks/tileentity) - Give your block a more dynamic storage and tickable progress.  
+-->
 
 Back to [Home Page](../../index)
