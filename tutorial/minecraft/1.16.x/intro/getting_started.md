@@ -398,7 +398,7 @@ To be able to set it up in this way, go to the left side of the screen where you
 ### <a name="run-favorites"></a>Run Favorites <a href="#run-favorites"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 
-Since the system in FG3 does not run the Eclipse setup through the mdk, it might be a bit more difficult to select the `runClient`, `runData`, and `runServer` application used to test your mod in game. To set these as your favorites to easily find them, go to the Green Play button underneath the toolbar and click the drop down arrow to the right. Click `Organize Favorites`->`Add...`->`Select All`->`Ok`->`Ok` to set the applications as your favorites for easy access.
+Since the system in ForgeGradle 3 does not run the Eclipse setup through the mdk, it might be a bit more difficult to select the `runClient`, `runData`, and `runServer` application used to test your mod in game. To set these as your favorites to easily find them, go to the Green Play button underneath the toolbar and click the drop down arrow to the right. Click `Organize Favorites`->`Add...`->`Select All`->`Ok`->`Ok` to set the applications as your favorites for easy access.
 
 ### <a name="removing-todo-auto-generated-messages"></a>Removing TODO Auto Generated Messages <a href="#removing-todo-auto-generated-messages"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
