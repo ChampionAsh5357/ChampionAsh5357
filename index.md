@@ -1,6 +1,6 @@
 # About Me
 
-Hello everyone! I am currently a student going for my doctorate in Computer Science. I usually spend my time doing work, research, youtube, playing the piano, or programming on the computer. I am currently creating mods for Minecraft for fun.
+Hello everyone! I am currently a student going for my doctorate in Computer Science. I usually spend my time doing work, research, youtube, playing the piano, or programming on the computer. Everything I do here is for my enjoyment of teaching or challenging myself. I hope you enjoy the work I produce!
 
 Check me out on [Youtube](http://youtube.com/c/ChampionAsh5357) for all the videos I create.
 
@@ -9,6 +9,10 @@ Check me out on [Youtube](http://youtube.com/c/ChampionAsh5357) for all the vide
 ### [Entity Armor Models](https://www.curseforge.com/minecraft/mc-mods/entity-armor-models)
 
 All entities have the power to wear armor, but none of them are able to show it. So, I've decided to change that. This client-side mod allows you to view armor on all your favorite living entities in the game! You can check out the release on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/entity-armor-models).
+
+### [Back Slot](https://www.curseforge.com/minecraft/mc-mods/back-slot)
+
+This is exactly what the name says. It's a slot on your back. You can put items in it. It also might apply to every single living entity...yes. You can check out the release on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/back-slot).
 
 ### [Custom Ideas](https://minecraft.curseforge.com/projects/custom-ideas)
 
