@@ -370,10 +370,10 @@ Everything that I've said can also be found in a simpler format within the [Forg
 
 ### <a name="within-the-ide"></a>Within the IDE <a href="#within-the-ide"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
-Once you have set up your `build.gradle` file, navigate over to your IDE and open it up. Depending on which one you are using, you will have to follow a different set of steps.
+Once you have set up your `build.gradle` file, navigate over to your IDE and open it up. Depending on which one you are using, you will have to follow a different set of steps.  
 **Eclipse** - Open eclipse within your workspace folder. Then, go to `File`->`Import...`->`Existing Gradle Project` and click next. You will see a box that says `Project root directory` to which you will browse to your actual MDK folder, and then click `Finish`.  
-**IntelliJ** - Go to `File`->`Open` and navigate to your MDK folder and click `OK`.
-From there, wait for gradle to finish importing your project and viola, the workspace is setup!
+**IntelliJ** - Go to `File`->`Open` and navigate to your MDK folder and click `OK`.  
+From there, wait for gradle to finish importing your project and viola, the workspace is setup!  
 
 If you want to generate your runs, find the gradle tab located in your IDE, find the folder that says `fg_runs` and run the task specific for your IDE.
 
