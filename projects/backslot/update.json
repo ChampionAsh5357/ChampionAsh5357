@@ -12,7 +12,8 @@
 		"1.16.3-1.1.0.2": "Updated to latest and ensured greater safety on network calls.",
 		"1.16.3-1.1.0.3": "Fix issues with unsafe url grab.",
 		"1.16.3-1.2.0.0": "Remove config from api and send value across network. Update to RB.",
-		"1.16.3-1.2.0.1": "Generalized network for packet handling"
+		"1.16.3-1.2.0.1": "Generalized network for packet handling",
+		"1.16.3-1.2.0.2": "Fix license information."
 	},
 	"promos": {
 		"1.16.2-latest": "1.16.2-1.1.0.2",
