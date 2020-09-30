@@ -3,12 +3,12 @@
 
 Here is a list of tutorials for Minecraft Modding that have been converted into text form for easy reading.
 
-**DISCLAIMER: This entire site will be rewritten over the next following days to update to the current standards of RB. I do not recommend any of the information below until that happens.**
-
 ## <a name="minecraft-1-16-x"></a>Minecraft 1.16.x <a href="#minecraft-1-16-x"><img src="../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 ### <a name="introduction"></a>Introduction <a href="#introduction"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+
+[Getting Started](./1.16.x/intro/getting_started) - Setting up the workspace and getting ready to program  
 
 <!--
 ### <a name="modding-101"></a>Modding 101 <a href="#modding-101"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
