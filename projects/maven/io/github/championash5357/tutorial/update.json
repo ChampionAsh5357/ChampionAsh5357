@@ -1,0 +1,11 @@
+{
+	"homepage": "https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial",
+	"1.16.3": {
+		"1.16.3-0.0.1.0": "Create gradle start up for tutorial."
+		"1.16.3-0.0.2.0": "Build out architecture of the main file."
+	},
+	"promos": {
+		"1.16.3-latest": "1.16.3-0.0.2.0",
+		"1.16.3-recommended": "1.16.3-0.0.2.0"
+	}
+}

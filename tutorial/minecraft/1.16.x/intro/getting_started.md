@@ -125,7 +125,7 @@ minecraft {
     // stable_#            Stables are built at the discretion of the MCP team.
     // Use non-default mappings at your own risk. they may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
-    mappings channel: 'snapshot', version: '20200514-1.16'
+    mappings channel: 'snapshot', version: '20200916-1.16.2'
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -189,7 +189,7 @@ dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.16.1-32.0.47'
+    minecraft 'net.minecraftforge:forge:1.16.3-34.1.0'
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
@@ -271,7 +271,7 @@ archivesBaseName = 'modid'
 ```
 
 Variables | Description
---- | ---
+:---: | ---
 **version** | The version of the mod you are on. For this, you might want to follow the [Forge standard](https://mcforge.readthedocs.io/en/latest/conventions/versioning/) provided on their docs.  
 **group** | Usually, this is the reverse-DNS of your website. So, if I have a website named `championash5357.github.io`, then my group name would be `io.github.championash5357`. If you do not own a domain, then you can just use your username (e.g. `championash5357`).
 **archivesBaseName** | The mod id of the project.  
@@ -288,7 +288,7 @@ minecraft {
     // stable_#            Stables are built at the discretion of the MCP team.
     // Use non-default mappings at your own risk. they may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
-    mappings channel: 'snapshot', version: '20200514-1.16'
+    mappings channel: 'snapshot', version: '20200916-1.16.2'
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -353,7 +353,7 @@ minecraft {
 Here we are going to look at a couple things:  
 
 Variables | Description
---- | ---
+:---: | ---
 **mappings channel** | Holds the current instance of the mappings to use to debobfuscate the Minecraft source code.  As of July 4th, 2020, Forge has been using a custom mapping system for 1.16 as they finish the new system MMS. The current mappings can be found on the [Forge Discord](https://discord.gg/UvedJ9m) in the pins of `#modder-support-116`. If you want to update your mappings, you can use `gradlew -PUPDATE_MAPPINGS="<mappings_version>" updateMappings` in a terminal of some kind.
 **accessTransformer** | Allows you to set specific fields in the Minecraft source to different levels of access (e.g. public or protected). It provides a link to where the file is located within your current project. Uncomment this line if you would like to use access transformers within your project. I will be using reflection unless absolutely necessary, so I will leave this line commented.
 
@@ -407,7 +407,7 @@ Sometimes when auto-completing a method, the TODO message auto generates within 
 ---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial) under **Getting Started**.
 
-<!-- Now that you have setup the workspace, it is now time to begin the [Main Mod File](./main_file). -->
+Now that you have setup the workspace, it is now time to begin the [Main File](./main_file).
 
 Back to [Minecraft Tutorials](../../index)  
 Back to [Home Page](../../../../index)  
