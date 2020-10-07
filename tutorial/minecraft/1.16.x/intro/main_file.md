@@ -312,7 +312,7 @@ All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x
 
 Thanks to `JTK222` for recommending that the system should be renamed. Proxies have been discouraged since 1.7.10.
 
-<!-- Before we get started with programming something into the game, let's talk about [registries](./registries). -->
+Before we get started with programming something into the game, let's talk about [registries](./registries).
 
 Back to [Getting Started](./getting_started)  
 Back to [Minecraft Tutorials](../../index)  

@@ -10,6 +10,7 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 
 [Getting Started](./1.16.x/intro/getting_started) - Setting up the workspace and getting ready to program  
 [Main Mod File](./1.16.x/intro/main_file) - Creating the main mod file and setting up asset folder  
+[Registries](./1.16.x/intro/registries) - Just a talk about registering objects within the game    
 
 <!--
 ### <a name="modding-101"></a>Modding 101 <a href="#modding-101"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
