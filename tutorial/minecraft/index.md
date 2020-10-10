@@ -3,14 +3,18 @@
 
 Here is a list of tutorials for Minecraft Modding that have been converted into text form for easy reading.
 
-## <a name="minecraft-1-16-x"></a>Minecraft 1.16.x <a href="#minecraft-1-16-x"><img src="../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
+## <a name="minecraft-1-16-x"></a>Minecraft 1.16.x <a href="#minecraft-1-16-x"><img src="../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>  
 ---
 
-### <a name="introduction"></a>Introduction <a href="#introduction"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+### <a name="introduction"></a>Introduction <a href="#introduction"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>  
 
 [Getting Started](./1.16.x/intro/getting_started) - Setting up the workspace and getting ready to program  
 [Main Mod File](./1.16.x/intro/main_file) - Creating the main mod file and setting up asset folder  
-[Registries](./1.16.x/intro/registries) - Just a talk about registering objects within the game    
+[Registries](./1.16.x/intro/registries) - Just a talk about registering objects within the game  
+
+### <a name="data-generators"></a>Data Generators <a href="#data-generators"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>  
+
+[Introduction](./1.16.x/datagen/intro) - An introduction into data generators and setting up 
 
 <!--
 ### <a name="modding-101"></a>Modding 101 <a href="#modding-101"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>

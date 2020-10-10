@@ -108,7 +108,7 @@ These were both taken directly from the default toml file. Obviously, `examplemo
 
 > Note: This does not review all possible variables you can have in your toml file. Those can be found by looking through the source on the [Minecraft Forge Github](https://github.com/MinecraftForge/MinecraftForge) yourself.
 
-### <a name="pack-mcmeta"></a>pack.mceta <a href="#pack-mcmeta"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+### <a name="pack-mcmeta"></a>pack.mcmeta <a href="#pack-mcmeta"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 This MCMeta file is basically the configuration file for the assets used in your mod. It allows the game to know that your mod has assets to attach to it. Although it has a different file extension, it is written in the `JSON` format. All you need to do is create an object `pack` with a `description` and a `pack_format` of 6:
 
@@ -253,7 +253,7 @@ public class Tutorial {
 }
 ```
 
-### <a name="lifecycle-events"></a>Lifecycle Events<a href="#lifecycle-events"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+### <a name="lifecycle-events"></a>Lifecycle Events <a href="#lifecycle-events"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 As metioned previously in [IEventBus](#ieventbus), the lifecycle events are what is used to initialize information specific to the mod. This is run parallelly so that multiple mods can be loaded at once.
 
@@ -297,7 +297,7 @@ public class ClientReference implements ISidedReference {
 }
 ```
 
-### <a name="linefeed-settings"></a>Linefeed Settings<a href="#linefeed-settings"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
+### <a name="linefeed-settings"></a>Linefeed Settings <a href="#linefeed-settings"><img src="../../../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 
 If you plan on uploading your mod to a repository, you should make sure that at least the `mods.toml` file is saved and pulled in a LF end-of-line (EOL). To do this, simply add the following line to your `.gitattributes` file:
 
