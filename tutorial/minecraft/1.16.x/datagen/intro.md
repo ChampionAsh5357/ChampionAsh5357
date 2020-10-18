@@ -44,7 +44,7 @@ To be able to run a data generator for our mod, we need to adjust the arguments 
 
 > Note: With the above settings, you will not be able to use pre-existing files in your mod within the generators. You will also not be able to view your generated files without copying them over to `src/main/resources`. Please view the below section for that information.
 
-## <a name="existingfilehelper-and-output-setup"></a>`ExistingFileHelper` and Output Setup <a href="#basic-setup"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
+## <a name="existingfilehelper-and-output-setup"></a>`ExistingFileHelper` and Output Setup <a href="#existingfilehelper-and-output-setup"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 By default, all generated files will not be compiled into the resources and no file will not be recognized by the generators except vanilla. To work around this, Forge added a helper class called `ExistingFileHelper` that's used to specify where to grab files from. To add an existing file directory, you will need to append an `--existing` parameter to the end. Afterwards, you can follow this up with the location you want to read your pre-existing files from. For example, if I wanted to read the files in `src/main/resources`, this will change our `build.gradle` to look like so:
@@ -99,7 +99,7 @@ If you would like a more detailed explanation, I did a documentation writeup ove
 
 All that's left to do is to refresh our gradle dependencies and regen our runs.
 
-## <a name="class-setup"></a>Class Setup <a href="#basic-setup"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
+## <a name="class-setup"></a>Class Setup <a href="#class-setup"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
 To be able to register our `DataGenerator`s, we need to also subscribe to `GatherDataEvent` on our mod event bus like so:
@@ -117,6 +117,8 @@ public class Tutorial {
 	}
 }
 ```
+
+`GatherDataEvent` holds four important booleans that check whether the generator should run client JSONs, server JSONs, developement data, and dump reports. We will be specifying which providers are associated with which boolean as these tutorials goes on.
 
 > Note: I make the data generator a parameter since there will be multiple calls to it, so it saves some resources.
 

@@ -14,7 +14,9 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 
 ### <a name="data-generators"></a>Data Generators <a href="#data-generators"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>  
 
-[Introduction](./1.16.x/datagen/intro) - An introduction into data generators and setting up 
+[Introduction](./1.16.x/datagen/intro) - An introduction into data generators and setting up  
+[Language Localization](./1.16.x/datagen/lang) - Generating language files  
+[States and Models](./1.16.x/datagen/models) - Generating block states, block models, and item models  
 
 <!--
 ### <a name="modding-101"></a>Modding 101 <a href="#modding-101"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
