@@ -1,0 +1,22 @@
+{
+	"homepage": "https://github.com/ChampionAsh5357/Paranoia/",
+	"1.16.3": {
+		"1.16.3-0.0.1.0": "Create basic capability.",
+		"1.16.3-0.0.2.0": "Added callback system.",
+		"1.16.3-0.0.3.0": "Removed client network handler. Everything is stored on the server so no need.",
+		"1.16.3-0.0.4.0": "Saturation callback implementation.",
+		"1.16.3-0.0.5.0": "Added more parameters to information.",
+		"1.16.3-0.0.6.0": "Added thresholds and ticking for sanity.",
+		"1.16.3-0.0.6.1": "Bug fixes with serialization.",
+		"1.16.3-0.0.7.0": "Abstract client/attribute callbacks.",
+		"1.16.3-0.0.8.0": "Added teleporter callback.",
+		"1.16.3-0.0.8.1": "Defer initial login callbacks from loading.",
+		"1.16.3-0.0.9.0": "Added tickable callbacks.",
+		"1.16.3-0.0.10.0": "Added user ideas from sciwhiz12, lilypuree, Amber, Commoble, and jedijoe.",
+		"1.16.3-0.0.10.1": "Fix api and main mod separation.",
+	},
+	"promos": {
+		"1.16.3-latest": "1.16.3-0.0.10.1",
+		"1.16.3-recommended": "1.16.3-0.0.10.1"
+	}
+}
