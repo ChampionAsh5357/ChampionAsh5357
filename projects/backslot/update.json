@@ -5,15 +5,16 @@
 		"1.16.2-1.0.0.1": "Fixed an issue with entity data not syncing.",
 		"1.16.2-1.0.0.2": "Fixed an issue with mob loots.",
 		"1.16.2-1.1.0.0": "Reformatted entire code to work on json system.",
-		"1.16.2-1.1.0.1": "Updated to 33.0.42",
+		"1.16.2-1.1.0.1": "Updated to 33.0.42.",
 		"1.16.2-1.1.0.2": "Updated to 33.0.58 and ensured greater safety on network calls. Support will be dropped for minor version."
 	},
 	"1.16.3": {
 		"1.16.3-1.1.0.2": "Updated to latest and ensured greater safety on network calls.",
 		"1.16.3-1.1.0.3": "Fix issues with unsafe url grab.",
 		"1.16.3-1.2.0.0": "Remove config from api and send value across network. Update to RB.",
-		"1.16.3-1.2.0.1": "Generalized network for packet handling",
-		"1.16.3-1.2.0.2": "Fix license information."
+		"1.16.3-1.2.0.1": "Generalized network for packet handling.",
+		"1.16.3-1.2.0.2": "Fix license information.",
+		"1.16.3-1.2.0.3": "Fix mods.toml formatting."
 	},
 	"promos": {
 		"1.16.2-latest": "1.16.2-1.1.0.2",

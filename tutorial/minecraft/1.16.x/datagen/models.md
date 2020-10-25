@@ -5,6 +5,16 @@ States and models are one of the hardest topics to review (excluding loot tables
 
 > Note: Although Minecraft supports its own model provider system, Forge has kept theirs in. We will be using Forge's system as it is deobfuscated and formatted much better.
 
+## <a name="models"></a>Models <a href="#modelsl"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
+
+Block and item models within Minecraft use exact same **JSON** format, excluding their locations. If you want a more in-depth explanation of item models, check out the breakdown over at [Minecraft Wiki](https://minecraft.gamepedia.com/Model#Item_models). If you want to create your own, there are many different [modeling softwares](https://blockbench.net/) out there that will help you with that. There will be a more visual example once we start creating items and blocks.
+
+## <a name="block-state-mapper"></a>Block State Mapper <a href="#block-state-mapper"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
+
+[Block States](https://mcforge.readthedocs.io/en/latest/blocks/states/) are one of the most important things to know for creating more advanced blocks that I won't be covering right now. The link above will giev you a decent rundown for anyone wanting a better understanding until we cover it. 
+
+For now, this should suffice. A `BlockState` is a representation of a `Block` in the `World` at a specific position. A `Block` can hold a wide variety of properties such as what direction its facing or how the block is rotated. This is where a `BlockState` mapper comes in. It takes the information provided by the `BlockState` and displays the correct model according to the current state. We will go into a more in-depth explanation once we create a block.
+
 ## <a name="modelprovider"></a>ModelProvider <a href="#modelprovider"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
@@ -295,7 +305,7 @@ Now all you have to do is rerun your datagens and you should have your models wi
 ---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/) under **States and Models**.
 
-<!-- Completing states and models is an accomplishment within itself. Moving onto [loot tables](./loot_tables) will be a breeze. -->
+Completing states and models is an accomplishment within itself. Moving onto [recipes](./recipes) will be a breeze.
 
 Back to [Language Localization](./lang)  
 Back to [Data Generators](../../index#data-generators)  

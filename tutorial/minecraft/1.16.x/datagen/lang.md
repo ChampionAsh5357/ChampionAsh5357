@@ -5,6 +5,16 @@ Language localization is one of the most important topics when it comes to progr
 
 > Note: For each language localization you would like to create, you have to create a new `LanguageProvider`. Of course, you could also just specify the locale code from the instance and use if-then-else or switch statements to generate accordingly.
 
+## <a name="language-localization"></a>Language Localization <a href="#language-localization"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
+
+All language localization is handled via **JavaScript Object Notation (JSON)** files using what is known as translation keys. A translation key is usually broken down into three parts: the specific object type, the mod id, and then the registry name each separated by a '.'. For almost every object initialized, there will be an associated translated key in this format `object_type.modid.registry_name`. To be able to give our items a name, we need to create a new JSON file once again.
+
+> Note: Any string you create within Minecraft for text display should be passed through a `TranslationTextComponent` with a translation key so that it can be localized in all languages.
+
+From there, we need to save the file name as your [locale code](https://minecraft.gamepedia.com/Language#Available_languages) specified by Minecraft.
+
+> Note: Any non-standard character supported by Minecraft must be referenced via their [Unicode](https://en.wikipedia.org/wiki/Unicode#Standardized_subsets) address (e.g. `\u00ed` for an `í`).
+
 ## <a name="languageprovider"></a>LanguageProvider <a href="#languageprovider"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
 
