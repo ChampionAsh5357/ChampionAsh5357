@@ -13,7 +13,7 @@ All language localization is handled via **JavaScript Object Notation (JSON)** f
 
 From there, we need to save the file name as your [locale code](https://minecraft.gamepedia.com/Language#Available_languages) specified by Minecraft.
 
-> Note: Any non-standard character supported by Minecraft must be referenced via their [Unicode](https://en.wikipedia.org/wiki/Unicode#Standardized_subsets) address (e.g. `\u00ed` for an `í`).
+> Note: Any non-standard character supported by Minecraft must be referenced via their [Unicode](https://en.wikipedia.org/wiki/Unicode#Standardized_subsets) address (e.g. `\u00ed` for an `Ã­`).
 
 ## <a name="languageprovider"></a>LanguageProvider <a href="#languageprovider"><img src="../../../../images/link.png" alt="Link" style="width:20px;height:20px;"></a>
 ---
