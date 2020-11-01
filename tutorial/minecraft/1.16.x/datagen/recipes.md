@@ -1,4 +1,4 @@
-﻿# Data Generators Part 3: Recipes
+# Data Generators Part 3: Recipes
 ---
 
 A recipe simply converts some input into a output. Nothing particularly interesting about them as they just handle everything crafting, smelting, stonecutting, or smithing. However, creating data generators is much more expansive.

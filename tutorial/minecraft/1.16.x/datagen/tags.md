@@ -1,4 +1,4 @@
-﻿# Data Generators Part 4: Tags
+# Data Generators Part 4: Tags
 ---
 
 Tags are the Minecraft implementation of Ore Dictionary that took over in 1.13. They are use in almost everything from recipes to what blocks can infinitely burn to even what an enderman can pick up. Tags are by far the easiest to implement with data generators.
