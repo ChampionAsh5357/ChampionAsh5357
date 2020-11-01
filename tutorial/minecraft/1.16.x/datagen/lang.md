@@ -113,7 +113,7 @@ public class Localization extends LanguageProvider {
 }
 ```
 
-> Note: Forge provides unicode translation support so characters can be entered as they appear.
+> Note: Forge provides unicode translation support so characters can be entered as is instead of their escape code.
 
 From there, we can create a loop of some kind and add a provider for each locale code we would like to support. In my case, I will use a stream to do this for me. However, any method will work.
 
