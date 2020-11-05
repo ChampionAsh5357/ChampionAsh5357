@@ -17,37 +17,37 @@
 		"1.16.3-1.0.0.0": "Ghost creepers and background music. Documented entire API.",
 		"1.16.3-1.0.0.1": "noeppi-noeppi: Fix crashes on dedicated server when outside a development environment",
 		"1.16.3-1.0.1.0": "No Naviphobia
-		Features:
-		 - Commoble (Suggestion): Armor has an effect on the current sanity.
-		 - BlueDuck (Suggestion): Night Vision makes the world clear.
-		 - GiantLuigi4 (Suggestion): Holding items in your off hand might help.
-		 - JTK222 (Suggestion): Curing entities helps you to relax.
-		 - Add new ways to increase your maximum sanity.
-		Balances:
-		 - Now supports 1.16.3 and 1.16.4. 1.16.3 support will be dropped once SpookyJam updates or 1.17 releases.
-		 - Updated the maximum sanity to a higher value and attached a hard mode to the mod that uses the current settings.
-		 - Balanced teleporter callbacks.
-		 - Balanced entity sanity damage.
-		Bugfixes:
-		 - GiantLuigi4 (Suggestion): Fix shaders in 3rd person.
-		 - sciwhiz12 (Suggestion): Fix boat insanity."
+Features:
+ - Commoble (Suggestion): Armor has an effect on the current sanity.
+ - BlueDuck (Suggestion): Night Vision makes the world clear.
+ - GiantLuigi4 (Suggestion): Holding items in your off hand might help.
+ - JTK222 (Suggestion): Curing entities helps you to relax.
+ - Add new ways to increase your maximum sanity.
+Balances:
+ - Now supports 1.16.3 and 1.16.4. 1.16.3 support will be dropped once SpookyJam updates or 1.17 releases.
+ - Updated the maximum sanity to a higher value and attached a hard mode to the mod that uses the current settings.
+ - Balanced teleporter callbacks.
+ - Balanced entity sanity damage.
+Bugfixes:
+ - GiantLuigi4 (Suggestion): Fix shaders in 3rd person.
+ - sciwhiz12 (Suggestion): Fix boat insanity."
 	},
 	"1.16.4": {
 		"1.16.3-1.0.1.0": "No Naviphobia
-		Features:
-		 - Commoble (Suggestion): Armor has an effect on the current sanity.
-		 - BlueDuck (Suggestion): Night Vision makes the world clear.
-		 - GiantLuigi4 (Suggestion): Holding items in your off hand might help.
-		 - JTK222 (Suggestion): Curing entities helps you to relax.
-		 - Add new ways to increase your maximum sanity.
-		Balances:
-		 - Now supports 1.16.3 and 1.16.4. 1.16.3 support will be dropped once SpookyJam updates or 1.17 releases.
-		 - Updated the maximum sanity to a higher value and attached a hard mode to the mod that uses the current settings.
-		 - Balanced teleporter callbacks.
-		 - Balanced entity sanity damage.
-		Bugfixes:
-		 - GiantLuigi4 (Suggestion): Fix shaders in 3rd person.
-		 - sciwhiz12 (Suggestion): Fix boat insanity."
+Features:
+ - Commoble (Suggestion): Armor has an effect on the current sanity.
+ - BlueDuck (Suggestion): Night Vision makes the world clear.
+ - GiantLuigi4 (Suggestion): Holding items in your off hand might help.
+ - JTK222 (Suggestion): Curing entities helps you to relax.
+ - Add new ways to increase your maximum sanity.
+Balances:
+ - Now supports 1.16.3 and 1.16.4. 1.16.3 support will be dropped once SpookyJam updates or 1.17 releases.
+ - Updated the maximum sanity to a higher value and attached a hard mode to the mod that uses the current settings.
+ - Balanced teleporter callbacks.
+ - Balanced entity sanity damage.
+Bugfixes:
+ - GiantLuigi4 (Suggestion): Fix shaders in 3rd person.
+ - sciwhiz12 (Suggestion): Fix boat insanity."
 	},
 	"promos": {
 		"1.16.3-latest": "1.16.3-1.0.1.0",
