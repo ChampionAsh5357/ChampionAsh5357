@@ -29,8 +29,9 @@ Balances:
  - Balanced teleporter callbacks.
  - Balanced entity sanity damage.
 Bugfixes:
- - GiantLuigi4 (Suggestion): Fix shaders in 3rd person.
- - sciwhiz12 (Suggestion): Fix boat insanity."
+ - GiantLuigi4 (Issue): Fix shaders in 3rd person.
+ - sciwhiz12 (Issue): Fix boat insanity.",
+		"1.16.3-1.0.1.1": "BluckDuckYT (Issue): Fixes standing on non-full blocks rapidly reduces sanity."
 	},
 	"1.16.4": {
 		"1.16.3-1.0.1.0": "No Naviphobia
@@ -46,13 +47,14 @@ Balances:
  - Balanced teleporter callbacks.
  - Balanced entity sanity damage.
 Bugfixes:
- - GiantLuigi4 (Suggestion): Fix shaders in 3rd person.
- - sciwhiz12 (Suggestion): Fix boat insanity."
+ - GiantLuigi4 (Issue): Fix shaders in 3rd person.
+ - sciwhiz12 (Issue): Fix boat insanity.",
+		"1.16.3-1.0.1.1": "BluckDuckYT (Issue): Fixes standing on non-full blocks rapidly reduces sanity."
 	},
 	"promos": {
-		"1.16.3-latest": "1.16.3-1.0.1.0",
-		"1.16.3-recommended": "1.16.3-1.0.1.0",
-		"1.16.4-latest": "1.16.3-1.0.1.0",
-		"1.16.4-recommended": "1.16.3-1.0.1.0"
+		"1.16.3-latest": "1.16.3-1.0.1.1",
+		"1.16.3-recommended": "1.16.3-1.0.1.1",
+		"1.16.4-latest": "1.16.3-1.0.1.1",
+		"1.16.4-recommended": "1.16.3-1.0.1.1"
 	}
 }
