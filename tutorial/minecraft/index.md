@@ -18,7 +18,8 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 [Language Localization](./1.16.x/datagen/lang) - Generating language files  
 [States and Models](./1.16.x/datagen/models) - Generating block states, block models, and item models  
 [Recipes](./1.16.x/datagen/recipes) - Generating recipes  
-[Tags](./1.16.x/datagen/tags) - Generating tags     
+[Tags](./1.16.x/datagen/tags) - Generating tags  
+[Loot Tables](./1.16.x/datagen/loot_tables) - Generating loot tables  
 
 <!--
 ### <a name="modding-101"></a>Modding 101 <a href="#modding-101"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
@@ -31,11 +32,6 @@ Here is a list of tutorials for Minecraft Modding that have been converted into 
 
 ### <a name="block-extensions"></a>Block Extensions <a href="#block-extensions"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 ---
-### <a name="introduction"></a>Introduction <a href="#introduction"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
-
-[Getting Started](./1.16.1/introduction/getting_started) - Setting up the workspace and getting ready to program  
-[Main Mod File](./1.16.1/introduction/main_file) - Creating the main mod file and setting up asset folder  
-[Registries](./1.16.1/introduction/registries) - Just a talk about registering objects within the game  
 
 ### <a name="modding-101"></a>Modding 101 <a href="#modding-101"><img src="../../images/link.png" alt="Link" style="width:15px;height:15px;"></a>
 

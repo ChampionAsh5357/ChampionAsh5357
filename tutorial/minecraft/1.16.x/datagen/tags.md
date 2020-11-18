@@ -76,7 +76,7 @@ private void data(final GatherDataEvent event) {
 ---
 All files are uploaded to the [GitHub](https://github.com/ChampionAsh5357/1.16.x-Minecraft-Tutorial/) under **Tags**.
 
-<!-- Finish off this six part tutorial with [advancements](./advancements). -->
+Now it's time to move on with [loot tables](./loot_tables).
 
 Back to [Data Generators](../../index#data-generators)  
 Back to [Minecraft Tutorials](../../index)  
