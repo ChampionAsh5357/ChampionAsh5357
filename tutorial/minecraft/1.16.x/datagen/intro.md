@@ -85,15 +85,9 @@ sourceSets {
 }
 ```
 
-> Note: This should be in a standalone block, not in some other one.
+> Note: This should be in a standalone block, not nested in some other one.
 
-As for including Forge files into the mix, we can specify those using:
-
-```
-project.afterEvaluate {
-    minecraft.runs.data.args('--existing', configurations.minecraft.asPath.split(":").toList().find { it.contains("forge") }.split(";")[0])
-}
-```
+Forge assets are included by default as of 35.1.3. To add other mod resources, you can append `--existing-mod <modid>` to the end of your data block arguments.
 
 If you would like a more detailed explanation, I did a documentation writeup over at the [MMD Modding Resources](https://github.com/MinecraftModDevelopment/Modding-Resources/blob/master/pages/existingfilehelper.md) GitHub. I would highly recommend reading this before progressing any further in data generators.
 
