@@ -3,13 +3,14 @@
   <groupId>io.github.championash5357</groupId>
   <artifactId>ashlib</artifactId>
   <versioning>
-    <release>1.16.4-0.0.6.0</release>
+    <release>1.16.4-0.0.8.0</release>
     <versions>
       <version>1.16.4-0.0.5.0</version>
       <version>1.16.4-0.0.5.1</version>
       <version>1.16.4-0.0.5.2</version>
       <version>1.16.4-0.0.6.0</version>
+      <version>1.16.4-0.0.8.0</version>
     </versions>
-    <lastUpdated>20201116182950</lastUpdated>
+    <lastUpdated>20201128030258</lastUpdated>
   </versioning>
 </metadata>
