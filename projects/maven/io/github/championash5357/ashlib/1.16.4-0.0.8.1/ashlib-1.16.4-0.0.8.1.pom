@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.github.championash5357</groupId>
+  <artifactId>ashlib</artifactId>
+  <version>1.16.4-0.0.8.1</version>
+  <name>AshLib</name>
+  <description>A Simple Utility</description>
+  <licenses>
+    <license>
+      <name>MIT</name>
+      <url>https://spdx.org/licenses/MIT.html</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>ChampionAsh5357</name>
+    </developer>
+  </developers>
+</project>
