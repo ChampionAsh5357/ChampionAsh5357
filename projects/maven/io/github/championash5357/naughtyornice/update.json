@@ -1,13 +1,14 @@
 {
-	"homepage": "https://github.com/ChampionAsh5357/Naughty-or-Nice",
+	"homepage": "https://www.curseforge.com/minecraft/mc-mods/naughty-or-nice",
 	"1.16.4": {
-		"1.16.4-0.0.1.0": "Setup initial capbility and workspace.",
+		"1.16.4-0.0.1.0": "Setup initial capability and workspace.",
 		"1.16.4-0.0.2.0": "Attach basic capability handling.",
 		"1.16.4-0.0.3.0": "Create basic present.",
-		"1.16.4-0.0.4.0": "Create basic wrapped instances."
+		"1.16.4-0.0.4.0": "Create basic wrapped instances.",
+		"1.16.4-1.0.0.0": "Full release."
 	},
 	"promos": {
-		"1.16.4-latest": "1.16.4-0.0.4.0",
-		"1.16.4-recommended": "1.16.4-0.0.4.0"
+		"1.16.4-latest": "1.16.4-1.0.0.0",
+		"1.16.4-recommended": "1.16.4-1.0.0.0"
 	}
 }
