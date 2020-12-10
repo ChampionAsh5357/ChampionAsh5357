@@ -5,10 +5,11 @@
 		"1.16.4-0.0.2.0": "Attach basic capability handling.",
 		"1.16.4-0.0.3.0": "Create basic present.",
 		"1.16.4-0.0.4.0": "Create basic wrapped instances.",
-		"1.16.4-1.0.0.0": "Full release."
+		"1.16.4-1.0.0.0": "Full release.",
+		"1.16.4-1.0.1.0": "Tdiggity_gaming (Issue): Add configuration for chunk check and present chances for spawning and fix presents spawning on top of one another."
 	},
 	"promos": {
-		"1.16.4-latest": "1.16.4-1.0.0.0",
-		"1.16.4-recommended": "1.16.4-1.0.0.0"
+		"1.16.4-latest": "1.16.4-1.0.1.0",
+		"1.16.4-recommended": "1.16.4-1.0.1.0"
 	}
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.github.championash5357</groupId>
+  <artifactId>naughtyornice</artifactId>
+  <version>1.16.4-1.0.1.0</version>
+  <name>Naughty or Nice</name>
+  <description>You Better Watch Out</description>
+  <licenses>
+    <license>
+      <name>GNU Lesser General Public License v3.0</name>
+      <url>https://www.gnu.org/licenses/lgpl-3.0.html</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>ChampionAsh5357</name>
+    </developer>
+  </developers>
+  <dependencies>
+    <dependency>
+      <groupId>io.github.championash5357</groupId>
+      <artifactId>ashlib</artifactId>
+      <version>1.16.4-0.0.8.1_mapped_snapshot_20201028-1.16.3</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>commoble.databuddy</groupId>
+      <artifactId>databuddy-1.16.3</artifactId>
+      <version>1.7.3.0_mapped_snapshot_20201028-1.16.3</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>
